@@ -9,6 +9,9 @@
 
          mvn package -P cobertura
          Compila, executa testes e elabora relatório de cobertura.
+
+         mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"
+         Executa o programa exemplo
     -->
 
     <groupId>com.github.kyriosdata</groupId>
