@@ -22,8 +22,7 @@
     <name>com.github.kyriosdata:exemplo</name>
 
     <description>
-        Modelo de Domínio do Sistema de Apoio à Elaboração
-        de Pareceres (SAEP), composto por um único 'bounded context'.
+        Projeto de referência (exemplo) inicial de desenvolvimento em Java com uso de JUnit.
     </description>
 
     <url>https://github.com/kyriosdata/exemplo</url>
@@ -58,7 +57,7 @@
     <scm>
         <connection>scm:git:https://github.com/kyriosdata/exemplo.git</connection>
         <developerConnection>scm:git:https://github.com/kyriosdata/exemplo.git</developerConnection>
-        <url>https://github.com/kyriosdata/saep</url>
+        <url>https://github.com/kyriosdata/exemplo</url>
     </scm>
 
     <properties>
