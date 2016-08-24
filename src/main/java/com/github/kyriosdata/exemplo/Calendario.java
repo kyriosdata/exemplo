@@ -24,15 +24,15 @@ public class Calendario
 {
     /**
      * Obtém dia da semana para a data.
-     * @param d O dia da data. Calendario entre 1 e 31, inclusive.
-     * @param m O mês da data. Calendario entre 1 e 12, inclusive.
-     * @param a O ano da data. Calendario maior que 1752.
+     * @param d O dia da data. Valor entre 1 e 31, inclusive.
+     * @param m O mês da data. Valor entre 1 e 12, inclusive.
+     * @param a O ano da data. Valor maior que 1752.
      *
      * @return O dia da semana correspondente à data. O valor 0 para
      * segunda-feira, 1 para terça-feira, 2 para quarta-feira e
      * assim sucessivamente.
      *
-     * @throws IllegalAccessException Se o dia for inválido (menor que um
+     * @throws IllegalArgumentException Se o dia for inválido (menor que um
      * ou maior que 31), o mês for inválido (menor que 1 ou maior que 12)
      * ou o ano for menor que 1753.
      */
