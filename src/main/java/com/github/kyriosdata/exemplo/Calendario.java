@@ -5,8 +5,6 @@
 
 package com.github.kyriosdata.exemplo;
 
-import java.time.LocalDate;
-
 /**
  * Implementação do cálculo de dia da semana.
  *
@@ -14,14 +12,20 @@ import java.time.LocalDate;
  * LARSEN, K. S. Computing the Day of the week,
  * Dr. Dobb´s Journal, april, 1995.
  *
- * <p>Convém ressaltar a existência da classe
- * {@link java.time.LocalDate} e, em particular,
- * do método {@link LocalDate#getDayOfWeek()},
- * que oferece funcionalidade similar.
- *
  */
-public class Calendario
-{
+public class Calendario {
+
+    /**
+     * Maior valor para um dia.
+     */
+    public static final int MAIOR_DIA = 31;
+
+    public static final int DEZEMBRO = 12;
+
+    private Calendario() {
+        // Segue recomendação de Checkstyle. 
+    }
+
     /**
      * Obtém dia da semana para a data.
      * @param d O dia da data. Valor entre 1 e 31, inclusive.
@@ -36,12 +40,15 @@ public class Calendario
      * ou maior que 31), o mês for inválido (menor que 1 ou maior que 12)
      * ou o ano for menor que 1753.
      */
-    public static int diaDaSemana(int d, int m, int a) {
-        if (d < 1 || d > 31) {
+    public static int diaDaSemana(final int d, final int m, final int a) {
+        int mes = m;
+        int ano = a;
+        
+        if (d < 1 || d > MAIOR_DIA) {
             throw new IllegalArgumentException("dia inválido");
         }
 
-        if (m < 1 || m > 12) {
+        if (mes < 1 || mes > DEZEMBRO) {
             throw new IllegalArgumentException("mês inválido");
         }
 
@@ -49,9 +56,9 @@ public class Calendario
             throw new IllegalArgumentException("ano inválido");
         }
 
-        if (m == 1 || m == 2) {
-            m = m + 12;
-            a = a - 1;
+        if (mes == 1 || mes == 2) {
+            mes = mes + DEZEMBRO;
+            ano = ano - 1;
         }
 
         int s = d + 2 * m + 3 * (m + 1) / 5 + a + a / 4 - a / 100 + a / 400;
@@ -59,3 +66,4 @@ public class Calendario
         return s % 7;
     }
 }
+
