@@ -13,17 +13,40 @@ package com.github.kyriosdata.exemplo;
  * Dr. Dobb´s Journal, april, 1995.
  *
  */
-public class Calendario {
+public final class Calendario {
 
     /**
      * Maior valor para um dia.
      */
     public static final int MAIOR_DIA = 31;
 
-    public static final int DEZEMBRO = 12;
+    /**
+     * Valor correspondente ao mês de janeiro.
+     */
+    public static final int JANEIRO = 1;
 
+    /**
+     * Valor correspondente ao mês de fevereiro.
+     */
+    public static final int FEVEREIRO = 2;
+
+    /**
+     * Valor correspondente ao mês de dezembro.
+     */
+    public static final int DEZEMBRO = 12;
+    public static final int DIAS_DA_SEMANA = 7;
+
+    /**
+     * Ano de referência para o calendário gregoriano?!
+     */
+    public static final int CALENDARIO_GREGORIANO = 1753;
+
+    /**
+     * Classe contendo apenas operações "static".
+     * Evita que instância seja criada desnecessariamente.
+     */
     private Calendario() {
-        // Segue recomendação de Checkstyle. 
+        // Segue recomendação de Checkstyle.
     }
 
     /**
@@ -43,7 +66,7 @@ public class Calendario {
     public static int diaDaSemana(final int dia, final int mes, final int ano) {
         int m = mes;
         int a = ano;
-        
+
         if (dia < 1 || dia > MAIOR_DIA) {
             throw new IllegalArgumentException("dia inválido");
         }
@@ -52,18 +75,17 @@ public class Calendario {
             throw new IllegalArgumentException("mês inválido");
         }
 
-        if (ano < 1753) {
+        if (ano < CALENDARIO_GREGORIANO) {
             throw new IllegalArgumentException("ano inválido");
         }
 
-        if (mes == 1 || mes == 2) {
+        if (mes == JANEIRO || mes == FEVEREIRO) {
             m = m + DEZEMBRO;
             a = a - 1;
         }
 
         int s = dia + 2 * m + 3 * (m + 1) / 5 + a + a / 4 - a / 100 + a / 400;
 
-        return s % 7;
+        return s % DIAS_DA_SEMANA;
     }
 }
-

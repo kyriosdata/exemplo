@@ -10,9 +10,15 @@ package com.github.kyriosdata.exemplo;
  * para uma data específica.
  *
  */
-public class ProgramaCalendario
-{
-    public static void main(String[] args) {
+public class ProgramaCalendario {
+
+    /**
+     * Ponto de entrada da aplicação. Apenas para ilustra chamada de método.
+     *
+     * @param args Ignorados.
+     */
+    public static void main(final String[] args) {
+
         System.out.println(Calendario.diaDaSemana(1, 2, 2013));
     }
 }
