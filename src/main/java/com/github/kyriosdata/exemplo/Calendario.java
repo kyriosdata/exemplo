@@ -28,9 +28,9 @@ public class Calendario {
 
     /**
      * Obtém dia da semana para a data.
-     * @param d O dia da data. Valor entre 1 e 31, inclusive.
-     * @param m O mês da data. Valor entre 1 e 12, inclusive.
-     * @param a O ano da data. Valor maior que 1752.
+     * @param dia O dia da data. Valor entre 1 e 31, inclusive.
+     * @param mes O mês da data. Valor entre 1 e 12, inclusive.
+     * @param ano O ano da data. Valor maior que 1752.
      *
      * @return O dia da semana correspondente à data. O valor 0 para
      * segunda-feira, 1 para terça-feira, 2 para quarta-feira e
@@ -40,11 +40,11 @@ public class Calendario {
      * ou maior que 31), o mês for inválido (menor que 1 ou maior que 12)
      * ou o ano for menor que 1753.
      */
-    public static int diaDaSemana(final int d, final int m, final int a) {
-        int mes = m;
-        int ano = a;
+    public static int diaDaSemana(final int dia, final int mes, final int ano) {
+        int m = mes;
+        int a = ano;
         
-        if (d < 1 || d > MAIOR_DIA) {
+        if (dia < 1 || dia > MAIOR_DIA) {
             throw new IllegalArgumentException("dia inválido");
         }
 
@@ -52,16 +52,16 @@ public class Calendario {
             throw new IllegalArgumentException("mês inválido");
         }
 
-        if (a < 1753) {
+        if (ano < 1753) {
             throw new IllegalArgumentException("ano inválido");
         }
 
         if (mes == 1 || mes == 2) {
-            mes = mes + DEZEMBRO;
-            ano = ano - 1;
+            m = m + DEZEMBRO;
+            a = a - 1;
         }
 
-        int s = d + 2 * m + 3 * (m + 1) / 5 + a + a / 4 - a / 100 + a / 400;
+        int s = dia + 2 * m + 3 * (m + 1) / 5 + a + a / 4 - a / 100 + a / 400;
 
         return s % 7;
     }

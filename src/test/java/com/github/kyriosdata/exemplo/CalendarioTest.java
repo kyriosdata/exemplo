@@ -53,10 +53,5 @@ public class CalendarioTest {
         int diaDaSemana = LocalDate.of(5000, 1, 1).getDayOfWeek().ordinal();
         assertEquals(diaDaSemana, Calendario.diaDaSemana(1, 1, 5000));
     }
-
-    @Test
-    public void apenasParaAgradarJacocoTool100PorCentoCobertura() {
-        new Calendario();
-    }
 }
 
