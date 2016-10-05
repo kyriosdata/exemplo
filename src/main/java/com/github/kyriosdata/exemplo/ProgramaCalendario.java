@@ -5,12 +5,21 @@
 
 package com.github.kyriosdata.exemplo;
 
+import java.time.LocalDate;
+
 /**
  * Programa que ilustra a obtenção do dia da semana
  * para uma data específica.
  *
  */
-public class ProgramaCalendario {
+public final class ProgramaCalendario {
+
+    /**
+     * Restringe criação de instância.
+     */
+    private ProgramaCalendario() {
+        // Apenas evita criação de instância.
+    }
 
     /**
      * Ponto de entrada da aplicação. Apenas para ilustra chamada de método.
@@ -19,6 +28,12 @@ public class ProgramaCalendario {
      */
     public static void main(final String[] args) {
 
-        System.out.println(Calendario.diaDaSemana(1, 2, 2013));
+        LocalDate hoje = LocalDate.now();
+        int dia = hoje.getDayOfMonth();
+        int mes = hoje.getMonthValue();
+        int ano = hoje.getYear();
+        int diaDaSemana = Calendario.diaDaSemana(dia, mes, ano);
+
+        System.out.println("Hoje é " + diaDaSemana);
     }
 }

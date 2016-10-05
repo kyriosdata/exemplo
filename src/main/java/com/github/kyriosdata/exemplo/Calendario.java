@@ -34,6 +34,10 @@ public final class Calendario {
      * Valor correspondente ao mês de dezembro.
      */
     public static final int DEZEMBRO = 12;
+
+    /**
+     * Total de dias em uma semana.
+     */
     public static final int DIAS_DA_SEMANA = 7;
 
     /**
