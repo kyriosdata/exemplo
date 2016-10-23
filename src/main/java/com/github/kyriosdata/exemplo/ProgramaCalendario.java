@@ -5,6 +5,9 @@
 
 package com.github.kyriosdata.exemplo;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.time.LocalDate;
 
 /**
@@ -13,6 +16,9 @@ import java.time.LocalDate;
  *
  */
 public final class ProgramaCalendario {
+
+    private static final Logger logger =
+            LogManager.getLogger(ProgramaCalendario.class);
 
     /**
      * Restringe criação de instância.
@@ -28,6 +34,7 @@ public final class ProgramaCalendario {
      */
     public static void main(final String[] args) {
 
+        logger.info("iniciado");
         LocalDate hoje = LocalDate.now();
         int dia = hoje.getDayOfMonth();
         int mes = hoje.getMonthValue();
