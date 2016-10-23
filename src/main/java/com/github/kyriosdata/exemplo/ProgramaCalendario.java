@@ -6,6 +6,7 @@
 package com.github.kyriosdata.exemplo;
 
 import java.time.LocalDate;
+import java.util.logging.Logger;
 
 /**
  * Programa que ilustra a obtenção do dia da semana
@@ -14,6 +15,8 @@ import java.time.LocalDate;
  */
 public final class ProgramaCalendario {
 
+    private static final Logger logger =
+            Logger.getLogger(ProgramaCalendario.class.getName());
     /**
      * Restringe criação de instância.
      */
@@ -28,6 +31,7 @@ public final class ProgramaCalendario {
      */
     public static void main(final String[] args) {
 
+        logger.info("ProgramaCalendario iniciado.");
         LocalDate hoje = LocalDate.now();
         int dia = hoje.getDayOfMonth();
         int mes = hoje.getMonthValue();
