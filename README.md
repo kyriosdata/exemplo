@@ -1,5 +1,5 @@
 # exemplo
-Projeto de referência (exemplo) básico em Java.
+Projeto de referência (exemplo) básico em Java. Inicie por aqui.
 
 ## Lembretes...
 - `mvn javadoc:javadoc` (geração de documentação)
