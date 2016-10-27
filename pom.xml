@@ -87,6 +87,10 @@
     </dependencies>
 
     <build>
+
+        <!-- Define o nome do file a ser gerado (.jar é acrescentada) -->
+        <finalName>Exemplo</finalName>
+
         <plugins>
 
             <plugin>
