@@ -34,6 +34,11 @@ public class CalendarioTest {
     }
 
     @Test
+    public void anoIgualAoLimiteInferior() {
+        assertEquals(0, Calendario.diaDaSemana(31, 12, 1753));
+    }
+
+    @Test
     public void umDiaArbitrarioObtidoDeCalendario() {
         assertEquals(2, Calendario.diaDaSemana(17, 8, 2016));
     }
