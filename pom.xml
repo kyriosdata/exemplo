@@ -93,6 +93,8 @@
 
         <plugins>
 
+            <!-- mvn org.pitest:pitest-maven:muatationCoverage -->
+            <!-- Relatório em: target/pit-reports/YYYYMMDDHHMM -->
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
