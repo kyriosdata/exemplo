@@ -115,6 +115,8 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                         
+                    <!-- OMITE INFORMACAO DE DEBUGGING -->
                     <compilerArgs>
                         <arg>-g:none</arg>
                     </compilerArgs>
