@@ -1,6 +1,7 @@
 # exemplo
 Projeto de referência (exemplo) básico em Java. Inicie por aqui.
 
+[![asciicast](https://asciinema.org/a/31qulp0472a9sbvawjnt6paua)](https://asciinema.org/a/14)
 
 ## Lembretes...
 - `mvn javadoc:javadoc` (geração de documentação)
