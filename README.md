@@ -1,9 +1,10 @@
 # exemplo
 Projeto de referência (exemplo) básico em Java. Inicie por aqui.
-
+<section>
   <pre><code data-trim>
 <script type="text/javascript" src="https://asciinema.org/a/31qulp0472a9sbvawjnt6paua" id="asciicast-14" async></script>
   </code></pre>
+</section>
 
 ## Lembretes...
 - `mvn javadoc:javadoc` (geração de documentação)
