@@ -1,3 +1,5 @@
+[![](https://codescene.io/projects/1157/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/1157/jobs/latest-successful/results)
+
 # exemplo
 Projeto de referência (exemplo) básico em Java. Inicie por aqui.
 
