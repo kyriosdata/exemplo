@@ -12,6 +12,9 @@
 
          mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"
          Executa o programa exemplo
+
+         mvn site
+         Gera relatórios para o projeto: checkstyle, PMD (caso exista falha).
     -->
 
     <groupId>com.github.kyriosdata</groupId>
