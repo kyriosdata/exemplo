@@ -3,6 +3,7 @@
 /target
 target/
 .idea/
+*.iml
 .metadata/
 RemoteSystemsTempFiles/
 Servers/
