@@ -9,7 +9,7 @@ package com.github.kyriosdata.exemplo;
 /**
  * Implementação do cálculo de dia da semana.
  *
- * <p>Algoritmo correspondente obtido de
+ * <p>Implementação do algoritmo criado por
  * LARSEN, K. S. Computing the Day of the week,
  * Dr. Dobb´s Journal, april, 1995.
  *
