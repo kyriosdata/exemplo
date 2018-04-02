@@ -7,6 +7,9 @@
     <!-- mvn javadoc:javadoc
          Gera documentação do projeto
 
+         mvn test
+         Executa testes
+
          mvn package -P cobertura
          Compila, executa testes e elabora relatório de cobertura.
 
@@ -73,11 +76,11 @@
     <dependencies>
 
         <!-- Executa spotbugs: mvn com.github.hazendaz.spotbugs:spotbugs-maven-plugin:3.1.0-RC4:gui -->
-       	<dependency>
-	  <groupId>com.github.hazendaz.spotbugs</groupId>
-	  <artifactId>spotbugs-maven-plugin</artifactId>
-	  <version>3.1.0-RC4</version>
-	</dependency>
+        <dependency>
+            <groupId>com.github.hazendaz.spotbugs</groupId>
+            <artifactId>spotbugs-maven-plugin</artifactId>
+            <version>3.1.0-RC4</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -115,26 +118,28 @@
             </plugin>
 
             <!-- FindBugs Static Analysis -->
-	<!-- mvn compile; mvn findbugs:findbugs; mvn findbugs:gui -->
-        <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>findbugs-maven-plugin</artifactId>
-            <version>3.0.1</version>
-            <configuration>
-                <effort>Max</effort>
-                <threshold>Low</threshold>
-                <failOnError>true</failOnError>
-                <includeFilterFile>${session.executionRootDirectory}/findbugs-security-include.xml</includeFilterFile>
-                <excludeFilterFile>${session.executionRootDirectory}/findbugs-security-exclude.xml</excludeFilterFile>
-                <plugins>
-                    <plugin>
-                        <groupId>com.h3xstream.findsecbugs</groupId>
-                        <artifactId>findsecbugs-plugin</artifactId>
-                        <version>LATEST</version> <!-- Auto-update to the latest stable -->
-                    </plugin>
-                </plugins>
-            </configuration>
-        </plugin>
+            <!-- mvn compile; mvn findbugs:findbugs; mvn findbugs:gui -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                    <failOnError>true</failOnError>
+                    <includeFilterFile>${session.executionRootDirectory}/findbugs-security-include.xml
+                    </includeFilterFile>
+                    <excludeFilterFile>${session.executionRootDirectory}/findbugs-security-exclude.xml
+                    </excludeFilterFile>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.h3xstream.findsecbugs</groupId>
+                            <artifactId>findsecbugs-plugin</artifactId>
+                            <version>LATEST</version> <!-- Auto-update to the latest stable -->
+                        </plugin>
+                    </plugins>
+                </configuration>
+            </plugin>
             <!-- mvn org.pitest:pitest-maven:muatationCoverage -->
             <!-- Relatório em: target/pit-reports/YYYYMMDDHHMM -->
             <plugin>
@@ -154,11 +159,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-		<version>3.7.0</version>
+                <version>3.7.0</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                         
+
                     <!-- OMITE INFORMACAO DE DEBUGGING -->
                     <compilerArgs>
                         <arg>-g:none</arg>
