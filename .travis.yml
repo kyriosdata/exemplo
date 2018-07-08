@@ -6,7 +6,7 @@ addons:
       secure: "vW+3cHf3AbWFuJkJahrICWOSF3bkR13yK1aSiqngC2z73ptz0u2ShwcWjtDVvq/Bc+HI/zdI3USDXuf3Uy3cH/9Fnlpn0ucWhxS4r/F6DBA3kT1bLjAlWsDD335KiUbvwkpYo18AfvPLN0yXWja7JNtqswsBiYpgQNJ0Q/GFvsjkLpXEQRO64iHy/SSVRNEXZKHZzPpvHBmm7vKXAbRNy53Dvg3wEARX1HxmiZkBSbJQhq3wmkX7eb1tXMR97vTEQrQGsReQPw95EN7ldnin9LkktZpRQu5HSZ0tvlp1grtaY0YctWndPjvDAiXNpdoI5IZH6J2x9E1bEE81OpO3QerKuGmCMVYdH2FsfXTgDnhiYdPYholEQb7+C6SXQ0mQmPFDfp9PQy2dDwPQLPJ7BEVf0XHUOdrM5ylw1ofS1s2ITi38yO+MsZ6mBgq8KTVrWlyMlKsrOY4zjxif8AWebbQkFIXWP42BbaAvHt9bjJvS1TjnNhHwHCsMZJZ3pCwSdyhZRllM8oVdhgV7L0eDK4vURm9SlJyozDZJ8RcVyHtFO8p4+nQ44kV4tF2j2z9boxsp9SGdZbKYlpKeIwoVQTjPvI+kVTifVmmVU1vzuGHUayfOzCLJP5HlGfV15kkxDoHz6+yehxBi3ErZYxXmsKq9SwteH3VYVjVyxSyNnkQ="
 
 script:
-- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.organization=kyriosdata
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.organization=kyriosdata -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
 
 cache:
   directories:
@@ -15,4 +15,3 @@ cache:
 
 jdk:
   - oraclejdk8
-qqq
