@@ -26,6 +26,9 @@ Observe que ao executar uma das duas últimas opções acima, pode-se executar o
 ## Análise estática
 - `mvn javancss:check` (verifica limites CC e NCSS)
 - `mvn javancss:report` (gera relatório)
+- `mvn spotbugs:spotbugs` (detecção de bugs)
+- `mvn spotbugs:check` (apenas verifica se há erros)
+- `mvn spotbugs:gui` (abre GUI para exibir bugs após spotbugs:spotbugs)
 - `mvn site` (gera documentação do projeto, além de análises estáticas)
 
 ## Outros recursos
