@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.com/kyriosdata/exemplo.svg?branch=develop)](https://travis-ci.com/kyriosdata/exemplo)
 
+https://sonarcloud.io/api/project_badges/measure?project=com.github.kyriosdata%3Aexemplo%3Adevelop&metric=alert_status
+
 # exemplo
 Projeto de referência básico em Java. Inicie por aqui.
 
