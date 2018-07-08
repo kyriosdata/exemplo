@@ -4,7 +4,7 @@ addons:
   sonarcloud:
     organization: "kyriosdata-github"
     token:
-      secure: ${SONAR_TOKEN}
+      secure: "FusOfil/ZvCC4H6wu49iPWjE9M/HpmSfv2PpzCijNTkwtenFeG6f0Ibga5UDl73bcqYJcuZC6y6ZGS5v6TBDC8y/5VwGUY020srKTJsbUBdl+yiEIQiIx8495HxcucQBzemjHg0aCD6zgW/OuZlLMJTT7H0Mv3o9Ugj0SkAZDMwgW4a4yj2/oXz/rSmgf6tIir0N/oasOVKJ58q7TUPW3LFIDYpr1C8R43vH7Q05YT+ccSkfWoZwkYdP3/AJwfyxZUCZ7KHW2tqVYV6dTqhW8hInFKfvWZfJ0Dij4WRqwF8fU5yaiJXi1Ob8Iu+XhA4jyk2D49rAxZvrbYKQg+lugVfgDPCqayu9iB6oN0fcIaz/T5YkBgBCUOaLU+VSQyrz4GQT0XdR+vM8a3jj+tf1iZn4K8Cl+M+ZNxmLP4yJ3K1lSQcGvVdzFn5RSnZxqRbuYOhTI4KBkJ6kAFnLkg1jWLslVKiC/wNgAT7UmTaPexardqjpjMwtJJ/Osy/nhlDQ5C8juE2DhSiHeTjnLKiZmVggx79eSzTqA4WQCPlDPxS181OXqW4ry9SkUIomcuiNW5dLk5ssN6WwW4lEWsVPNYkKFWfuXYC7opi0IUytMAy76PjP8ApOh/5hGepy1NBo3jeBWfbjm/eG0/Arq3p7Jh3DexivsiLljyXP0B1+uVM="
 
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
