@@ -280,6 +280,8 @@
                         <version>3.0.2</version>
                         <configuration>
                             <archive>
+                                <!-- Evita inclusão dir 'maven' em META-INF -->
+                                <addMavenDescriptor>false</addMavenDescriptor>
                                 <manifest>
                                     <addClasspath>true</addClasspath>
                                     <classpathPrefix>jars/</classpathPrefix>
