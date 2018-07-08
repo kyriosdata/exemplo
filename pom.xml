@@ -110,6 +110,20 @@
 
         <plugins>
 
+            <!-- javadoc:javadoc -->
+            <!-- target/site/apidocs/index.html -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <show>public</show>
+                    <additionalOptions>
+                        <additionalOption>-html5</additionalOption>
+                    </additionalOptions>
+                </configuration>
+            </plugin>
+
             <!-- sonar -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
@@ -140,6 +154,7 @@
                     </plugins>
                 </configuration>
             </plugin>
+
             <!-- mvn org.pitest:pitest-maven:muatationCoverage -->
             <!-- Relatório em: target/pit-reports/YYYYMMDDHHMM -->
             <plugin>
