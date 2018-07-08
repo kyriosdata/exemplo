@@ -2,12 +2,16 @@
 Projeto de referência básico em Java. Inicie por aqui.
 
 
-## Lembretes...
+## Compilação e execução
 - `mvn clean` (remove código gerado, derivado dos fontes)
-- `mvn test` (executa testes)
+- `mvn compile` (compila o projeto)
+- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario` (executa a classe indicada)
+
+## Documentação
 - `mvn javadoc:javadoc` (geração de documentação)
+- `mvn test` (executa testes)
 - `mvn package -P cobertura` (executação de testes e relatório de cobertura)
-- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario` (execução do programa)
+do programa)
 - `java -jar exemplo-1.0.0.jar` (executa o programa, alternativa para o comando acima. O diretório "jar", conforme configurado no pom.xml deve acompanhar exemplo-1.0.0.jar).
 - `mvn javancss:check` (verifica se limites são observados e gera erro se não são)
 - `mvn javancss:report` (gera relatório)
