@@ -12,7 +12,7 @@ Projeto de referência básico em Java. Inicie por aqui.
 - `mvn package -P executavel-dir` (gera jar executável, mas que depende do diretório 'jars', ambos disponíveis em 'target')
 - `mvn package -P executavel-unico` (gera jar executávem em um único arquivo, disonível em 'target')
 
-#### Execução
+## Execução
 Observe que ao executar uma das duas últimas opções acima, pode-se executar o programa gerado por meio do comando `java -jar target/Exemplo.jar` ou
 `java -jar target/Exemplo-unico.jar`. Neste último caso, você precisa apenas do arquivo `Exemplo-unico.jar` e, no caso anterior, além do arquivo `Exemplo.jar` também é preciso o diretório `jars`.
 
@@ -29,6 +29,8 @@ Observe que ao executar uma das duas últimas opções acima, pode-se executar o
 - `mvn spotbugs:spotbugs` (detecção de bugs)
 - `mvn spotbugs:check` (apenas verifica se há erros)
 - `mvn spotbugs:gui` (abre GUI para exibir bugs após spotbugs:spotbugs)
+- `mvn findbugs:findbugs` (detecção de bugs)
+- `mvn findbugs:gui` (exibir resultado de detecção de bugs)
 - `mvn site` (gera documentação do projeto, além de análises estáticas)
 
 ## Outros recursos
