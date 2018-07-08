@@ -124,6 +124,20 @@
                 </configuration>
             </plugin>
 
+            <!-- JavaNCSS -->
+            <!-- Verifica limite de complexidade ciclomática -->
+            <!-- Verifica número de sentenças (código fonte) -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>javancss-maven-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <failOnViolation>true</failOnViolation>
+                    <ccnLimit>111</ccnLimit>
+                    <ncssLimit>90</ncssLimit>
+                </configuration>
+            </plugin>
+
             <!-- sonar -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
@@ -196,6 +210,11 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>javancss-maven-plugin</artifactId>
                 <version>2.1</version>
+                <configuration>
+                    <failOnViolation>true</failOnViolation>
+                    <ccnLimit>111</ccnLimit>
+                    <ncssLimit>90</ncssLimit>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
