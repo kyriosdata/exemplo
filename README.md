@@ -1,8 +1,9 @@
 # exemplo
-Projeto de referência (exemplo) básico em Java. Inicie por aqui.
+Projeto de referência básico em Java. Inicie por aqui.
 
 
 ## Lembretes...
+- `mvn clean` (remove código gerado, derivado dos fontes)
 - `mvn test` (executa testes)
 - `mvn javadoc:javadoc` (geração de documentação)
 - `mvn package -P cobertura` (executação de testes e relatório de cobertura)
