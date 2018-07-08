@@ -7,4 +7,9 @@ addons:
       secure: ZY9oRb+bm2dP33BYWpWCNP64QzcbkKA8Bv7wBAnpkHXpPjVVEVTXcLpTmMhUq4VT0W09MS589jEArampToEbNyPIrbfkYWUK1+3HGouxGlGjXNTucTIJlg16+EUgGtOWFwS5XUQB5cGICGxD/EkNTk0H7rVoDee5MBoqJp3/tVA/Y9T4I/BhByDHin0K3qTYzNCsT80YnYDLA5wI93kL2jsoIGWlhbhwiBTpJpcBSQXDSrdPEmcmZACHB14JFGNHO+FoQOeVhft6U8temBSrjbDZRfL0EzvRYu3UIzmqShFN96ZaBuqaYd9lhwoLmlChj2+p4ygfUAcpKJEpKfYHxyeQ0DFEZ1xOehfG3Ilvx1T13uKCpaFPpjgMuOThpWJ6ZsAMS46/FgKnOREB9Undzz4an7kndlQu+UuGtudHSGo+aA6sCZciByo84I92TJqnqll/2+rYytNMmoTCfiZ546SAXfhOT14RBhkuPAFdBSgRz+JfqVtUgM+YX3sy8l9I9EQ+FAlU7fhZCz26WYiJaksdBIax7EUc7Y2c4i2KFaU0ut3eeJgbS76vNmdtp34jkh/DCMkr7e4RrrNC2JYNvnzTRYKRvVMBYEIwsuqKNrWEsmvW5nfIxawDhQNMDoWcZnPl5hRxowAf52Uj6uSIPX95Dp0Tf7yaMv5ygQoA+HY=
 
 script:
-- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.login=$SONAR_TOKEN
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
