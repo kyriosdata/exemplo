@@ -1,15 +1,16 @@
 language: java
-
 addons:
   sonarcloud:
     organization: "kyriosdata-github"
-    token:
-      ssecure: "YjwGQjffXcLj1dLsAEOkd25VKFgeI+iahOtq7dJ+9CY0M1PB/kHzFaqkPwBWLEhHV0Uqv6jNKwoHvtMAnHxoC3DKFxsMNQ/Kwy5weWBxGE0TGLeVaTBU+qn4/uu+p+TzkanrXPSifhLIfJEub9UQ3NgRS/N0glpSCUWTaDZ/aw3E0uOlQQAhIaLvvuCevIygPvhbTCU4p4qgZM0vKwDKRr95uu3GYlKX3IsaiXNijBro0Tjxk66xodj75EYw2F0cCNSIp9bvKvOA+csTsmK6CYWucQZXZYme1rp2SsT5Vn16H7r147AZFGqYLbb74nGkqAw2ft5f1e+2NmCZ3bSRs3ssmmyFrCd7Eb2b+ZSdlCZvq5GAEJrc6nKC2KG4s0QvPnEm1R3OXyROd8OatlvHdU/7o0ENMJKWQ4h9IeBoXdsq0aYepAuDEmLNLvnxXaeWnnYCQAekEEpksnZypwHtz653PooKMS2LYgtINzjCReVn0UWAc9zjM4ECZT94B68vzUoEuzslnx7BENsOSDFiQITLpyOgRgMYGOPkCwZTaRtQUVe3PVzfdPajWAMSu9nt2DKcehO3zpjiccyDfJAdgqJvBWAbWVfDWthV7ZB32xOhVTVbw1fxPnv7rcMmeWB4LVLniePf7m2fpSBFlV39bsOtHTxBgm6xBjIfd2HiZNg="
 
 script:
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.login=$SONAR_TOKEN
 
 cache:
   directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.sonar/cache'
+  - "$HOME/.m2/repository"
+  - "$HOME/.sonar/cache"
+
+env:
+  global:
+    secure: qwcil4H2BMkDh4FAJPVOdIBa5li4GkeXPgZ1MNa0EshUcZ0tBCaq1RH/HvAI/hFY9P6zzN5lnHwWk7SvXGxYgUrJviQ48Vrlnx2iDS7ubUgtxm0z64GOn3KT5keQ+vnJgUz4urPlYB4rRn5fzs4Vi5GdJA8xjcsdX2CBiWbbwgEsJw/lDQh7YgvpL6QSGbZKa45z69FXuF+650OBBC8PfoOoxP7olEWtfBqMCzKJn6vHYYI4XGwNuRbN1v4slV6LqiOD3+ziv5q7IpPnjihGpMJBG4Ca2RSjTQMFEBBGZpzPkX3H8giGCqpLmgaPwTq5+6U9npYsk6gGCqDPRbHhgcweJXLwONKWQbYhvpgNyShPElxG38pyiKIHAfdvbsRJvusPWn60lvnv/R3ub/Qy2KGS6MxF6PRMrmtkOr6i1A4Gm4NYK548JX1sOfMliVEt/rUud+tz4K5tdIfXemvXz/ito1AxAqYU5ZYKJvT01d7LMzZNynnbi8f9M3Y+r1AQsDGzw+svTf66CbfO+fLpujDzejwyhRdUl90NpctvQPGpjRvTsUAOTY8fR9mB7/whaHqC8MMjyEHKXCJMCCfE3BRy2M8vjPuUSXRM1wTunUr4MrO3QsBaZrdu0aK7/SrxM3yap38XVqVHpHCgyP5ODQxU0F2nZb0kZ5+ozQh+M8c=
