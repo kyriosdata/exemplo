@@ -1,15 +1,16 @@
 language: java
 addons:
   sonarcloud:
-    organization: "kyriosdata-github"
+    organization: kyriosdata-github
 
 script:
-- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.organization="kyriosdata-github" -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.branch=develop
-
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.organization="kyriosdata-github" -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dsonar.branch=develop
 cache:
   directories:
   - "$HOME/.m2/repository"
   - "$HOME/.sonar/cache"
-
 jdk:
-  - oraclejdk8
+- oraclejdk8
+env:
+  global:
+    secure: NtxzhgRtVyipyEKTB/W1ppv5Hh7Rk4cRxN4v8FK4lqfgWntze7Lct2plvo11KbnWiIFeuN2dxe4OG7w6WjlIpcUupNGdEYf7wqlYPDhAdGc39EePasoNxNgM+nMantNpMYFSjp/EJtwqW1bl3uPLqdqcoisivGGHKZiY37JZbKIU+0zAzHNBuD05E1Cg/OgFmQ74SZodeC1cF+P9ieAL4ebdmpJxZrYL0mWW162q4jhUPZYhgE3iUHDHwOLS1TVFobml1f2dFf78fZ2V6yCqrsQ+vxsoWUsM5Usphgjgnx5O9ZyFEB3sHbxInf0uqJt7jQoqAgdcPT8BqX897g9kjI1P2V+sBAD02+JWGc07vN7a4ugTkDFQ9lYOa83gB+v8ndGW2Cx9/CLXSDEwiEimxNY+uSBwcrBUexjYLpryYTw6x4A/5XJIAAGwPpybTOwtrDHqhf8qtC6TZ4C+7do6o0120suC87yX6H5vYo58qZSoIDcytUarL2tL4hm7WXQNNezmh9be8Euae7P9vl2yu/gMRAfalmywrsFBQmWI+30tlAJgK5qY/18tx/5nFR5PPFw1n7A3IZkxzKa0KWvSeZYaLuzERG4/HPoZwZTHPOGgAUqlrk9/a1MT/ZURdD1oqBrK9vHT0pOvZGLovWj4L4TgEEQABvIbCS2Si5LPbSo=
