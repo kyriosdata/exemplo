@@ -24,7 +24,7 @@ Observe que ao executar uma das duas últimas opções acima, pode-se executar o
 - `mvn package -P cobertura` (executação de testes e relatório de cobertura, `target/site/jacoco/index.html`)
 
 ## Análise estática
-- `mvn javancss:check` (verifica se limites são observados e gera erro se não são)
+- `mvn javancss:check` (verifica limites CC e NCSS)
 - `mvn javancss:report` (gera relatório)
 - `mvn site` (gera documentação do projeto, além de análises estáticas)
 
