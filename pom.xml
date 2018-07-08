@@ -217,10 +217,19 @@
                 <version>2.3</version>
             </plugin>
 
+            <!-- mvn checkstyle:checkstyle -->
+            <!-- mvn checkstyle:check      -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.17</version>
+                <version>3.0.0</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>checkstyle</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
             </plugin>
 
             <!-- SPOTBUGS -->
