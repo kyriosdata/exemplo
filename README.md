@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/kyriosdata/exemplo.svg?branch=develop)](https://travis-ci.com/kyriosdata/exemplo)
+
 # exemplo
 Projeto de referência básico em Java. Inicie por aqui.
 
