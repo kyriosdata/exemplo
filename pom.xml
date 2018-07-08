@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!-- mvn javadoc:javadoc
@@ -27,6 +26,11 @@
     <artifactId>exemplo</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.mainClass>com.github.kyriosdata.exemplo.ProgramaCalendario</project.mainClass>
+    </properties>
 
     <name>${project.groupId}:${project.artifactId}</name>
 
@@ -68,10 +72,6 @@
         <developerConnection>scm:git:https://github.com/kyriosdata/exemplo.git</developerConnection>
         <url>https://github.com/kyriosdata/exemplo</url>
     </scm>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
 
@@ -149,7 +149,7 @@
                         <plugin>
                             <groupId>com.h3xstream.findsecbugs</groupId>
                             <artifactId>findsecbugs-plugin</artifactId>
-                            <version>LATEST</version> <!-- Auto-update to the latest stable -->
+                            <version>LATEST</version>                            <!-- Auto-update to the latest stable -->
                         </plugin>
                     </plugins>
                 </configuration>
@@ -226,46 +226,46 @@
             <id>executavel-dir</id>
             <build>
                 <plugins>
-                            <!-- PASSO (1/2) PARA GERAÇÃO DE JAR FILE EXECUTÁVEL   -->
-            <!-- Exige dir 'jars' e Exemplo.jar no mesmo diretório -->
-            <!-- Dependências são copiadas para diretório 'jars'   -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.10</version>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <includeScope>runtime</includeScope>
-                            <outputDirectory>${project.build.directory}/jars/</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+                    <!-- PASSO (1/2) PARA GERAÇÃO DE JAR FILE EXECUTÁVEL   -->
+                    <!-- Exige dir 'jars' e Exemplo.jar no mesmo diretório -->
+                    <!-- Dependências são copiadas para diretório 'jars'   -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>2.10</version>
+                        <executions>
+                            <execution>
+                                <id>copy-dependencies</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>copy-dependencies</goal>
+                                </goals>
+                                <configuration>
+                                    <includeScope>runtime</includeScope>
+                                    <outputDirectory>${project.build.directory}/jars/</outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
 
-            <!-- PASSO (2/2) PARA GERAÇÃO DE JAR FILE EXECUTÁVEL   -->
-            <!-- Configura arquivo MANIFEST.MF                     -->
-            <!-- Class-Path: formado pelos arquivos em 'jars'      -->
-            <!-- Main-Class: classe a ser executada (método main)) -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>jars/</classpathPrefix>
-                            <mainClass>com.github.kyriosdata.exemplo.ProgramaCalendario</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
+                    <!-- PASSO (2/2) PARA GERAÇÃO DE JAR FILE EXECUTÁVEL   -->
+                    <!-- Configura arquivo MANIFEST.MF                     -->
+                    <!-- Class-Path: formado pelos arquivos em 'jars'      -->
+                    <!-- Main-Class: classe a ser executada (método main)) -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <version>3.0.2</version>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <addClasspath>true</addClasspath>
+                                    <classpathPrefix>jars/</classpathPrefix>
+                                    <mainClass>${project.mainClass}</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </plugin>
 
                 </plugins>
             </build>
@@ -290,12 +290,10 @@
                                     <finalName>Exemplo-unico</finalName>
                                     <archive>
                                         <manifest>
-                                            <mainClass>
-                                                com.github.kyriosdata.exemplo.ProgramaCalendario
-                                            </mainClass>
+                                            <mainClass>${project.mainClass}</mainClass>
                                         </manifest>
                                     </archive>
-                                    <descriptorRefs>            
+                                    <descriptorRefs>
                                         <descriptorRef>jar-with-dependencies</descriptorRef>
                                     </descriptorRefs>
                                     <appendAssemblyId>false</appendAssemblyId>
