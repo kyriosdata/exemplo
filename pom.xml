@@ -186,8 +186,49 @@
                 </configuration>
             </plugin>
 
-            <!-- PASSO (1/2) PARA GERAÇÃO DE JAR FILE EXECUTÁVEL -->
-            <!-- Dependências são copiadas para diretório 'jars' -->
+        </plugins>
+    </build>
+
+    <!-- mvn site (gera relatório em Project Report -->
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>javancss-maven-plugin</artifactId>
+                <version>2.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.19.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.6</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>2.3</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.17</version>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <profiles>
+
+        <profile>
+            <id>executavel-dir</id>
+            <build>
+                <plugins>
+                            <!-- PASSO (1/2) PARA GERAÇÃO DE JAR FILE EXECUTÁVEL   -->
+            <!-- Exige dir 'jars' e Exemplo.jar no mesmo diretório -->
+            <!-- Dependências são copiadas para diretório 'jars'   -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -226,41 +267,46 @@
                 </configuration>
             </plugin>
 
-        </plugins>
-    </build>
+                </plugins>
+            </build>
+        </profile>
 
-    <!-- mvn site (gera relatório em Project Report -->
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>javancss-maven-plugin</artifactId>
-                <version>2.1</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.19.1</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.6</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jxr-plugin</artifactId>
-                <version>2.3</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.17</version>
-            </plugin>
-        </plugins>
-    </reporting>
+        <!-- GERA JAR EXECUTÁVEL EM UM ÚNICO ARQUIVO -->
+        <profile>
+            <id>arquivo-unico</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <finalName>Exemplo-unico</finalName>
+                                    <archive>
+                                        <manifest>
+                                            <mainClass>
+                                                com.github.kyriosdata.exemplo.ProgramaCalendario
+                                            </mainClass>
+                                        </manifest>
+                                    </archive>
+                                    <descriptorRefs>            
+                                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                                    </descriptorRefs>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
-    <profiles>
         <profile>
             <id>cobertura</id>
             <build>
