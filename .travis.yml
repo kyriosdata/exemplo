@@ -2,8 +2,9 @@ language: java
 addons:
   sonarcloud:
     organization: kyriosdata-github
+    branch: develop
 script:
-- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.branch=develop
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 env:
   global:
     secure: IQc9/Pme0wFyNTgPrP4NKNNp/+wwXBqLyU8hsxATJnI78POh0zCNFTkilwioVoX+rHb5VhtKPetGIJL/EwCxZEfnBflB9LBXxmU/Nc/w2/jSbAjzXpAXrK4fqD3qtPJuuhl6OwbOCXLcXwfyMnCVbjlP0Qld9hjXKOYCecU4HFmbAwuralDQ0BnQ0Fv0K2H2UR5zDoT7dkZgF7Y4tB7uUHXKzEKvm2FPmotdPSLPAoSatzALAXGveUgh+/gzppQSS5PRlDyeitGcuWxkAEEbObemYfNk6J+fmnC9C0uRa+2YBCGCnmppbtcqi1FM+GJRI5qULYBPrgbTDEtmg0xV6Vf9jfvAm6ZlimHbtrTGNNQh+7JF6pm13ov0MYPnUbwH3GdZo6haN9hh37wNkHyCwffgXN1BkbwAhO1rF44BHQDtLq6HLHETtzpJqAkzvevlbiXDC0Qb+iqv2NJ4bJRbgv4X8vEgL1zPQTnYmUVQlrlL4cHd+MaikWKTbb7T858/3+Gy9XlASqI69h5sYhihBXel3aW4+ttxtjQ00mqsHJbvV/5m+6HxEXNCDX6rUrhqCC1HX9sgRtDDKBIYzmoiAHRNo3yFN5qyBknolyVwK4F2TqUc+GzfrvSnJAFkkEKrPxNWgcj+aoquXRm8uycTCcmcREXMIytfIwKejdbJKiA=
