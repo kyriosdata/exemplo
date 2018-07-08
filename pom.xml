@@ -273,7 +273,7 @@
 
         <!-- GERA JAR EXECUTÁVEL EM UM ÚNICO ARQUIVO -->
         <profile>
-            <id>arquivo-unico</id>
+            <id>executavel-unico</id>
             <build>
                 <plugins>
                     <plugin>

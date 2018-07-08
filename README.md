@@ -6,7 +6,14 @@ Projeto de referência básico em Java. Inicie por aqui.
 - `mvn clean` (remove código gerado, derivado dos fontes)
 - `mvn compile` (compila o projeto)
 - `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario` (executa a classe indicada)
-- `mvn package` (gera, neste caso, jar file correspondente ao projeto, permite que a execução seja via `java -jar target/Exemplo.jar`)
+
+## Empacotando o projeto
+- `mvn package` (gera, neste caso, jar file correspondente ao projeto)
+- `mvn package -P executavel-dir` (gera jar executável, mas que depende do diretório 'jars')
+- `mvn package -P executavel-unico` (gera jar executávem em um único arquivo)
+
+Observe que ao executar uma das duas últimas opções acima, pode executar o programa gerado por meio do comando `java -jar target/Exemplo.jar` ou
+`java -jar target/Exemplo-unico.jar`. Neste último caso, você precisa apenas do arquivo `Exemplo-unico.jar` e, no caso anterior, além do arquivo `Exemplo.jar` também é preciso o diretório `jars`.
 
 ## Documentação
 - `mvn javadoc:javadoc` (geração de documentação)
