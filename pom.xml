@@ -28,7 +28,7 @@
     <packaging>jar</packaging>
     <version>1.0.0</version>
 
-    <name>com.github.kyriosdata:exemplo</name>
+    <name>${project.groupId}:${project.artifactId}</name>
 
     <description>
         Projeto de referência (exemplo) inicial de desenvolvimento em Java com uso de JUnit.
@@ -186,6 +186,8 @@
                 </configuration>
             </plugin>
 
+            <!-- PASSO (1/2) PARA GERAÇÃO DE JAR FILE EXECUTÁVEL -->
+            <!-- Dependências são copiadas para diretório 'jars' -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -205,9 +207,10 @@
                 </executions>
             </plugin>
 
-            <!-- Copia dependencias para "jars", não incluída no jar.    -->
-            <!-- Ou seja, você deve obter exemplo.jar e o diretório jars -->
-            <!-- para que a aplicação seja executada satisfatoriamente.  -->
+            <!-- PASSO (2/2) PARA GERAÇÃO DE JAR FILE EXECUTÁVEL   -->
+            <!-- Configura arquivo MANIFEST.MF                     -->
+            <!-- Class-Path: formado pelos arquivos em 'jars'      -->
+            <!-- Main-Class: classe a ser executada (método main)) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
