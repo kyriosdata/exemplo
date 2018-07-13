@@ -173,11 +173,6 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-
-                    <!-- OMITE INFORMACAO DE DEBUGGING -->
-                    <compilerArgs>
-                        <arg>-g:none</arg>
-                    </compilerArgs>
                 </configuration>
             </plugin>
 
@@ -277,6 +272,8 @@
 
     <profiles>
 
+        <!-- executavel-dir -->
+        <!-- executável usa diretório 'jars' -->
         <profile>
             <id>executavel-dir</id>
             <build>
@@ -328,7 +325,8 @@
             </build>
         </profile>
 
-        <!-- GERA JAR EXECUTÁVEL EM UM ÚNICO ARQUIVO -->
+        <!-- executavel-unico -->
+        <!-- Jar file gerado é suficiente -->
         <profile>
             <id>executavel-unico</id>
             <build>
@@ -362,6 +360,8 @@
             </build>
         </profile>
 
+        <!-- cobertura -->
+        <!-- Gera relatório de cobertura -->
         <profile>
             <id>cobertura</id>
             <build>
@@ -395,6 +395,21 @@
             <id>release</id>
             <build>
                 <plugins>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.7.0</version>
+                        <configuration>
+                            <source>1.8</source>
+                            <target>1.8</target>
+
+                            <!-- OMITE INFORMACAO DE DEBUGGING -->
+                            <compilerArgs>
+                                <arg>-g:none</arg>
+                            </compilerArgs>
+                        </configuration>
+                    </plugin>
 
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
