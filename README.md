@@ -6,7 +6,8 @@ Projeto de referência básico em Java. Inicie por aqui.
 
 ## Vamos verificar se está instalado?
 - `mvn --version` (você deverá ver a indicação da versão do Maven instalada e
-a versão do JDK, dentre outras)
+a versão do JDK, dentre outras. Observe que o JDK é obrigatório, assim como
+a definição da variável **JAVA_HOME**)
 
 
 ## Compilação e execução
