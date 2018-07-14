@@ -18,7 +18,7 @@ import java.time.LocalDate;
  */
 public final class ProgramaCalendario {
 
-    protected static final Logger logger =
+    private static final Logger logger =
             LogManager.getLogger(ProgramaCalendario.class);
 
     /**
