@@ -15,7 +15,7 @@ Maven e "boas práticas" para inspirar projetos "reais"_.
 - `mvn --version`<br>
 você deverá ver a indicação da versão do Maven instalada e
 a versão do JDK, dentre outras. Observe que o JDK é obrigatório, assim como
-a definição da variável **JAVA_HOME**)
+a definição da variável **JAVA_HOME**
 
 
 ## Limpar, compilar, executar testes de unidade e cobertura
