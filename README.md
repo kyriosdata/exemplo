@@ -12,17 +12,25 @@ data em que é executado.
 Maven e "boas práticas" para inspirar projetos "reais"_.
 
 ## Requisitos são atendidos?
-- `mvn --version` (você deverá ver a indicação da versão do Maven instalada e
+- `mvn --version`<br>
+você deverá ver a indicação da versão do Maven instalada e
 a versão do JDK, dentre outras. Observe que o JDK é obrigatório, assim como
 a definição da variável **JAVA_HOME**)
 
 
 ## Limpar, compilar, executar testes de unidade e cobertura
-- `mvn clean` (remove diretório 'target')
-- `mvn compile` (compila o projeto, deposita resultados no diretório 'target')
-- `mvn test` (executa testes de unidade)
-- `mvn package -P cobertura` (executação de testes e gera relatório de 
-cobertura em `target/site/jacoco/index.html`)
+- `mvn clean`<br>
+remove diretório _target_
+
+- `mvn compile`<br>
+compila o projeto, deposita resultados no diretório _target_
+
+- `mvn test`<br>
+executa testes de unidade
+
+- `mvn package -P cobertura`<br>
+executa testes de unidade e produz relatório de 
+cobertura em _target/site/jacoco/index.html_
 
 ## Empacotando o projeto
 - `mvn package` (gera jar file com código compilado e recursos do projeto)
