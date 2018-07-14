@@ -32,14 +32,24 @@ do projeto, o arquivo de entrada é depositado em
 cobertura em `target/site/jacoco/index.html`)
 
 ## Análise estática
-- `mvn javancss:check` (verifica limites CC e NCSS, depende da compilação
+- **JavaNCSS**
+ - `mvn javancss:check` (verifica limites CC e NCSS, depende da compilação
 prévia, ou seja _mvn compile_)
-- `mvn javancss:report` (gera relatório em 'target/site/javancss.html' e 
+ - `mvn javancss:report` (gera relatório em 'target/site/javancss.html' e 
 também depende de compilação prévia, ou seja, _mvn compile_)
-- `mvn spotbugs:spotbugs` (detecção de bugs)
-- `mvn spotbugs:check` (apenas verifica se há erros)
-- `mvn spotbugs:gui` (abre GUI para exibir bugs após spotbugs:spotbugs)
-- `mvn site` (gera documentação do projeto, além de análises estáticas)
+- **Spotbugs**
+ - `mvn spotbugs:spotbugs` (detecção de bugs)
+ - `mvn spotbugs:check` (apenas verifica se há erros)
+ - `mvn spotbugs:gui` (abre GUI para exibir bugs após spotbugs:spotbugs)
+- **Checkstyle**
+ - `mvn checkstyle:checkstyle` (gera análise de estilo em 
+ 'target/site/checkstyle.html')
+ - `mvn checkstyle:check` (faz com que o _build_ falhe se houver pelo menos
+um estilo violado)
+
+## Relatório do projeto
+- `mvn site` (gera documentação do projeto, além de análises estáticas em
+'target/site/index.html')
 
 ## Outros recursos
 - `mvn help:effective-pom` (exibe POM de fato empregado)
