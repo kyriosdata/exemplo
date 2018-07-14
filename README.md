@@ -7,20 +7,22 @@ Projeto de referência básico em Java. Inicie por aqui.
 
 ## Compilação e execução
 - `mvn clean` (remove código gerado, derivado dos fontes)
-- `mvn compile` (compila o projeto)
-- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"` (executa a classe indicada, possível após `mvn compile`)
+- `mvn compile` (compila o projeto com código gerado no diretório 'target')
+- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"` (executa a classe indicada, primeiro execute `mvn compile`)
 
 ## Empacotando o projeto
 - `mvn package` (gera jar file com código compilado e recursos do projeto)
 - `mvn package -P executavel-dir` (gera jar executável, mas que depende do diretório 'jars', ambos disponíveis em 'target')
-- `mvn package -P executavel-unico` (gera jar executávem em um único arquivo, disonível em 'target')
+- `mvn package -P executavel-unico` (gera jar executável em um único arquivo, disonível em _target_)
 
 ## Execução
-Observe que ao executar uma das duas últimas opções acima, pode-se executar o programa gerado por meio do comando `java -jar target/Exemplo.jar` ou
-`java -jar target/Exemplo-unico.jar`. Neste último caso, você precisa apenas do arquivo `Exemplo-unico.jar` e, no caso anterior, além do arquivo `Exemplo.jar` também é preciso o diretório `jars`.
+Observe que a execução dos dois últimos comandos _mvn_ acima resulta em um arquivo Jar
+que pode ser executado pelo comando `java -jar target/Exemplo.jar` ou
+`java -jar target/Exemplo-unico.jar`. Neste último caso, você precisa apenas do arquivo `Exemplo-unico.jar` e, no caso anterior, além do arquivo `Exemplo.jar` também é preciso o diretório `jars`. Em tempo, tanto o arquivo Jar quanto o diretório 'jars' são gerados
+no diretório **target**.
 
 ## Documentação
-- `mvn javadoc:javadoc` (geração de documentação, `target/site/apidocs/index.html`)
+- `mvn javadoc:javadoc` (produz páginas HTML correspondentes à documentação do projeto, o arquivo de entrada é depositado em `target/site/apidocs/index.html`)
 
 ## Testes (e cobertura)
 - `mvn test` (executa testes)

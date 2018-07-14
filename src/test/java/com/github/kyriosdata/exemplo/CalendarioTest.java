@@ -1,36 +1,43 @@
 package com.github.kyriosdata.exemplo;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalendarioTest {
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void diaMenorQueUmInvalido() {
-        Calendario.diaDaSemana(0, 8, 2016);
+        assertThrows(IllegalArgumentException.class,
+                () -> Calendario.diaDaSemana(0, 8, 2016));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void diaMaiorQue31Invalido() {
-        Calendario.diaDaSemana(32, 8, 2016);
+        assertThrows(IllegalArgumentException.class,
+                () -> Calendario.diaDaSemana(32, 8, 2016));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
+
     public void mesMenorQueUmInvalido() {
-        Calendario.diaDaSemana(1, 0, 2016);
+        assertThrows(IllegalArgumentException.class,
+                () -> Calendario.diaDaSemana(1, 0, 2016));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void mesMaiorQue12Invalido() {
-        Calendario.diaDaSemana(1, 13, 2016);
+        assertThrows(IllegalArgumentException.class,
+                () -> Calendario.diaDaSemana(1, 13, 2016));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void anoMenorQue1753Invalido() {
-        Calendario.diaDaSemana(31, 12, 1752);
+        assertThrows(IllegalArgumentException.class,
+                () -> Calendario.diaDaSemana(31, 12, 1752));
     }
 
     @Test
