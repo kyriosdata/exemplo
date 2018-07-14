@@ -209,6 +209,34 @@
                 </executions>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.10.0</version>
+                <configuration>
+                    <linkXref>true</linkXref>
+                    <sourceEncoding>utf-8</sourceEncoding>
+                    <minimumTokens>10</minimumTokens>
+                    <excludes>
+                        <exclude>**/*Bean.java</exclude>
+                        <exclude>**/generated/*.java</exclude>
+                    </excludes>
+                    <excludeRoots>
+                        <excludeRoot>target/generated-sources/stubs</excludeRoot>
+                    </excludeRoots>
+                    <rulesets>
+                        <ruleset>/category/java/bestpractices.xml</ruleset>
+                        <ruleset>/category/java/codestyle.xml</ruleset>
+                        <ruleset>/category/java/design.xml</ruleset>
+                        <ruleset>/category/java/documentation.xml</ruleset>
+                        <ruleset>/category/java/errorprone.xml</ruleset>
+                        <ruleset>/category/java/multithreading.xml</ruleset>
+                        <ruleset>/category/java/performance.xml</ruleset>
+                        <ruleset>/category/java/security.xml</ruleset>
+                    </rulesets>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
@@ -242,6 +270,16 @@
                     <excludeRoots>
                         <excludeRoot>target/generated-sources/stubs</excludeRoot>
                     </excludeRoots>
+                    <rulesets>
+                        <ruleset>/category/java/bestpractices.xml</ruleset>
+                        <ruleset>/category/java/codestyle.xml</ruleset>
+                        <ruleset>/category/java/design.xml</ruleset>
+                        <ruleset>/category/java/documentation.xml</ruleset>
+                        <ruleset>/category/java/errorprone.xml</ruleset>
+                        <ruleset>/category/java/multithreading.xml</ruleset>
+                        <ruleset>/category/java/performance.xml</ruleset>
+                        <ruleset>/category/java/security.xml</ruleset>
+                    </rulesets>
                 </configuration>
             </plugin>
 

@@ -18,7 +18,7 @@ import java.time.LocalDate;
  */
 public final class ProgramaCalendario {
 
-    private static final Logger logger =
+    protected static final Logger logger =
             LogManager.getLogger(ProgramaCalendario.class);
 
     /**
@@ -36,7 +36,7 @@ public final class ProgramaCalendario {
     public static void main(final String[] args) {
 
         logger.info("iniciado");
-        LocalDate hoje = LocalDate.now();
+        final LocalDate hoje = LocalDate.now();
         int dia = hoje.getDayOfMonth();
         int mes = hoje.getMonthValue();
         int ano = hoje.getYear();

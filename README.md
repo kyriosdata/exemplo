@@ -33,19 +33,24 @@ cobertura em `target/site/jacoco/index.html`)
 
 ## Análise estática
 - **JavaNCSS**
- - `mvn javancss:check` (verifica limites CC e NCSS, depende da compilação
+  - `mvn javancss:check` (verifica limites CC e NCSS, depende da compilação
 prévia, ou seja _mvn compile_)
- - `mvn javancss:report` (gera relatório em 'target/site/javancss.html' e 
+  - `mvn javancss:report` (gera relatório em 'target/site/javancss.html' e 
 também depende de compilação prévia, ou seja, _mvn compile_)
+- **JDepend**
+  - `mvn jdepend:generate` (gera relatório em 'target/site/jdepend-report.html')
 - **Spotbugs**
- - `mvn spotbugs:spotbugs` (detecção de bugs)
- - `mvn spotbugs:check` (apenas verifica se há erros)
- - `mvn spotbugs:gui` (abre GUI para exibir bugs após spotbugs:spotbugs)
+  - `mvn spotbugs:spotbugs` (detecção de bugs)
+   - `mvn spotbugs:check` (apenas verifica se há erros)
+  - `mvn spotbugs:gui` (abre GUI para exibir bugs após spotbugs:spotbugs)
 - **Checkstyle**
- - `mvn checkstyle:checkstyle` (gera análise de estilo em 
+  - `mvn checkstyle:checkstyle` (gera análise de estilo em 
  'target/site/checkstyle.html')
- - `mvn checkstyle:check` (faz com que o _build_ falhe se houver pelo menos
-um estilo violado)
+  - `mvn checkstyle:check` (faz com que o _build_ falhe se pelo menos
+um estilo é violado)
+- **PMD**
+  - `mvn pmd:pmd` (gera relatório em 'target/site/pmd.html')
+  - `mvn pmd:check` (falha se pelo menos uma regra é violada)
 
 ## Relatório do projeto
 - `mvn site` (gera documentação do projeto, além de análises estáticas em

@@ -47,14 +47,6 @@ public final class Calendario {
     public static final int CALENDARIO_GREGORIANO = 1753;
 
     /**
-     * Classe contendo apenas operações "static".
-     * Evita que instância seja criada desnecessariamente.
-     */
-    private Calendario() {
-        // Segue recomendação de Checkstyle.
-    }
-
-    /**
      * Obtém dia da semana para a data.
      * @param dia O dia da data. Valor entre 1 e 31, inclusive.
      * @param mes O mês da data. Valor entre 1 e 12, inclusive.
