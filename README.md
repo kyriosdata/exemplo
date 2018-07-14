@@ -33,64 +33,91 @@ executa testes de unidade e produz relatório de
 cobertura em _target/site/jacoco/index.html_
 
 ## Empacotando o projeto
-- `mvn package` (gera jar file com código compilado e recursos do projeto)
-- `mvn package -P executavel-dir` (gera jar executável, mas que depende do 
-diretório 'jars', ambos disponíveis em 'target')
+- `mvn package`<br>
+gera arquivo _Exemplo.jar_ no diretório _target_. Observe que
+o Jar não é executável.
+
+- `mvn package -P executavel-dir`<br>
+gera _Exemplo.jar_, executável, mas que depende do 
+diretório _jars_. Tanto o executável quanto o diretório são
+criados no diretório _target_
+
 - `mvn package -P executavel-unico` (gera jar executável em um único arquivo, 
 disponível em _target_)
 
 ## Executando a aplicação
-- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"` 
-(executa a classe indicada, primeiro execute `mvn compile`)
+- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"`<br>
+executa a classe indicada (método _main_). Depende de `mvn compile`
 
-Observe que a execução dos dois últimos comandos _mvn_ acima resulta em um 
-arquivo Jar
-que pode ser executado pelo comando `java -jar target/Exemplo.jar` ou
+Os arquivos jar executáveis, gerados por comandos acima,
+podem ser executados, respectivamente, por 
+`java -jar target/Exemplo.jar` e
 `java -jar target/Exemplo-unico.jar`. Neste último caso, você precisa apenas 
-do arquivo `Exemplo-unico.jar` e, no caso anterior, além do 
-arquivo `Exemplo.jar` também é preciso o diretório `jars`. Em tempo, tanto 
-o arquivo Jar quanto o diretório 'jars' são gerados
-no diretório **target**.
+do arquivo `Exemplo-unico.jar`, enquanto o arquivo _Exemplo.jar_, embora
+executável, depende do diretório _jars_, ambos gerados no diretório
+ _target_.
 
 ## Documentação
-- `mvn javadoc:javadoc` (produz páginas HTML correspondentes à documentação 
-do projeto, o arquivo de entrada é depositado em 
-`target/site/apidocs/index.html`)
+
+- `mvn javadoc:javadoc`<br>
+produz documentação do projeto (páginas HTML) depositada em 
+_target/site/apidocs/index.html_
 
 ## Análise estática
 - **Dependency Check**
-  - `mvn verify` (análise de vulnerabilidades em 
-  'target/dependency-check-report.html')
+  - `mvn verify`<br>
+  análise de vulnerabilidades depositadas em 
+  _target/dependency-check-report.html_
+  
 - **JavaNCSS**
-  - `mvn javancss:check` (verifica limites CC e NCSS, depende da compilação
-prévia, ou seja _mvn compile_)
-  - `mvn javancss:report` (gera relatório em 'target/site/javancss.html' e 
-também depende de compilação prévia, ou seja, _mvn compile_)
+  - `mvn javancss:check`<br>
+  verifica limites de complexidade ciclomática (CC) e de linhas
+  de código sem comentário (NCSS). Este comando depende da compilação
+prévia, ou seja _mvn compile_
+
+  - `mvn javancss:report`<br>
+  gera relatório em _target/site/javancss.html_ e 
+também depende de compilação prévia, ou seja, _mvn compile_
+
 - **JDepend**
-  - `mvn jdepend:generate` (gera relatório em 'target/site/jdepend-report.html')
+  - `mvn jdepend:generate`<br>
+  gera relatório em _target/site/jdepend-report.html_
+  
 - **Spotbugs**
-  - `mvn spotbugs:spotbugs` (detecção de bugs)
-   - `mvn spotbugs:check` (apenas verifica se há erros)
-  - `mvn spotbugs:gui` (abre GUI para exibir bugs após spotbugs:spotbugs)
+  - `mvn spotbugs:spotbugs`<br>
+  detecção de bugs
+   - `mvn spotbugs:check`<br>
+   apenas verifica se há erros
+  - `mvn spotbugs:gui`<br>
+  abre GUI para exibir bugs após _mvn spotbugs:spotbugs_
+  
 - **Checkstyle**
-  - `mvn checkstyle:checkstyle` (gera análise de estilo em 
- 'target/site/checkstyle.html')
-  - `mvn checkstyle:check` (faz com que o _build_ falhe se pelo menos
-um estilo é violado)
+  - `mvn checkstyle:checkstyle`<br>
+  gera análise de estilo em _target/site/checkstyle.html_
+  
+  - `mvn checkstyle:check`<br>
+  faz com que o _build_ falhe se pelo menos
+um estilo é violado
+
 - **PMD**
-  - `mvn pmd:pmd` (gera relatório em 'target/site/pmd.html')
-  - `mvn pmd:check` (falha se pelo menos uma regra é violada)
+  - `mvn pmd:pmd`<br>
+  gera relatório em _target/site/pmd.html_
+  
+  - `mvn pmd:check`<br>
+  falha se pelo menos uma regra é violada
 
 ## Relatório do projeto
 - `mvn site` (gera documentação do projeto, além de análises estáticas em
-'target/site/index.html')
+_target/site/index.html_
 
 ## Outros recursos
-- `mvn help:effective-pom` (exibe POM de fato empregado)
-- `mvn help:describe -Dcmd=clean` (exibe detalhes da fase 'clean')
+- `mvn help:effective-pom`<br>
+exibe POM de fato empregado
+
+- `mvn help:describe -Dcmd=clean`<br>
+exibe detalhes da fase _clean_
 
 ## TODO
-- Acrescentar outros tipos de testes (e não apenas os testes de unidade)
 - Disponibilizar biblioteca (jar) em Maven Central.
 - Aplicação e biblioteca deveriam ser módulos?
 - Acrescentar API para acesso à função via HTTP?
