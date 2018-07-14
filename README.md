@@ -1,24 +1,27 @@
 [![Build Status](https://travis-ci.com/kyriosdata/exemplo.svg?branch=develop)](https://travis-ci.com/kyriosdata/exemplo)
 [![SonarCloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.kyriosdata%3Aexemplo%3Adevelop&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.github.kyriosdata%3Aexemplo%3Adevelop)
 
-# exemplo
+# Escopo e objetivo
 Projeto de referência básico em Java contendo uma biblioteca e uma aplicação. 
+A biblioteca contém um único método que determina o dia da semana de uma 
+dada data, e pode ser reutilizada via repositório Maven Central. 
+A aplicação exibe o dia da semana da data em que é executado.
 
-A biblioteca contém um
-único método (determina o dia da semana de uma dada data) e pode
-ser reutilizada via repositório Maven Central. A aplicação exibe o dia da 
-semana da data em que é executado. 
+> _O objetivo é ilustrar uma possível organização de código em Java usando
+Maven e "boas práticas" para inspirar projetos "reais"_.
 
-## Vamos verificar se está instalado?
+## Requisitos são atendidos?
 - `mvn --version` (você deverá ver a indicação da versão do Maven instalada e
 a versão do JDK, dentre outras. Observe que o JDK é obrigatório, assim como
 a definição da variável **JAVA_HOME**)
 
 
-## Compilação, testes de unidade e execução
+## Limpar, compilar, executar testes de unidade e cobertura
 - `mvn clean` (remove diretório 'target')
 - `mvn compile` (compila o projeto, deposita resultados no diretório 'target')
 - `mvn test` (executa testes de unidade)
+- `mvn package -P cobertura` (executação de testes e gera relatório de 
+cobertura em `target/site/jacoco/index.html`)
 
 ## Empacotando o projeto
 - `mvn package` (gera jar file com código compilado e recursos do projeto)
@@ -45,11 +48,10 @@ no diretório **target**.
 do projeto, o arquivo de entrada é depositado em 
 `target/site/apidocs/index.html`)
 
-## Testes (e cobertura)
-- `mvn package -P cobertura` (executação de testes e gera relatório de 
-cobertura em `target/site/jacoco/index.html`)
-
 ## Análise estática
+- **Dependency Check**
+  - `mvn verify` (análise de vulnerabilidades em 
+  'target/dependency-check-report.html')
 - **JavaNCSS**
   - `mvn javancss:check` (verifica limites CC e NCSS, depende da compilação
 prévia, ou seja _mvn compile_)
@@ -80,6 +82,8 @@ um estilo é violado)
 
 ## TODO
 - Acrescentar outros tipos de testes (e não apenas os testes de unidade)
-- Disponibilizar biblioteca (jar) em Maven Central
+- Disponibilizar biblioteca (jar) em Maven Central.
+- Aplicação e biblioteca deveriam ser módulos?
+- Acrescentar API para acesso à função via HTTP?
 
 [![](https://codescene.io/projects/1157/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/1157/jobs/latest-successful/results)
