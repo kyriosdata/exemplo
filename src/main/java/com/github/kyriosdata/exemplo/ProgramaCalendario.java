@@ -9,11 +9,8 @@ package com.github.kyriosdata.exemplo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.time.LocalDate;
-
 /**
- * Programa que ilustra a obtenção do dia da semana
- * para uma data específica.
+ * Programa que exibe o dia da semana para o dia em que é executado.
  *
  */
 public final class ProgramaCalendario {
@@ -36,12 +33,7 @@ public final class ProgramaCalendario {
     public static void main(final String[] args) {
 
         logger.info("iniciado");
-        final LocalDate hoje = LocalDate.now();
-        int dia = hoje.getDayOfMonth();
-        int mes = hoje.getMonthValue();
-        int ano = hoje.getYear();
-        int diaDaSemana = Calendario.diaDaSemana(dia, mes, ano);
-
-        System.out.format("Hoje é %d\n", diaDaSemana);
+        System.out.println(Calendario.diaDaSemanaParaHoje());;
     }
+
 }

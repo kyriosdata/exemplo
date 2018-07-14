@@ -6,13 +6,14 @@
 
 package com.github.kyriosdata.exemplo;
 
+import java.time.LocalDate;
+
 /**
  * Implementação do cálculo de dia da semana.
  *
  * <p>Implementação do algoritmo criado por
  * LARSEN, K. S. Computing the Day of the week,
  * Dr. Dobb´s Journal, april, 1995.
- *
  */
 public final class Calendario {
 
@@ -47,18 +48,27 @@ public final class Calendario {
     public static final int CALENDARIO_GREGORIANO = 1753;
 
     /**
+     * Nomes dos dias da semana, iniciado por "segunda-feira" (índice 0),
+     * seguido de terça-feira (índice 1) e assim sucessivamente, até
+     * "domingo" (índice 6).
+     */
+    public static String[] semana = {
+            "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira",
+            "sexta-feira", "sábado", "domingo"
+    };
+
+    /**
      * Obtém dia da semana para a data.
+     *
      * @param dia O dia da data. Valor entre 1 e 31, inclusive.
      * @param mes O mês da data. Valor entre 1 e 12, inclusive.
      * @param ano O ano da data. Valor maior que 1752.
-     *
      * @return O dia da semana correspondente à data. O valor 0 para
      * segunda-feira, 1 para terça-feira, 2 para quarta-feira e
      * assim sucessivamente.
-     *
      * @throws IllegalArgumentException Se o dia for inválido (menor que um
-     * ou maior que 31), o mês for inválido (menor que 1 ou maior que 12)
-     * ou o ano for menor que 1753.
+     *                                  ou maior que 31), o mês for inválido (menor que 1 ou maior que 12)
+     *                                  ou o ano for menor que 1753.
      */
     public static int diaDaSemana(final int dia, final int mes, final int ano) {
         int m = mes;
@@ -84,5 +94,22 @@ public final class Calendario {
         int s = dia + 2 * m + 3 * (m + 1) / 5 + a + a / 4 - a / 100 + a / 400;
 
         return s % DIAS_DA_SEMANA;
+    }
+
+    /**
+     * Produz sequência de caracteres indicando o dia corrente e o
+     * dia da semana correspondente.
+     *
+     * @return Sequência que indica o dia corrente (dia em que o método é
+     * executado) e o dia da semana correspondente.
+     */
+    public static String diaDaSemanaParaHoje() {
+        final LocalDate hoje = LocalDate.now();
+        int dia = hoje.getDayOfMonth();
+        int mes = hoje.getMonthValue();
+        int ano = hoje.getYear();
+        int diaDaSemana = diaDaSemana(dia, mes, ano);
+
+        return String.format("Hoje é %s\n", semana[diaDaSemana]);
     }
 }

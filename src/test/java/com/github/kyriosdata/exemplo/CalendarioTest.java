@@ -6,6 +6,7 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CalendarioTest {
 
@@ -64,6 +65,32 @@ public class CalendarioTest {
     public void umDiaDistanteParaOsHumanos() {
         int diaDaSemana = LocalDate.of(5000, 1, 1).getDayOfWeek().ordinal();
         assertEquals(diaDaSemana, Calendario.diaDaSemana(1, 1, 5000));
+    }
+
+    @Test
+    public void nomesDiasDaSemana() {
+        assertEquals(7, Calendario.semana.length);
+        assertEquals("segunda-feira", Calendario.semana[0]);
+        assertEquals("terça-feira", Calendario.semana[1]);
+        assertEquals("quarta-feira", Calendario.semana[2]);
+        assertEquals("quinta-feira", Calendario.semana[3]);
+        assertEquals("sexta-feira", Calendario.semana[4]);
+        assertEquals("sábado", Calendario.semana[5]);
+        assertEquals("domingo", Calendario.semana[6]);
+    }
+
+    @Test
+    public void diaDaSemanaDeHoje() {
+        String hojeStr = Calendario.diaDaSemanaParaHoje();
+
+        // Primeiro dia da semana é domingo, valor 0.
+        LocalDate hoje = LocalDate.now();
+        int diaDaSemanaJava = hoje.getDayOfWeek().getValue();
+
+        // Ajustando para padrão adotado em Calendario
+        int ajustado = (diaDaSemanaJava + 6) % 7;
+
+        assertTrue(hojeStr.contains(Calendario.semana[ajustado]));
     }
 }
 
