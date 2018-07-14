@@ -22,20 +22,23 @@ que pode ser executado pelo comando `java -jar target/Exemplo.jar` ou
 no diretório **target**.
 
 ## Documentação
-- `mvn javadoc:javadoc` (produz páginas HTML correspondentes à documentação do projeto, o arquivo de entrada é depositado em `target/site/apidocs/index.html`)
+- `mvn javadoc:javadoc` (produz páginas HTML correspondentes à documentação 
+do projeto, o arquivo de entrada é depositado em 
+`target/site/apidocs/index.html`)
 
 ## Testes (e cobertura)
 - `mvn test` (executa testes)
-- `mvn package -P cobertura` (executação de testes e relatório de cobertura, `target/site/jacoco/index.html`)
+- `mvn package -P cobertura` (executação de testes e gera relatório de 
+cobertura em `target/site/jacoco/index.html`)
 
 ## Análise estática
-- `mvn javancss:check` (verifica limites CC e NCSS)
-- `mvn javancss:report` (gera relatório)
+- `mvn javancss:check` (verifica limites CC e NCSS, depende da compilação
+prévia, ou seja _mvn compile_)
+- `mvn javancss:report` (gera relatório em 'target/site/javancss.html' e 
+também depende de compilação prévia, ou seja, _mvn compile_)
 - `mvn spotbugs:spotbugs` (detecção de bugs)
 - `mvn spotbugs:check` (apenas verifica se há erros)
 - `mvn spotbugs:gui` (abre GUI para exibir bugs após spotbugs:spotbugs)
-- `mvn findbugs:findbugs` (detecção de bugs)
-- `mvn findbugs:gui` (exibir resultado de detecção de bugs)
 - `mvn site` (gera documentação do projeto, além de análises estáticas)
 
 ## Outros recursos
