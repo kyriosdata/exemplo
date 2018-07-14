@@ -2,7 +2,12 @@
 [![SonarCloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.kyriosdata%3Aexemplo%3Adevelop&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.github.kyriosdata%3Aexemplo%3Adevelop)
 
 # exemplo
-Projeto de referência básico em Java. Inicie por aqui.
+Projeto de referência básico em Java contendo uma biblioteca e uma aplicação. 
+
+A biblioteca contém um
+único método (determina o dia da semana de uma dada data) e pode
+ser reutilizada via repositório Maven Central. A aplicação exibe o dia da 
+semana da data em que é executado. 
 
 ## Vamos verificar se está instalado?
 - `mvn --version` (você deverá ver a indicação da versão do Maven instalada e
@@ -10,21 +15,29 @@ a versão do JDK, dentre outras. Observe que o JDK é obrigatório, assim como
 a definição da variável **JAVA_HOME**)
 
 
-## Compilação e execução
+## Compilação, testes de unidade e execução
 - `mvn clean` (remove diretório 'target')
 - `mvn compile` (compila o projeto, deposita resultados no diretório 'target')
-- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"` 
-(executa a classe indicada, primeiro execute `mvn compile`)
+- `mvn test` (executa testes de unidade)
 
 ## Empacotando o projeto
 - `mvn package` (gera jar file com código compilado e recursos do projeto)
-- `mvn package -P executavel-dir` (gera jar executável, mas que depende do diretório 'jars', ambos disponíveis em 'target')
-- `mvn package -P executavel-unico` (gera jar executável em um único arquivo, disonível em _target_)
+- `mvn package -P executavel-dir` (gera jar executável, mas que depende do 
+diretório 'jars', ambos disponíveis em 'target')
+- `mvn package -P executavel-unico` (gera jar executável em um único arquivo, 
+disponível em _target_)
 
-## Execução
-Observe que a execução dos dois últimos comandos _mvn_ acima resulta em um arquivo Jar
+## Executando a aplicação
+- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"` 
+(executa a classe indicada, primeiro execute `mvn compile`)
+
+Observe que a execução dos dois últimos comandos _mvn_ acima resulta em um 
+arquivo Jar
 que pode ser executado pelo comando `java -jar target/Exemplo.jar` ou
-`java -jar target/Exemplo-unico.jar`. Neste último caso, você precisa apenas do arquivo `Exemplo-unico.jar` e, no caso anterior, além do arquivo `Exemplo.jar` também é preciso o diretório `jars`. Em tempo, tanto o arquivo Jar quanto o diretório 'jars' são gerados
+`java -jar target/Exemplo-unico.jar`. Neste último caso, você precisa apenas 
+do arquivo `Exemplo-unico.jar` e, no caso anterior, além do 
+arquivo `Exemplo.jar` também é preciso o diretório `jars`. Em tempo, tanto 
+o arquivo Jar quanto o diretório 'jars' são gerados
 no diretório **target**.
 
 ## Documentação
@@ -33,7 +46,6 @@ do projeto, o arquivo de entrada é depositado em
 `target/site/apidocs/index.html`)
 
 ## Testes (e cobertura)
-- `mvn test` (executa testes)
 - `mvn package -P cobertura` (executação de testes e gera relatório de 
 cobertura em `target/site/jacoco/index.html`)
 
@@ -65,5 +77,9 @@ um estilo é violado)
 ## Outros recursos
 - `mvn help:effective-pom` (exibe POM de fato empregado)
 - `mvn help:describe -Dcmd=clean` (exibe detalhes da fase 'clean')
+
+## TODO
+- Acrescentar outros tipos de testes (e não apenas os testes de unidade)
+- Disponibilizar biblioteca (jar) em Maven Central
 
 [![](https://codescene.io/projects/1157/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/1157/jobs/latest-successful/results)
