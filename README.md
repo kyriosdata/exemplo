@@ -4,11 +4,16 @@
 # exemplo
 Projeto de referência básico em Java. Inicie por aqui.
 
+## Vamos verificar se está instalado?
+- `mvn --version` (você deverá ver a indicação da versão do Maven instalada e
+a versão do JDK, dentre outras)
+
 
 ## Compilação e execução
-- `mvn clean` (remove código gerado, derivado dos fontes)
-- `mvn compile` (compila o projeto com código gerado no diretório 'target')
-- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"` (executa a classe indicada, primeiro execute `mvn compile`)
+- `mvn clean` (remove diretório 'target')
+- `mvn compile` (compila o projeto, deposita resultados no diretório 'target')
+- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"` 
+(executa a classe indicada, primeiro execute `mvn compile`)
 
 ## Empacotando o projeto
 - `mvn package` (gera jar file com código compilado e recursos do projeto)
@@ -58,5 +63,6 @@ um estilo é violado)
 
 ## Outros recursos
 - `mvn help:effective-pom` (exibe POM de fato empregado)
+- `mvn help:describe -Dcmd=clean` (exibe detalhes da fase 'clean')
 
 [![](https://codescene.io/projects/1157/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/1157/jobs/latest-successful/results)

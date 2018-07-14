@@ -241,6 +241,7 @@
     </build>
 
     <!-- mvn site (gera relatório em Project Report -->
+    <!-- reporting está relacionado à fase 'site'   -->
     <reporting>
         <plugins>
 
