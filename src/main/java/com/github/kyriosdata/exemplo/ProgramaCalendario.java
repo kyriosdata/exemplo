@@ -42,6 +42,6 @@ public final class ProgramaCalendario {
         int ano = hoje.getYear();
         int diaDaSemana = Calendario.diaDaSemana(dia, mes, ano);
 
-        System.out.println("Hoje é " + diaDaSemana);
+        System.out.format("Hoje é %d\n", diaDaSemana);
     }
 }
