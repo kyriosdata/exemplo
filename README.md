@@ -125,10 +125,28 @@ também depende de compilação prévia, ou seja, _mvn compile_
   abre GUI para exibir bugs após _mvn spotbugs:spotbugs_
 
 - **Snyk**
-  - `mvn snyk:test`<br>
+Depende do valor da propriedade _snyk.token_. Por conveniência, pode ser
+fornecido via linha de comandos, -Dsnyk.token=TOKEN, ou definido no 
+arquivo _HOME/.m2/settings.xml_. No último caso, tal arquivo deve conter algo
+similar ao conteúdo abaixo:
+```
+<settings>
+    <profiles>
+        <profile>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <snyk.token>VALOR DO TOKEN AQUI</snyk.token>
+            </properties>
+        </profile>
+    </profiles>
+</settings>
+```
+  - `mvn snyk:test -P security`<br>
   análise de vulnerabilidade
   
-  - `mvn snyk:monitor`<br>
+  - `mvn snyk:monitor -P security`<br>
   Disponibiliza relatório em snyk.io (atualiza badge)
 
 ## Relatório do projeto

@@ -95,36 +95,6 @@
 
         <plugins>
 
-            <!-- snyk -->
-            <!-- mvn snyk:test ou snyk:monitor -->
-            <!-- snyk.token definito em settings.xml (Snyk API Token) -->
-            <plugin>
-                <groupId>io.snyk</groupId>
-                <artifactId>snyk-maven-plugin</artifactId>
-                <version>1.1.1</version>
-                <executions>
-                    <execution>
-                        <id>snyk-test</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>snyk-monitor</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>monitor</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <apiToken>${snyk.token}</apiToken>
-                    <failOnSeverity>low</failOnSeverity>
-                    <org>kyriosdata</org>
-                </configuration>
-            </plugin>
-
             <!-- spotbugs -->
             <!-- mvn compile           -->
             <!-- mvn spotbugs:spotbugs -->
@@ -442,6 +412,37 @@
                             </plugins>
                         </configuration>
                     </plugin>
+
+                    <!-- snyk -->
+                    <!-- mvn snyk:test ou snyk:monitor -->
+                    <!-- snyk.token definito em settings.xml (Snyk API Token) -->
+                    <plugin>
+                        <groupId>io.snyk</groupId>
+                        <artifactId>snyk-maven-plugin</artifactId>
+                        <version>1.1.1</version>
+                        <executions>
+                            <execution>
+                                <id>snyk-test</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>snyk-monitor</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>monitor</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <apiToken>${snyk.token}</apiToken>
+                            <failOnSeverity>low</failOnSeverity>
+                            <org>kyriosdata</org>
+                        </configuration>
+                    </plugin>
+
                 </plugins>
             </build>
         </profile>
