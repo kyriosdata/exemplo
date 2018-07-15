@@ -140,7 +140,7 @@ também depende de compilação prévia, ou seja, _mvn compile_
             <activeByDefault>true</activeByDefault>
         </activation>
         <properties>
-            <snyk.token>VALOR DO TOKEN AQUI</snyk.token>
+            <snyk.token>TOKEN API AQUI</snyk.token>
         </properties>
     </profile>
   </profiles>
