@@ -42,24 +42,19 @@ o Jar não é executável.
 gera _Exemplo.jar_, executável, mas dependente do diretório _jars_,
  também criado no diretório _target_. Para executar basta o comando
  `java -jar target/Exemplo.jar`. Observe que se o diretório _jars_ for
- removido, então este comando falha.
+ removido, então este comando falha. Por último, o diretório _jars_ deve
+ ser depositado no mesmo diretório do arquivo _Exemplo.jar_. 
 
 - `mvn package -P executavel-unico`<br>
- gera jar executável em um único arquivo suficiente para ser 
- transferido e executado. O arquivo gerado é _target/Exemplo-unico.jar_. 
+ gera jar executável em um único arquivo, _target/Exemplo-unico.jar_, 
+ suficiente para ser transferido e executado. Para executá-lo basta o
+ comando `java -jar Exemplo-unico.jar`.  
  
 
 ## Executando a aplicação
 - `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"`<br>
 executa a classe indicada (método _main_). Depende de `mvn compile`
 
-Os arquivos jar executáveis, gerados por comandos acima,
-podem ser executados, respectivamente, por 
-`java -jar target/Exemplo.jar` e
-`java -jar target/Exemplo-unico.jar`. Neste último caso, você precisa apenas 
-do arquivo `Exemplo-unico.jar`, enquanto o arquivo _Exemplo.jar_, embora
-executável, depende do diretório _jars_, ambos gerados no diretório
- _target_.
 
 ## Documentação
 
