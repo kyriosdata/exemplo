@@ -39,12 +39,15 @@ gera arquivo _Exemplo.jar_ no diretório _target_. Observe que
 o Jar não é executável.
 
 - `mvn package -P executavel-dir`<br>
-gera _Exemplo.jar_, executável, mas que depende do 
-diretório _jars_. Tanto o executável quanto o diretório são
-criados no diretório _target_
+gera _Exemplo.jar_, executável, mas dependente do diretório _jars_,
+ também criado no diretório _target_. Para executar basta o comando
+ `java -jar target/Exemplo.jar`. Observe que se o diretório _jars_ for
+ removido, então este comando falha.
 
-- `mvn package -P executavel-unico` (gera jar executável em um único arquivo, 
-disponível em _target_)
+- `mvn package -P executavel-unico`<br>
+ gera jar executável em um único arquivo suficiente para ser 
+ transferido e executado. O arquivo gerado é _target/Exemplo-unico.jar_. 
+ 
 
 ## Executando a aplicação
 - `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"`<br>
