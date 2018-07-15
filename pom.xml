@@ -86,6 +86,7 @@
 
             <!-- snyk -->
             <!-- mvn snyk:test ou snyk:monitor -->
+            <!-- snyk.token definito em settings.xml (Snyk API Token) -->
             <plugin>
                 <groupId>io.snyk</groupId>
                 <artifactId>snyk-maven-plugin</artifactId>
