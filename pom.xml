@@ -59,7 +59,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.2.0</version>
+            <version>5.3.0-M1</version>
             <scope>test</scope>
         </dependency>
 
@@ -125,6 +125,17 @@
                 </configuration>
             </plugin>
 
+            <!-- spotbugs -->
+            <!-- mvn compile           -->
+            <!-- mvn spotbugs:spotbugs -->
+            <!-- mvn spotbugs:check    -->
+            <!-- mvn spotbugs:gui      -->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>3.1.5</version>
+            </plugin>
+
             <!-- surefire -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -142,13 +153,6 @@
                         <version>5.2.0</version>
                     </dependency>
                 </dependencies>
-            </plugin>
-
-            <!-- SPOTBUGS -->
-            <plugin>
-                <groupId>com.github.spotbugs</groupId>
-                <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>3.1.5</version>
             </plugin>
 
             <!-- javadoc:javadoc -->
@@ -293,6 +297,21 @@
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.5</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>dependency-updates-report</report>
+                            <report>plugin-updates-report</report>
+                            <report>property-updates-report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
                 <artifactId>javancss-maven-plugin</artifactId>
                 <version>2.1</version>
                 <configuration>
@@ -368,6 +387,35 @@
     </reporting>
 
     <profiles>
+
+        <!-- spotbugs (security) -->
+        <profile>
+            <id>security</id>
+            <build>
+                <plugins>
+                    <!-- SPOTBUGS -->
+                    <plugin>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs-maven-plugin</artifactId>
+                        <version>3.1.5</version>
+                        <configuration>
+                            <effort>Max</effort>
+                            <threshold>Low</threshold>
+                            <failOnError>true</failOnError>
+                            <includeFilterFile>${project.basedir}/spotbugs-security-include.xml</includeFilterFile>
+                            <excludeFilterFile>${project.basedir}/spotbugs-security-exclude.xml</excludeFilterFile>
+                            <plugins>
+                                <plugin>
+                                    <groupId>com.h3xstream.findsecbugs</groupId>
+                                    <artifactId>findsecbugs-plugin</artifactId>
+                                    <version>1.8.0</version>
+                                </plugin>
+                            </plugins>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
         <!-- executavel-dir -->
         <!-- executável usa diretório 'jars' -->

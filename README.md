@@ -16,7 +16,7 @@ Maven e "boas práticas" para inspirar projetos "reais"_.
 - `mvn --version`<br>
 você deverá ver a indicação da versão do Maven instalada e
 a versão do JDK, dentre outras. Observe que o JDK é obrigatório, assim como
-a definição da variável **JAVA_HOME**
+a definição das variáveis de ambiente **JAVA_HOME** e **M2_HOME**.
 
 
 ## Limpar, compilar, executar testes de unidade e cobertura
@@ -61,10 +61,18 @@ executável, depende do diretório _jars_, ambos gerados no diretório
 ## Documentação
 
 - `mvn javadoc:javadoc`<br>
-produz documentação do projeto (páginas HTML) depositada em 
+produz documentação do projeto depositada em 
 _target/site/apidocs/index.html_
 
 ## Análise estática
+Trata-se da análise do código sem que seja executado. Esta análise produz 
+uma "noção de quão bom" está o código e, em consequência, permite orientar
+eventuais ações de melhoria do código. Fique atento, "sair bem" na análise
+estática não significa que "agrada usuários". 
+
+Todas estas análises devem ser realizadas em todos os projetos? Não! 
+Aquelas relevantes para um dado projeto deverão ser
+configuradas em conformidade com o contexto em questão. 
   
 - **Checkstyle**
   - `mvn checkstyle:checkstyle`<br>
@@ -133,6 +141,14 @@ exibe POM de fato empregado
 
 - `mvn help:describe -Dcmd=clean`<br>
 exibe detalhes da fase _clean_
+
+## Integração contínua
+Notou os emblemas (_badges_) no início da página? Todo _commit_ na presente 
+página automaticamente irá realizar uma série de operações, como compilação,
+execução dos testes de unidade e várias análises estáticas. O resultado 
+geral é imediatamente visível pelos emblemas e, detalhes são disponibilizados
+nas páginas indicadas. Dessa forma, tem-se um significativo instrumento
+de visibilidade do projeto.
 
 ## TODO
 - Disponibilizar biblioteca (jar) em Maven Central.
