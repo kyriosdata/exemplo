@@ -140,6 +140,12 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>3.0.0</version>
             </plugin>
@@ -165,7 +171,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.4</version>
+                <version>3.5</version>
             </plugin>
 
             <plugin>
@@ -234,8 +240,15 @@
             <!-- Relatório em: target/pit-reports/YYYYMMDDHHMM -->
             <plugin>
                 <groupId>org.pitest</groupId>
-                <artifactId>pitest-maven</artifactId>
+                <artifactId>pitest</artifactId>
                 <version>1.4.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-junit5-plugin</artifactId>
+                        <version>0.5</version>
+                    </dependency>
+                </dependencies>
                 <configuration>
                     <targetClasses>
                         <param>com.github.kyriosdata.exemplo.Calendario</param>
@@ -445,7 +458,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
-                        <version>2.10</version>
+                        <version>3.0.0</version>
                         <executions>
                             <execution>
                                 <id>copy-dependencies</id>

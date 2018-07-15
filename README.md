@@ -115,6 +115,14 @@ também depende de compilação prévia, ou seja, _mvn compile_
    apenas verifica se há erros
   - `mvn spotbugs:gui`<br>
   abre GUI para exibir bugs após _mvn spotbugs:spotbugs_
+  
+- **Spotbugs** (security)
+  - `mvn spotbugs:spotbugs -P security`<br>
+  detecção de bugs
+   - `mvn spotbugs:check -P security`<br>
+   apenas verifica se há erros
+  - `mvn spotbugs:gui -P security`<br>
+  abre GUI para exibir bugs após _mvn spotbugs:spotbugs_
 
 - **Snyk**
   - `mvn snyk:test`<br>
@@ -151,8 +159,6 @@ nas páginas indicadas. Dessa forma, tem-se um significativo instrumento
 de visibilidade do projeto.
 
 ## TODO
-- Disponibilizar biblioteca (jar) em Maven Central.
-- Spotbugs:fb-security
 - (TBD) Acrescentar API para acesso à função via HTTP?
 
 [![](https://codescene.io/projects/1157/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/1157/jobs/latest-successful/results)
