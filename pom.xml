@@ -168,6 +168,12 @@
                 <version>3.4</version>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.1</version>
+            </plugin>
+
             <!-- FIM DE ATUALIZACAO DE PLUGINS -->
 
             <!-- surefire -->
@@ -221,31 +227,7 @@
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.4.0.905</version>
-            </plugin>
-
-            <!-- FindBugs Static Analysis -->
-            <!-- mvn compile; mvn findbugs:findbugs; mvn findbugs:gui -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>3.0.1</version>
-                <configuration>
-                    <effort>Max</effort>
-                    <threshold>Low</threshold>
-                    <failOnError>true</failOnError>
-                    <includeFilterFile>${session.executionRootDirectory}/findbugs-security-include.xml
-                    </includeFilterFile>
-                    <excludeFilterFile>${session.executionRootDirectory}/findbugs-security-exclude.xml
-                    </excludeFilterFile>
-                    <plugins>
-                        <plugin>
-                            <groupId>com.h3xstream.findsecbugs</groupId>
-                            <artifactId>findsecbugs-plugin</artifactId>
-                            <version>LATEST</version>                            <!-- Auto-update to the latest stable -->
-                        </plugin>
-                    </plugins>
-                </configuration>
+                <version>3.4.1.1168</version>
             </plugin>
 
             <!-- mvn org.pitest:pitest-maven:muatationCoverage -->
@@ -253,7 +235,7 @@
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
-                <version>1.2.0</version>
+                <version>1.4.0</version>
                 <configuration>
                     <targetClasses>
                         <param>com.github.kyriosdata.exemplo.Calendario</param>
