@@ -36,7 +36,7 @@ cobertura em _target/site/jacoco/index.html_
 ## Empacotando o projeto
 - `mvn package`<br>
 gera arquivo _Exemplo.jar_ no diretório _target_. Observe que
-o Jar não é executável.
+o arquivo gerado não é executável.
 
 - `mvn package -P executavel-dir`<br>
 gera _Exemplo.jar_, executável, mas dependente do diretório _jars_,
@@ -60,7 +60,8 @@ executa a classe indicada (método _main_). Depende de `mvn compile`
 
 - `mvn javadoc:javadoc`<br>
 produz documentação do projeto depositada em 
-_target/site/apidocs/index.html_
+_target/site/apidocs/index.html_. Este comando está configurado para 
+o JDK 9.
 
 ## Análise estática
 Trata-se da análise do código sem que seja executado. Esta análise produz 
@@ -83,7 +84,8 @@ um estilo é violado
 - **Dependency Check**
   - `mvn verify`<br>
   análise de vulnerabilidades depositadas em 
-  _target/dependency-check-report.html_
+  _target/dependency-check-report.html_. A primeira execução é relativamente
+  "longa", esteja preparado para esperar...
   
 - **JavaNCSS**
   - `mvn javancss:check`<br>
@@ -123,26 +125,28 @@ também depende de compilação prévia, ou seja, _mvn compile_
   abre GUI para exibir bugs após _mvn spotbugs:spotbugs_
 
 - **Snyk**
-Depende do valor da propriedade _snyk.token_. Por conveniência, pode ser
-fornecido via linha de comandos, -Dsnyk.token=TOKEN, ou definido no 
-arquivo _HOME/.m2/settings.xml_. No último caso, tal arquivo deve conter algo
-similar ao conteúdo abaixo:
-```
-<settings>
-    <profiles>
-        <profile>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <snyk.token>VALOR DO TOKEN AQUI</snyk.token>
-            </properties>
-        </profile>
-    </profiles>
-</settings>
-```
+
   - `mvn snyk:test -P security`<br>
-  análise de vulnerabilidade
+  análise de vulnerabilidade. Depende do valor da propriedade _snyk.token_. 
+  Por conveniência, pode ser fornecido via linha de comandos, 
+  **-Dsnyk.token=TOKEN-VALUE-HERE**, ou definido no arquivo 
+  _HOME/.m2/settings.xml_. Neste último caso, tal arquivo deve conter 
+  algo similar ao conteúdo abaixo:
+  ```
+  <settings>
+  <profiles>
+    <profile>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <snyk.token>VALOR DO TOKEN AQUI</snyk.token>
+        </properties>
+    </profile>
+  </profiles>
+  </settings>
+  ```
+
   
   - `mvn snyk:monitor -P security`<br>
   Disponibiliza relatório em snyk.io (atualiza badge)
