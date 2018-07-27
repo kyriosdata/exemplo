@@ -188,6 +188,7 @@ merecidos agradecimentos a:
 A lista acima não tem a pretensão de ser exclusiva. Abaixo seguem outros serviços:
 - https://www.codacy.com/
 - https://codescene.io/
+- https://codecov.io/
 
 
 ## TODO
