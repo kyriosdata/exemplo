@@ -178,6 +178,17 @@ geral é imediatamente visível pelos emblemas e, detalhes são disponibilizados
 nas páginas indicadas. Dessa forma, tem-se um significativo instrumento
 de visibilidade do projeto.
 
+Para projetos _open source_ os serviços oferecidos são gratuitos. Seguem aqui os
+merecidos agradecimentos a:
+- https://travis-ci.com
+- https://sonarcloud.io
+- https://snyk.io
+
+A lista acima não tem a pretensão de ser exclusiva. Abaixo seguem outros serviços:
+- https://www.codacy.com/
+- https://codescene.io/
+
+
 ## TODO
 - (TBD) Acrescentar API para acesso à função via HTTP?
 
