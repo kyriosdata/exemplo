@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.com/kyriosdata/exemplo.svg?branch=develop)](https://travis-ci.com/kyriosdata/exemplo)
 [![SonarCloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.kyriosdata%3Aexemplo%3Adevelop&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.github.kyriosdata%3Aexemplo%3Adevelop)
 [![Known Vulnerabilities](https://snyk.io/test/github/kyriosdata/exemplo/develop/badge.svg)](https://snyk.io/org/kyriosdata/project/8f1cd845-b6ed-4559-95a4-1375feb3c548)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo)
 
 # Escopo e objetivo
 Projeto de referência básico em Java contendo uma biblioteca e uma aplicação. 
