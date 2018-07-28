@@ -189,6 +189,7 @@ A lista acima não tem a pretensão de ser exclusiva. Abaixo seguem outros servi
 - https://www.codacy.com/
 - https://codescene.io/
 - https://codecov.io/
+- http://circleci.com/
 
 
 ## TODO
