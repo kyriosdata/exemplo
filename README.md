@@ -17,7 +17,7 @@ Maven e "boas práticas" para inspirar projetos "reais"_.
 - `mvn --version`<br>
 você deverá ver a indicação da versão do Maven instalada e
 a versão do JDK, dentre outras. Observe que o JDK é obrigatório, assim como
-a definição das variáveis de ambiente **JAVA_HOME** e **M2_HOME**.
+a definição das variáveis de ambiente **JAVA_HOME** e **M2_HOME**. No Windows certifique-se de que as variaveis nao foram definidas com o valor correspondente entre aspas.
 
 
 ## Limpar, compilar, executar testes de unidade e cobertura
