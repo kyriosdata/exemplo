@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/kyriosdata/exemplo.svg?branch=develop)](https://travis-ci.com/kyriosdata/exemplo)
+﻿[![Build Status](https://travis-ci.com/kyriosdata/exemplo.svg?branch=develop)](https://travis-ci.com/kyriosdata/exemplo)
 [![SonarCloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.kyriosdata%3Aexemplo%3Adevelop&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.github.kyriosdata%3Aexemplo%3Adevelop)
 [![Known Vulnerabilities](https://snyk.io/test/github/kyriosdata/exemplo/develop/badge.svg)](https://snyk.io/org/kyriosdata/project/8f1cd845-b6ed-4559-95a4-1375feb3c548)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo)
@@ -17,7 +17,7 @@ Maven e "boas práticas" para inspirar projetos "reais"_.
 - `mvn --version`<br>
 você deverá ver a indicação da versão do Maven instalada e
 a versão do JDK, dentre outras. Observe que o JDK é obrigatório, assim como
-a definição das variáveis de ambiente **JAVA_HOME** e **M2_HOME**. No Windows certifique-se de que as variaveis nao foram definidas com o valor correspondente entre aspas.
+a definição das variáveis de ambiente **JAVA_HOME** e **M2_HOME**. No Windows certifique-se de que as variáveis não foram definidas com o valor correspondente entre aspas.
 
 
 ## Limpar, compilar, executar testes de unidade e cobertura
