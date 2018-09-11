@@ -141,7 +141,7 @@ também depende de compilação prévia, ou seja, _mvn compile_
             <activeByDefault>true</activeByDefault>
         </activation>
         <properties>
-            <snyk.token>TOKEN API AQUI</snyk.token>
+            <snyk.token>API-TOKEN AQUI</snyk.token>
         </properties>
     </profile>
   </profiles>
@@ -150,7 +150,7 @@ também depende de compilação prévia, ou seja, _mvn compile_
 
   
   - `mvn snyk:monitor -P security`<br>
-  Disponibiliza relatório em snyk.io (atualiza badge)
+  Disponibiliza relatório em snyk.io (atualiza _badge_)
 
 ## Relatório do projeto
 - `mvn site` (gera documentação do projeto, além de análises estáticas em
@@ -175,9 +175,10 @@ exibe detalhes da fase _clean_
 Notou os emblemas (_badges_) no início da página? Todo _commit_ na presente 
 página automaticamente irá realizar uma série de operações, como compilação,
 execução dos testes de unidade e várias análises estáticas. O resultado 
-geral é imediatamente visível pelos emblemas e, detalhes são disponibilizados
-nas páginas indicadas. Dessa forma, tem-se um significativo instrumento
-de visibilidade do projeto.
+geral é imediatamente acessível por meio dos emblemas (clique neles), 
+onde detalhes são disponibilizados nas páginas correspondentes. 
+Observe que isso se transforma em um significativo **instrumento
+de visibilidade do projeto**.
 
 Para projetos _open source_ os serviços oferecidos são gratuitos. Seguem aqui os
 merecidos agradecimentos a:
