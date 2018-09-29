@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.kyriosdata</groupId>
     <artifactId>exemplo</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.mainClass>com.github.kyriosdata.exemplo.ProgramaCalendario</project.mainClass>
+        <project.mainClass>com.github.kyriosdata.exemplo.ProgramaCalendario
+        </project.mainClass>
     </properties>
 
     <name>${project.groupId}:${project.artifactId}</name>
 
     <description>
-        Projeto de referência (exemplo) inicial de desenvolvimento em Java com uso de JUnit.
+        Projeto de referência para desenvolvimento em Java.
+        A expectativa é que o presente projeto possa ser empregado como ponto
+        de partida e, a partir dele, ajustes realizados para se adequar às
+        necessidades específicas do projeto em questão.
     </description>
 
     <url>https://github.com/kyriosdata/exemplo</url>
@@ -30,9 +35,12 @@
 
     <licenses>
         <license>
-            <name>Creative Commons Attribution 4.0 International (CC BY 4.0)</name>
-            <comments>A atribuição deve conter, explicitamente, a seguinte linha:
-                Copyright (c) 2016. Fábrica de Software - Instituto de Informática (UFG)
+            <name>Creative Commons Attribution 4.0 International (CC BY 4.0)
+            </name>
+            <comments>A atribuição deve conter, explicitamente, a seguinte
+                linha:
+                Copyright (c) 2016. Fábrica de Software - Instituto de
+                Informática (UFG)
             </comments>
             <url>https://creativecommons.org/licenses/by/4.0/</url>
         </license>
@@ -49,8 +57,10 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/kyriosdata/exemplo.git</connection>
-        <developerConnection>scm:git:https://github.com/kyriosdata/exemplo.git</developerConnection>
+        <connection>scm:git:https://github.com/kyriosdata/exemplo.git
+        </connection>
+        <developerConnection>scm:git:https://github.com/kyriosdata/exemplo.git
+        </developerConnection>
         <url>https://github.com/kyriosdata/exemplo</url>
     </scm>
 
@@ -59,20 +69,20 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.3.0-M1</version>
+            <version>5.3.1</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.11.0</version>
+            <version>2.11.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.11.0</version>
+            <version>2.11.1</version>
         </dependency>
 
     </dependencies>
@@ -84,14 +94,15 @@
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/
+            </url>
         </repository>
     </distributionManagement>
 
     <build>
 
         <!-- Define o nome do arquivo a ser gerado (.jar é acrescentada) -->
-        <finalName>Exemplo</finalName>
+        <finalName>exemplo</finalName>
 
         <plugins>
 
@@ -141,7 +152,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.5</version>
+                <version>3.7.1</version>
             </plugin>
 
             <plugin>
@@ -150,23 +161,36 @@
                 <version>3.0.1</version>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+
             <!-- FIM DE ATUALIZACAO DE PLUGINS -->
 
             <!-- surefire -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.21.0</version>
+                <version>2.22.0</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.junit.platform</groupId>
-                        <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>1.3.0-M1</version>
+                        <artifactId>junit-platform-surefire-provider
+                        </artifactId>
+                        <version>1.3.1</version>
                     </dependency>
                     <dependency>
                         <groupId>org.junit.jupiter</groupId>
                         <artifactId>junit-jupiter-engine</artifactId>
-                        <version>5.3.0-M1</version>
+                        <version>5.3.1</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -211,12 +235,12 @@
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest</artifactId>
-                <version>1.4.0</version>
+                <version>1.4.2</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.pitest</groupId>
                         <artifactId>pitest-junit5-plugin</artifactId>
-                        <version>0.5</version>
+                        <version>0.7</version>
                     </dependency>
                 </dependencies>
                 <configuration>
@@ -271,7 +295,8 @@
                         <exclude>**/generated/*.java</exclude>
                     </excludes>
                     <excludeRoots>
-                        <excludeRoot>target/generated-sources/stubs</excludeRoot>
+                        <excludeRoot>target/generated-sources/stubs
+                        </excludeRoot>
                     </excludeRoots>
                     <rulesets>
                         <ruleset>/category/java/bestpractices.xml</ruleset>
@@ -333,7 +358,8 @@
                         <exclude>**/generated/*.java</exclude>
                     </excludes>
                     <excludeRoots>
-                        <excludeRoot>target/generated-sources/stubs</excludeRoot>
+                        <excludeRoot>target/generated-sources/stubs
+                        </excludeRoot>
                     </excludeRoots>
                     <rulesets>
                         <ruleset>/category/java/bestpractices.xml</ruleset>
@@ -401,8 +427,12 @@
                             <effort>Max</effort>
                             <threshold>Low</threshold>
                             <failOnError>true</failOnError>
-                            <includeFilterFile>${project.basedir}/spotbugs-security-include.xml</includeFilterFile>
-                            <excludeFilterFile>${project.basedir}/spotbugs-security-exclude.xml</excludeFilterFile>
+                            <includeFilterFile>
+                                ${project.basedir}/spotbugs-security-include.xml
+                            </includeFilterFile>
+                            <excludeFilterFile>
+                                ${project.basedir}/spotbugs-security-exclude.xml
+                            </excludeFilterFile>
                             <plugins>
                                 <plugin>
                                     <groupId>com.h3xstream.findsecbugs</groupId>
@@ -459,7 +489,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
-                        <version>3.0.0</version>
+                        <version>3.1.1</version>
                         <executions>
                             <execution>
                                 <id>copy-dependencies</id>
@@ -469,7 +499,9 @@
                                 </goals>
                                 <configuration>
                                     <includeScope>runtime</includeScope>
-                                    <outputDirectory>${project.build.directory}/jars/</outputDirectory>
+                                    <outputDirectory>
+                                        ${project.build.directory}/jars/
+                                    </outputDirectory>
                                 </configuration>
                             </execution>
                         </executions>
@@ -517,14 +549,16 @@
                                     <goal>single</goal>
                                 </goals>
                                 <configuration>
-                                    <finalName>Exemplo-unico</finalName>
+                                    <finalName>exemplo-unico</finalName>
                                     <archive>
                                         <manifest>
-                                            <mainClass>${project.mainClass}</mainClass>
+                                            <mainClass>${project.mainClass}
+                                            </mainClass>
                                         </manifest>
                                     </archive>
                                     <descriptorRefs>
-                                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                                        <descriptorRef>jar-with-dependencies
+                                        </descriptorRef>
                                     </descriptorRefs>
                                     <appendAssemblyId>false</appendAssemblyId>
                                 </configuration>
@@ -544,7 +578,7 @@
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
-                        <version>0.8.1</version>
+                        <version>0.8.2</version>
                         <executions>
                             <execution>
                                 <id>default-prepare-agent</id>
