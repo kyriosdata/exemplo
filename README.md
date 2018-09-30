@@ -1,5 +1,5 @@
 ﻿[![Build Status](https://travis-ci.com/kyriosdata/exemplo.svg?branch=develop)](https://travis-ci.com/kyriosdata/exemplo)
-[![SonarCloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.kyriosdata%3Aexemplo%3Adevelop&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.github.kyriosdata%3Aexemplo%3Adevelop)
+[![SonarCloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.kyriosdata%3Aexemplo&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.github.kyriosdata%3Aexemplo%3Adevelop)
 [![Known Vulnerabilities](https://snyk.io/test/github/kyriosdata/exemplo/develop/badge.svg)](https://snyk.io/org/kyriosdata/project/8f1cd845-b6ed-4559-95a4-1375feb3c548)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo)
 
@@ -191,9 +191,3 @@ A lista acima não tem a pretensão de ser exclusiva. Abaixo seguem outros servi
 - https://codescene.io/
 - https://codecov.io/
 - http://circleci.com/
-
-
-## TODO
-- (TBD) Acrescentar API para acesso à função via HTTP?
-
-[![](https://codescene.io/projects/1157/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/1157/jobs/latest-successful/results)
