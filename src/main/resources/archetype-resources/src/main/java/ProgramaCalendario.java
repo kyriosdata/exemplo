@@ -36,7 +36,7 @@ public final class ProgramaCalendario {
     public static void main(final String[] args) {
 
         logger.info("iniciado");
-        System.out.println(Calendario.diaDaSemanaParaHoje());;
+        System.out.println(Calendario.diaDaSemanaParaHoje());
     }
 
 }
