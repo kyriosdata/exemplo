@@ -1,10 +1,13 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 /*
  * Copyright (c) 2016.
  * Fábrica de Software - Instituto de Informática (UFG)
  * Creative Commons Attribution 4.0 International License.
  */
 
-package com.github.kyriosdata.exemplo;
+package ${package};
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -1,10 +1,13 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 /*
  * Copyright (c) 2016.
  * Fábrica de Software - Instituto de Informática (UFG)
  * Creative Commons Attribution 4.0 International License.
  */
 
-package com.github.kyriosdata.exemplo;
+package ${package};
 
 import java.time.LocalDate;
 
@@ -117,6 +120,6 @@ public final class Calendario {
         int ano = hoje.getYear();
         int diaDaSemana = diaDaSemana(dia, mes, ano);
 
-        return String.format("Hoje é %s\n", semana[diaDaSemana]);
+        return String.format("Hoje é %s${symbol_escape}n", semana[diaDaSemana]);
     }
 }
