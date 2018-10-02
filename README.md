@@ -19,6 +19,24 @@ você deverá ver a indicação da versão do Maven instalada e
 a versão do JDK, dentre outras. Observe que o JDK é obrigatório, assim como
 a definição das variáveis de ambiente **JAVA_HOME** e **M2_HOME**. No Windows certifique-se de que as variáveis não foram definidas com o valor correspondente entre aspas.
 
+## Configurando projeto pelo archetype
+
+Primeiro fazer clone do projeto pelo git:
+```sh
+git clone https://github.com/kyriosdata/exemplo.git
+```
+
+Já na pasta do projeto, instalar o archetype no catálogo local:
+```sh
+mvn clean install
+```
+
+Na pasta onde o archetype será gerado executar:
+```bash
+mvn -B archetype:generate -DartifactId=exemplo -DgroupId=com.github.kyriosdata -DarchetypeGroupId=com.github.kyriosdata -DarchetypeArtifactId=exemplo-archetype -DarchetypeVersion=1.0.1
+```
+
+_O groupId e artifactId do projeto podem ser modificados_
 
 ## Limpar, compilar, executar testes de unidade e cobertura
 - `mvn clean`<br>
