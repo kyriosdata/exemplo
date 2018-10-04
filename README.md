@@ -171,6 +171,9 @@ exibe POM de fato empregado
 - `mvn help:describe -Dcmd=clean`<br>
 exibe detalhes da fase _clean_
 
+- `mvn dependency:purge-local-repository`<br>
+limpa dependências do projeto em questão do repositório local e obtém dependências novamente. Útil quando o repositório local é corrompido.
+
 ## Integração contínua
 Notou os emblemas (_badges_) no início da página? Todo _commit_ na presente 
 página automaticamente irá realizar uma série de operações, como compilação,
