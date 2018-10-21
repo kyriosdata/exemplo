@@ -100,7 +100,7 @@ também depende de compilação prévia, ou seja, _mvn compile_
 
 - **JDepend**
   - `mvn jdepend:generate`<br>
-  gera relatório em _target/site/jdepend-report.html_
+  gera relatório de algumas métricas, inclusive presença de ciclos em _target/site/jdepend-report.html_
   
 - **PMD**
   - `mvn pmd:pmd`<br>
