@@ -172,7 +172,7 @@ torna-se necessário e há dois _plugins_ úteis para tal. Consulte a documenta�
 para outros além daqueles ilustrados abaixo: Version Maven Plugin ([aqui](http://www.mojohaus.org/versions-maven-plugin/)) e Apache Maven Dependency Plugin ([aqui](https://maven.apache.org/plugins/maven-dependency-plugin/)). 
 
 - `mvn versions:display-dependency-updates`<br>
-Lista eventuais dependências para as quais há versões mais recentes do que aquelas empregadas.
+Identifica dependências para as quais há versões mais recentes do que aquelas empregadas.
 
 - `mvn dependency:analyze`<br>
 Analisar as dependências de um projeto. Dependência citada mas não utilizada, dentre
