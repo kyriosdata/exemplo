@@ -171,7 +171,7 @@ reutilização é incorporada em um projeto por meio de dependências. Gerenciá
 torna-se necessário e há dois _plugins_ úteis para tal. Consulte a documentação deles
 para outros além daqueles ilustrados abaixo: Version Maven Plugin ([aqui](http://www.mojohaus.org/versions-maven-plugin/)) e Apache Maven Dependency Plugin ([aqui](https://maven.apache.org/plugins/maven-dependency-plugin/)). 
 
-- `mvn versions:display-dependencies-update`<br>
+- `mvn versions:display-dependency-updates`<br>
 Lista eventuais dependências para as quais há versões mais recentes do que aquelas empregadas.
 
 - `mvn dependency:analyze`<br>
