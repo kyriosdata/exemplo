@@ -82,7 +82,7 @@ configuradas em conformidade com o contexto em questão.
   faz com que o _build_ falhe se pelo menos
 um estilo é violado
 
-- **Dependency Check**
+- **Dependency Check (vulnerabilidades)**
   - `mvn verify`<br>
   análise de vulnerabilidades depositadas em 
   _target/dependency-check-report.html_. A primeira execução é relativamente
@@ -168,7 +168,8 @@ configuração do arquivo _HOMEDIR/.m2/settings.xml_.
 ## Dependências
 Projetos em Java usufruem, em geral, extensivamente de código já existente. Esta 
 reutilização é incorporada em um projeto por meio de dependências. Gerenciá-las
-também é preciso.
+torna-se necessário e há dois _plugins_ úteis para tal. Consulte a documentação deles
+para outros além daqueles ilustrados abaixo: Version Maven Plugin ([aqui](http://www.mojohaus.org/versions-maven-plugin/)) e Apache Maven Dependency Plugin ([aqui](https://maven.apache.org/plugins/maven-dependency-plugin/)). 
 
 - `mvn dependency:analyze`<br>
 Analisar as dependências de um projeto. Dependência citada mas não utilizada, dentre
