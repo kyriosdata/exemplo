@@ -83,7 +83,7 @@ configuradas em conformidade com o contexto em questão.
 um estilo é violado
 
 - **Dependency Check (vulnerabilidades)**
-  - `mvn verify`<br>
+  - `mvn verify -P owasp`<br>
   análise de vulnerabilidades depositadas em 
   _target/dependency-check-report.html_. A primeira execução é relativamente
   "longa", esteja preparado para esperar...
