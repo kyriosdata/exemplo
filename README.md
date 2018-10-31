@@ -40,16 +40,16 @@ gera arquivo _exemplo.jar_ no diretório _target_. Observe que
 o arquivo gerado não é executável.
 
 - `mvn package -P executavel-dir`<br>
-gera _exemplo.jar_, executável, mas dependente do diretório _jars_,
+gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
  também criado no diretório _target_. Para executar basta o comando
- `java -jar target/Exemplo.jar`. Observe que se o diretório _jars_ for
+ `java -jar target/exemplo-dir.jar`. Observe que se o diretório _jars_ for
  removido, então este comando falha. Por último, o diretório _jars_ deve
  ser depositado no mesmo diretório do arquivo _exemplo.jar_. 
 
 - `mvn package -P executavel-unico`<br>
  gera jar executável em um único arquivo, _target/exemplo-unico.jar_, 
  suficiente para ser transferido e executado. Para executá-lo basta o
- comando `java -jar Exemplo-unico.jar`.  
+ comando `java -jar target/exemplo-unico.jar`.  
  
 
 ## Executando a aplicação
