@@ -287,6 +287,29 @@
                 </configuration>
             </plugin>
 
+            <!-- DOCKER -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.8</version>
+                <executions>
+                    <execution>
+                    <id>default</id>
+                    <goals>
+                        <goal>build</goal>
+                        <goal>push</goal>
+                    </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <repository>spotify/foobar</repository>
+                    <tag>${project.version}</tag>
+                    <buildArgs>
+                    <JAR_FILE>target/exemplo-unico.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
@@ -516,6 +539,7 @@
                         <artifactId>maven-jar-plugin</artifactId>
                         <version>3.0.2</version>
                         <configuration>
+                            <finalName>exemplo-dir</finalName>
                             <archive>
                                 <!-- Evita inclusão dir 'maven' em META-INF -->
                                 <addMavenDescriptor>false</addMavenDescriptor>
