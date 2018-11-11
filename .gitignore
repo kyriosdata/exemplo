@@ -1,3 +1,9 @@
+# Visual Code
+.project
+.vscode/
+.classpath
+.settings/
+
 /reports
 /bin
 /target
