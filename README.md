@@ -153,8 +153,8 @@ também depende de compilação prévia, ou seja, _mvn compile_
   Disponibiliza relatório em snyk.io (atualiza _badge_)
 
 ## Relatório do projeto
-- `mvn site` <br>
-Gera documentação do projeto, além de análises estáticas em
+- `mvn javadoc:javadoc package site -P cobertura` <br>
+Gera documentação do projeto, incluindo relatórios de análises estáticas em
 _target/site/index.html_).
 
 ## Disponibilizando biblioteca no repositório Maven Central

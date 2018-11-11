@@ -283,6 +283,25 @@
         <plugins>
 
             <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>3.3.4</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.0.1</version>
@@ -466,8 +485,9 @@
             </build>
         </profile>
 
-        <!-- owasp vulnerabilidades -->
-        <!-- mvn verify -P owasp -->
+        <!-- OWASP vulnerabilidades              -->
+        <!-- mvn verify -P owasp                 -->
+        <!-- target/dependency-check-report.html -->
         <profile>
             <id>owasp</id>
             <build>
