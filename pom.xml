@@ -232,29 +232,6 @@
                 <version>3.4.1.1168</version>
             </plugin>
 
-            <!-- mvn org.pitest:pitest-maven:muatationCoverage -->
-            <!-- Relatório em: target/pit-reports/YYYYMMDDHHMM -->
-            <plugin>
-                <groupId>org.pitest</groupId>
-                <artifactId>pitest</artifactId>
-                <version>1.4.3</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.pitest</groupId>
-                        <artifactId>pitest-junit5-plugin</artifactId>
-                        <version>0.8</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <targetClasses>
-                        <param>com.github.kyriosdata.exemplo.Calendario</param>
-                    </targetClasses>
-                    <targetTests>
-                        <param>com.github.kyriosdata.exemplo.*</param>
-                    </targetTests>
-                </configuration>
-            </plugin>
-
             <!-- maven-compiler-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -298,10 +275,26 @@
         </plugins>
     </build>
 
-    <!-- mvn site (gera relatório em Project Report -->
-    <!-- reporting está relacionado à fase 'site'   -->
+    <!-- mvn site (gera relatórios e os agrega em portal -->
+    <!-- Execute "mvn site" após os comandos abaixo      -->
+    <!-- mvn package -P cobertura                        -->
+    <!-- mvn javadoc:javadoc                             -->
     <reporting>
         <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.0.1</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>javadoc-no-fork</report>
+                            <report>test-javadoc-no-fork</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -412,6 +405,36 @@
     </reporting>
 
     <profiles>
+
+        <profile>
+            <id>mutantes</id>
+            <build>
+                <plugins>
+                    <!-- mvn org.pitest:pitest-maven:muatationCoverage -->
+                    <!-- Relatório em: target/pit-reports/YYYYMMDDHHMM -->
+                    <plugin>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest</artifactId>
+                        <version>1.4.3</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.pitest</groupId>
+                                <artifactId>pitest-junit5-plugin</artifactId>
+                                <version>0.8</version>
+                            </dependency>
+                        </dependencies>
+                        <configuration>
+                            <targetClasses>
+                                <param>com.github.kyriosdata.exemplo.Calendario</param>
+                            </targetClasses>
+                            <targetTests>
+                                <param>com.github.kyriosdata.exemplo.*</param>
+                            </targetTests>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
         <!-- DOCKER -->
         <profile>
