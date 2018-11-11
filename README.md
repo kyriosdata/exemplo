@@ -166,7 +166,7 @@ configuração do arquivo _HOMEDIR/.m2/settings.xml_.
 
 
 ## Dependências
-Projetos em Java usufruem, em geral, extensivamente de código já existente. Esta 
+O desenvolvimento de código em Java, em geral, usufrui de um significativo conjunto de bibliotecas e _frameworks_. Esta 
 reutilização é incorporada em um projeto por meio de dependências. Gerenciá-las
 torna-se necessário e há dois _plugins_ úteis para tal. Consulte a documentação deles
 para outros além daqueles ilustrados abaixo: Version Maven Plugin ([aqui](http://www.mojohaus.org/versions-maven-plugin/)) e Apache Maven Dependency Plugin ([aqui](https://maven.apache.org/plugins/maven-dependency-plugin/)). 
