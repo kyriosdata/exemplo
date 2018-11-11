@@ -123,7 +123,7 @@ também depende de compilação prévia, ou seja, _mvn compile_
    - `mvn spotbugs:check -P security`<br>
    apenas verifica se há erros
   - `mvn spotbugs:gui -P security`<br>
-  abre GUI para exibir bugs após _mvn spotbugs:spotbugs_
+  abre GUI para exibir bugs após _mvn spotbugs:spotbugs -P security_
 
 - **Snyk**
 
