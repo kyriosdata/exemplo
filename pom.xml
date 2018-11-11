@@ -4,6 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <prerequisites>
+        <maven>3.1.1</maven>
+    </prerequisites>
+    
     <groupId>com.github.kyriosdata</groupId>
     <artifactId>exemplo</artifactId>
     <packaging>jar</packaging>
@@ -124,7 +128,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.1</version>
             </plugin>
 
             <plugin>
@@ -237,7 +241,7 @@
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest</artifactId>
-                <version>1.4.2</version>
+                <version>1.4.3</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.pitest</groupId>
@@ -366,7 +370,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
-                <version>2.3</version>
+                <version>3.0.0</version>
             </plugin>
 
             <!-- mvn checkstyle:checkstyle -->
