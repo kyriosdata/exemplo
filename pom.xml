@@ -624,8 +624,9 @@
             </build>
         </profile>
 
-        <!-- cobertura -->
-        <!-- Gera relatório de cobertura -->
+        <!-- cobertura                     -->
+        <!-- mvn package -P cobertura      -->
+        <!-- target/site/jacoco/index.html -->
         <profile>
             <id>cobertura</id>
             <build>
