@@ -153,8 +153,9 @@ também depende de compilação prévia, ou seja, _mvn compile_
   Disponibiliza relatório em snyk.io (atualiza _badge_)
 
 ## Relatório do projeto
-- `mvn site` (gera documentação do projeto, além de análises estáticas em
-_target/site/index.html_
+- `mvn site` <br>
+Gera documentação do projeto, além de análises estáticas em
+_target/site/index.html_).
 
 ## Disponibilizando biblioteca no repositório Maven Central
 A boa notícia é que este _pom.xml_ está devidamente configurado para
