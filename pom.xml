@@ -397,6 +397,21 @@
                 <version>3.1.8</version>
             </plugin>
 
+            <!-- Jacoco -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.2</version>
+                <reportSets>
+                <reportSet>
+                    <reports>
+                    <!-- select non-aggregate reports -->
+                    <report>report</report>
+                    </reports>
+                </reportSet>
+                </reportSets>
+            </plugin>
+
         </plugins>
     </reporting>
 
