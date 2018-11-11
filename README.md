@@ -128,7 +128,7 @@ também depende de compilação prévia, ou seja, _mvn compile_
 - **Snyk**
 
   - `mvn snyk:test -P security`<br>
-  análise de vulnerabilidade. Depende do valor da propriedade _snyk.token_. 
+  análise de vulnerabilidade que depende do serviço [Snyk](https://snyk.io). Depende do valor da propriedade _snyk.token_. 
   Por conveniência, pode ser fornecido via linha de comandos, 
   **-Dsnyk.token=API-TOKEN**, ou definido no arquivo 
   _HOME/.m2/settings.xml_. Neste último caso, tal arquivo deve conter 
