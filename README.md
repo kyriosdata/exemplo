@@ -4,11 +4,9 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo)
 
 # Escopo e objetivo
-Projeto de referência básico em Java contendo uma biblioteca e uma aplicação. 
-A biblioteca contém um único método que determina o dia da semana de uma 
-dada data, e pode ser publicada no repositório Maven Central, do qual pode
-ser reutilizada por outros projetos. A aplicação exibe o dia da semana da 
-data em que é executado.
+Projeto de referência básico em Java contendo uma biblioteca com um único 
+método que identifica o dia da semana para uma data fornecida; uma aplicação 
+e uma RESTFul API ambas para acesso à funcionalidade. 
 
 > _O objetivo é ilustrar uma possível organização de código em Java usando
 Maven e "boas práticas" para inspirar projetos "reais"_.
@@ -17,8 +15,9 @@ Maven e "boas práticas" para inspirar projetos "reais"_.
 - `mvn --version`<br>
 você deverá ver a indicação da versão do Maven instalada e
 a versão do JDK, dentre outras. Observe que o JDK é obrigatório, assim como
-a definição das variáveis de ambiente **JAVA_HOME** e **M2_HOME**. No Windows certifique-se de que as variáveis não foram definidas com o valor correspondente entre aspas.
-
+a definição das variáveis de ambiente **JAVA_HOME** e **M2_HOME**. 
+No Windows certifique-se de que as variáveis não foram definidas com o valor 
+correspondente entre aspas.
 
 ## Limpar, compilar, executar testes de unidade e cobertura
 - `mvn clean`<br>
@@ -50,11 +49,19 @@ gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
  gera jar executável em um único arquivo, _target/exemplo-unico.jar_, 
  suficiente para ser transferido e executado. Para executá-lo basta o
  comando `java -jar target/exemplo-unico.jar`.  
+
+ - `mvn package -P api`<br>
+ gera jar executável em um único arquivo, _target/api.jar_, cuja execução
+ disponibilida para consultas ao dia da semana da data corrente pelo endereço _http://localhost:8080/ds_, ou o dia uma data qualquer, por exemplo,
+ _http://localhost:8080/ds?data=01-01-2015_.
  
 
 ## Executando a aplicação
-- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"`<br>
-executa a classe indicada (método _main_). Depende de `mvn compile`
+- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.application.console.ProgramaCalendario"`<br>
+executa a classe indicada (método _main_). Depende de `mvn compile`.
+
+- `java -jar target/exemplo-unico.jar`<br>
+executa o aplicativo por meio do arquivo jar criado conforme comando comentado anteriormente. Observe que o comando anterior e este produzem o mesmo efeito, contudo, o arquivo jar permite que seja enviado para um outro diretório ou outro computador, enquanto o comando anterior exige, inclusive, a disponibilidade do Maven (esta opção pode ser útil em tempo de desenvolvimento).
 
 
 ## Documentação

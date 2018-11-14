@@ -58,12 +58,19 @@
         <url>https://github.com/kyriosdata/exemplo</url>
     </scm>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.0.RELEASE</version>
+    </parent>
+
     <properties>
         <java.version>8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.mainClass>com.github.kyriosdata.exemplo.ProgramaCalendario
+        <project.mainClass>
+            com.github.kyriosdata.exemplo.application.console.ProgramaCalendario
         </project.mainClass>
     </properties>
 
@@ -89,6 +96,17 @@
             <version>2.11.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <distributionManagement>
@@ -108,7 +126,7 @@
         <!-- Define o nome do arquivo a ser gerado (.jar é acrescentada) -->
         <finalName>exemplo</finalName>
 
-        <plugins>
+        <plugins>            
 
             <!-- spotbugs -->
             <!-- mvn compile           -->
@@ -183,17 +201,17 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.0</version>
                 <!--<dependencies>-->
-                    <!--<dependency>-->
-                        <!--<groupId>org.junit.platform</groupId>-->
-                        <!--<artifactId>junit-platform-surefire-provider-->
-                        <!--</artifactId>-->
-                        <!--<version>1.2.0</version>-->
-                    <!--</dependency>-->
-                    <!--<dependency>-->
-                        <!--<groupId>com.tngtech.archunit</groupId>-->
-                        <!--<artifactId>archunit-junit5-engine</artifactId>-->
-                        <!--<version>0.9.1</version>-->
-                    <!--</dependency>-->
+                <!--<dependency>-->
+                <!--<groupId>org.junit.platform</groupId>-->
+                <!--<artifactId>junit-platform-surefire-provider-->
+                <!--</artifactId>-->
+                <!--<version>1.2.0</version>-->
+                <!--</dependency>-->
+                <!--<dependency>-->
+                <!--<groupId>com.tngtech.archunit</groupId>-->
+                <!--<artifactId>archunit-junit5-engine</artifactId>-->
+                <!--<version>0.9.1</version>-->
+                <!--</dependency>-->
                 <!--</dependencies>-->
             </plugin>
 
@@ -411,12 +429,12 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.2</version>
                 <reportSets>
-                <reportSet>
-                    <reports>
-                    <!-- select non-aggregate reports -->
-                    <report>report</report>
-                    </reports>
-                </reportSet>
+                    <reportSet>
+                        <reports>
+                            <!-- select non-aggregate reports -->
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
                 </reportSets>
             </plugin>
 
@@ -424,6 +442,19 @@
     </reporting>
 
     <profiles>
+
+        <profile>
+            <id>api</id>
+            <build>
+                <finalName>api</finalName>
+                <plugins>            
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
         <profile>
             <id>mutantes</id>
@@ -444,7 +475,9 @@
                         </dependencies>
                         <configuration>
                             <targetClasses>
-                                <param>com.github.kyriosdata.exemplo.Calendario</param>
+                                <param>
+                                    com.github.kyriosdata.exemplo.domain.Calendario
+                                </param>
                             </targetClasses>
                             <targetTests>
                                 <param>com.github.kyriosdata.exemplo.*</param>
@@ -574,7 +607,7 @@
             </build>
         </profile>
 
-        <!-- executavel-dir -->
+        <!-- mvn package -P executavel-dir -->
         <!-- executável usa diretório 'jars' -->
         <profile>
             <id>executavel-dir</id>

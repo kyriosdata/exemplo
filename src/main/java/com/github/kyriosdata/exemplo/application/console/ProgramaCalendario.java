@@ -4,8 +4,9 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package com.github.kyriosdata.exemplo;
+package com.github.kyriosdata.exemplo.application.console;
 
+import com.github.kyriosdata.exemplo.domain.Calendario;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
