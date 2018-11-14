@@ -51,8 +51,9 @@ gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
  comando `java -jar target/exemplo-unico.jar`.  
 
  - `mvn package -P api`<br>
- gera jar executável em um único arquivo, _target/api.jar_, cuja execução
- disponibilida para consultas ao dia da semana da data corrente pelo endereço _http://localhost:8080/ds_, ou o dia uma data qualquer, por exemplo,
+ gera jar executável em um único arquivo, _target/api.jar_, que pode ser transferido e cuja execução,
+ `java -jar target/api.jar`, disponibilida o serviço de dia da semana da data corrente pelo endereço
+ _http://localhost:8080/ds_, ou o dia uma dada data, por exemplo, por meio de
  _http://localhost:8080/ds?data=01-01-2015_.
  
 
