@@ -8,7 +8,7 @@ Projeto de referência básico em Java contendo uma biblioteca com um único
 método que identifica o dia da semana para uma data fornecida; uma aplicação 
 e uma RESTFul API ambas para acesso à funcionalidade. 
 
-> _O objetivo é ilustrar uma possível organização de código em Java usando
+> _O objetivo é ilustrar uma organização de código em Java usando
 Maven e "boas práticas" para inspirar projetos "reais"_.
 
 ## Requisitos são atendidos?
@@ -56,12 +56,23 @@ gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
  _http://localhost:8080/ds?data=01-01-2015_.
  
 
-## Executando a aplicação
+## Executando a aplicação e a RESTFul API
 - `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.application.console.ProgramaCalendario"`<br>
 executa a classe indicada (método _main_). Depende de `mvn compile`.
 
 - `java -jar target/exemplo-unico.jar`<br>
-executa o aplicativo por meio do arquivo jar criado conforme comando comentado anteriormente. Observe que o comando anterior e este produzem o mesmo efeito, contudo, o arquivo jar permite que seja enviado para um outro diretório ou outro computador, enquanto o comando anterior exige, inclusive, a disponibilidade do Maven (esta opção pode ser útil em tempo de desenvolvimento).
+executa o aplicativo por meio do arquivo jar criado pelo comando `mvn package
+ -P executavel-unico`, conforme comentado anteriormente. Observe que o comando 
+ anterior e o corrente produzem o mesmo efeito, contudo, o arquivo jar 
+ permite que seja enviado para um outro diretório ou outro computador, 
+ onde pode ser executado, enquanto o comando anterior (acima) exige, 
+ inclusive, a disponibilidade do Maven (o que pode ser útil em tempo de 
+ desenvolvimento).
+ 
+- `java -jar target/api.jar`<br>
+coloca em execução a API gerada por `mvn package -P api`. Você pode testar 
+usando o seu navegador ou, via linha de comandos, `curl 
+http://localhost:8080/ds`.
 
 
 ## Documentação
