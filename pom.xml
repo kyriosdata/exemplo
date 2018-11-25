@@ -703,6 +703,7 @@
         <!-- cobertura                     -->
         <!-- mvn package -P cobertura      -->
         <!-- target/site/jacoco/index.html -->
+        <!-- mvn verify -P cobertura       -->
         <profile>
             <id>cobertura</id>
             <build>
@@ -724,6 +725,26 @@
                                 <goals>
                                     <goal>report</goal>
                                 </goals>
+                            </execution>
+                            <execution>
+                                <id>verificacao</id>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <rule implementation="org.jacoco.maven.RuleConfiguration">
+                                            <element>BUNDLE</element>
+                                            <limits>
+                                                <limit implementation="org.jacoco.report.check.Limit">
+                                                    <counter>LINE</counter>
+                                                    <value>COVEREDRATIO</value>
+                                                    <minimum>0.95</minimum>
+                                                </limit>
+                                            </limits>
+                                        </rule>
+                                    </rules>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>

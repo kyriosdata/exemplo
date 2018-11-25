@@ -29,9 +29,10 @@ compila o projeto, deposita resultados no diretório _target_
 - `mvn test`<br>
 executa testes de unidade
 
-- `mvn package -P cobertura`<br>
+- `mvn verify -P cobertura`<br>
 executa testes de unidade e produz relatório de 
-cobertura em _target/site/jacoco/index.html_
+cobertura em _target/site/jacoco/index.html_ além de verificar se limite mínimo
+de cobertura, conforme configurado, é satisfeito. 
 
 ## Empacotando o projeto
 - `mvn package`<br>
