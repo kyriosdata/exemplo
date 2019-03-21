@@ -11,13 +11,11 @@ e uma RESTFul API ambas para acesso à funcionalidade.
 > _O objetivo é ilustrar uma organização de código em Java usando
 Maven e "boas práticas" para inspirar projetos reais_.
 
-## Requisitos são atendidos?
+## Pré-requisitos
 - `mvn --version`<br>
 você deverá ver a indicação da versão do Maven instalada e
 a versão do JDK, dentre outras. Observe que o JDK é obrigatório, assim como
 a definição das variáveis de ambiente **JAVA_HOME** e **M2_HOME**.
-No Windows certifique-se de que as variáveis não foram definidas com o valor
-correspondente entre aspas.
 
 ## Limpar, compilar, executar testes de unidade e cobertura
 - `mvn clean`<br>
@@ -37,7 +35,8 @@ de cobertura, conforme configurado, é satisfeito.
 ## Empacotando o projeto
 - `mvn package`<br>
 gera arquivo _exemplo.jar_ no diretório _target_. Observe que
-o arquivo gerado não é executável.
+o arquivo gerado não é executável. Um arquivo jar é um arquivo no formato
+zip. Você pode verificar o conteúde deste arquivo ao executar o comando `jar vft exemplo.jar`.
 
 - `mvn package -P executavel-dir`<br>
 gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
