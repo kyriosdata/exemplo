@@ -185,6 +185,9 @@ configuração do arquivo _HOMEDIR/.m2/settings.xml_.
 - **Nexus Staging Maven Plugin**
   - `mvn deploy -P deploy`<br>
 
+Particularmente considero a publicação usando o Maven Central mais
+complexa do que a alternativa recente oferecida pelo [JitPack](https://jitpack.io),
+uma alternativa.
 
 ## Dependências
 O desenvolvimento de código em Java, em geral, usufrui de um significativo conjunto de bibliotecas e _frameworks_. Esta
