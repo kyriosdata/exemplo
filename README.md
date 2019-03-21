@@ -58,8 +58,9 @@ gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
 
 
 ## Executando a aplicação e a RESTFul API
-- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.application.console.ProgramaCalendario"`<br>
-executa a classe indicada (método _main_). Depende de `mvn compile`.
+- `mvn exec:java`<br>
+executa o método _main_ da classe indicada na configuração do _plugin_ pertinente
+no arquivo pom.xml. Depende de `mvn compile`.
 
 - `java -jar target/exemplo-unico.jar`<br>
 executa o aplicativo por meio do arquivo jar criado pelo comando `mvn package
