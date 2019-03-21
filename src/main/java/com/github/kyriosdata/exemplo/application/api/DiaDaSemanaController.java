@@ -23,6 +23,8 @@ public class DiaDaSemanaController {
             "não fornecida") String arg) {
 
         LocalDate data = localDateFromString(arg);
+
+        // Se data não é fornecida, ou é inválida, use o dia corrente.
         if (data == null) {
             data = LocalDate.now();
         }
