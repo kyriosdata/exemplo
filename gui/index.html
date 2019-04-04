@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dia da Semana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function atualizaDiaDaSemana(data) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("exibe-id").innerHTML = xhttp.responseText;
+                }
+            };
+            xhttp.open("GET", "http://localhost:8080/ds", true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>Dia da semana do corrente dia</h1>
+    <button onclick="atualizaDiaDaSemana();">Clique aqui</button>
+    Resultado: <span id="exibe-id"></span>
+</body>
+</html>
