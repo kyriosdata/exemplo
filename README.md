@@ -46,7 +46,8 @@ gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
  ser depositado no mesmo diretório do arquivo _exemplo.jar_.
 
 - `mvn package -P executavel-unico`<br>
- gera jar executável em um único arquivo, _target/exemplo-unico.jar_,
+ gera jar executável correspondente ao aplicativo a ser executado via linha de comandos,
+ em um único arquivo, _target/exemplo-unico.jar_,
  suficiente para ser transferido e executado. Para executá-lo basta o
  comando `java -jar target/exemplo-unico.jar`.
 
