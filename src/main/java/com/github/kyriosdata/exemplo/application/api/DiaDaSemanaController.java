@@ -19,7 +19,7 @@ import java.time.format.DateTimeFormatter;
 @RestController
 public class DiaDaSemanaController {
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @CrossOrigin
     @RequestMapping("ds")
     public DiaDaSemana diaDaSemana(@RequestParam(value="data", defaultValue =
             "não fornecida") String arg) {
