@@ -4,12 +4,12 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo)
 
 # Escopo e objetivo
-Projeto de referência básico em Java contendo uma biblioteca com um único
+Projeto de referência para software em Java contendo uma biblioteca com um único
 método que identifica o dia da semana para uma data fornecida; uma aplicação
 e uma RESTFul API ambas para acesso à funcionalidade.
 
-> _O objetivo é ilustrar uma organização de código em Java usando
-Maven e "boas práticas" para inspirar projetos reais_.
+> _Objetivo: ilustrar uma organização de código em Java usando
+"boas práticas" para inspirar projetos reais_.
 
 ## Pré-requisitos
 - `mvn --version`<br>
@@ -55,7 +55,10 @@ gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
  gera jar executável em um único arquivo, _target/api.jar_, que pode ser transferido e cuja execução,
  `java -jar target/api.jar`, disponibilida o serviço de dia da semana da data corrente pelo endereço
  _http://localhost:8080/ds_, ou o dia da semana para uma data desejada, por meio de
- _http://localhost:8080/ds?data=01-01-2015_, por exemplo.
+ _http://localhost:8080/ds?data=01-01-2015_, por exemplo. Você pode 
+ experimentar esta funcionalidade via linha de comandos, por exemplo,
+ `curl http://localhost:8080/ds` ou `curl 
+ http://localhost:8080/ds?data=01-01-200`.
 
 
 ## Executando a aplicação e a RESTFul API
@@ -87,9 +90,10 @@ o JDK 9.
 
 ## Análise estática
 Trata-se da análise do código sem que seja executado. Esta análise produz
-uma "noção de quão bom" está o código e, em consequência, permite orientar
-eventuais ações de melhoria do código. Fique atento, "sair bem" na análise
-estática não significa que "agrada usuários".
+uma "noção de quão bom" está o código sob alguns aspecto e, em consequência, 
+permite orientar eventuais ações de melhoria. Fique atento, "sair 
+bem" na análise estática não significa que "agrada usuários". A análise 
+estática observa o código. 
 
 Todas estas análises devem ser realizadas em todos os projetos? Não!
 Aquelas relevantes para um dado projeto deverão ser

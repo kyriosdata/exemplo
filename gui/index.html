@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dia da Semana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        // Path para a requisição (URL)
+        const PATH = "http://localhost:8080/ds?data=";
+
+        function atualizaDiaDaSemana() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    let dds = extraiDiaDaSemanaDaResposta(xhttp.responseText);
+                    document.getElementById("resultado").innerHTML = dds;
+                }
+            };
+
+            let dataAnoMesDia = document.getElementById("data").value;
+            let data = formataData(dataAnoMesDia);
+            xhttp.open("GET", PATH + data, true);
+            xhttp.send();
+        }
+
+        function dataCorrente() {
+            document.getElementById("data").valueAsDate = new Date();
+        }
+
+        // Funções para integração (satisfazer contrato do servidor)
+
+        function extraiDiaDaSemanaDaResposta(resposta) {
+            return JSON.parse(resposta).diaDaSemana;
+        }
+
+        // Dia ou mês deve possuir dois dígitos
+        function formataDiaOuMes(n) {
+            return ("00" + n).substr(-2, 2);
+        }
+
+        // Ano deve possuir quatro dígitos
+        function formataAno(n) {
+            return ("0000" + n).substr(-4,4);
+        }
+
+        // ENTRADA: ano-mes-dia SAIDA: dd-mm-yyyy
+        function formataData(data) {
+            let [a, m, d] = data.split("-");
+
+            let dia = formataDiaOuMes(d);
+            let mes = formataDiaOuMes(m);
+            let ano = formataAno(a);
+
+            return `${d}-${m}-${a}`;
+        }
+    </script>
+</head>
+<body onload="dataCorrente()">
+    <h1>Dia da semana</h1>
+    <label for="data">Mês / Dia / Ano</label><br>
+    <input type="date" id="data" onchange="atualizaDiaDaSemana()">
+    <button onclick="atualizaDiaDaSemana();">Obtenha dia da semana</button><br>
+    <span style="color: blue; font-size: 20pt;" id="resultado"></span>
+</body>
+</html>
