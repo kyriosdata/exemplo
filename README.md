@@ -58,13 +58,17 @@ gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
  comando `java -jar target/exemplo-unico.jar`.
 
  - `mvn package -P api`<br>
- gera jar executável em um único arquivo, _target/api.jar_, que pode ser transferido e cuja execução,
- `java -jar target/api.jar`, disponibilida o serviço de dia da semana da data corrente pelo endereço
- _http://localhost:8080/ds_, ou o dia da semana para uma data desejada, por meio de
- _http://localhost:8080/ds?data=01-01-2015_, por exemplo. Você pode 
- experimentar esta funcionalidade via linha de comandos, por exemplo,
- `curl http://localhost:8080/ds` ou `curl 
+ gera jar executável juntamente com todas as dependências em um único arquivo, 
+ _target/api.jar_. Este arquivo jar pode ser transferido para outro diretório
+  ou máquina e ser executado pelo comando `java -jar target/api.jar`. Para 
+  verificar:
+   - Abra o endereço _http://localhost:8080/ds_ no seu navegador, ou forneça 
+   a seguinte URL para um dia específico
+ _http://localhost:8080/ds?data=01-01-2015_.
+   - Via linha de comandos (curl), `curl http://localhost:8080/ds` ou `curl 
  http://localhost:8080/ds?data=01-01-200`.
+   - Página HTML (há uma interface gráfica) no diretório **gui**, basta abrir
+     o arquivo _index.html_. 
 
 
 ## Executando a aplicação e a RESTFul API
