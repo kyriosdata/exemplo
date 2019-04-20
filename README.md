@@ -11,6 +11,12 @@ e uma RESTFul API ambas para acesso à funcionalidade.
 > _Objetivo: ilustrar uma organização de código em Java usando
 "boas práticas" para inspirar projetos reais_.
 
+## Iniciando...
+- `git clone https://github.com/kyriosdata/exemplo`
+- `cd exemplo`
+
+Agora você poderá executar os vários comandos abaixo.
+
 ## Pré-requisitos
 - `mvn --version`<br>
 você deverá ver a indicação da versão do Maven instalada e
