@@ -190,7 +190,7 @@ também depende de compilação prévia, ou seja, _mvn compile_
 ## Relatório do projeto
 - `mvn package site -P cobertura` <br>
 Gera documentação do projeto, incluindo relatórios de análises estáticas em
-_target/site/index.html_).
+_target/site/index.html_.
 
 ## Disponibilizando biblioteca no repositório Maven Central
 A boa notícia é que este _pom.xml_ está devidamente configurado para
