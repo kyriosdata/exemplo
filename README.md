@@ -255,3 +255,4 @@ A lista acima não tem a pretensão de ser exclusiva. Abaixo seguem outros servi
 - https://codescene.io/
 - https://codecov.io/
 - http://circleci.com/
+- https://codeclimate.com/quality/
