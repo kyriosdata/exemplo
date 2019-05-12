@@ -58,9 +58,9 @@ gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
  comando `java -jar target/exemplo-unico.jar`.
 
  - `mvn package -P api`<br>
- gera jar executável juntamente com todas as dependências em um único arquivo, 
+ gera jar executável juntamente com todas as dependências reunidas em um único arquivo, 
  _target/api.jar_. Este arquivo jar pode ser transferido para outro diretório
-  ou máquina e ser executado pelo comando `java -jar target/api.jar`. Para 
+  ou máquina e ser executado pelo comando `java -jar target/api.jar`. Aps a execução deste comando, para 
   verificar:
    - Abra o endereço _http://localhost:8080/ds_ no seu navegador, ou forneça 
    a seguinte URL para um dia específico
