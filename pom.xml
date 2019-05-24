@@ -72,6 +72,7 @@
         <project.mainClass>
             com.github.kyriosdata.exemplo.application.console.ProgramaCalendario
         </project.mainClass>
+        <tools.dir>${project.basedir}/tools</tools.dir>
     </properties>
 
     <dependencies>
@@ -195,7 +196,9 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <configLocation>src/main/resources/checkstyle.xml</configLocation>
+                    <configLocation>${tools.dir}/checkstyle.xml</configLocation>
+                    <suppressionsLocation>${tools.dir}/checkstyle-suppressions.xml</suppressionsLocation>
+                    <maxAllowedViolations>0</maxAllowedViolations>
                 </configuration>
             </plugin>
 
