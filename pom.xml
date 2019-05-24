@@ -264,35 +264,33 @@
                 <version>3.8.1</version>
             </plugin>
 
-            <!-- PMD -->
-            <!-- mvn pmd:pmd -->
-            <!-- mvn pmd:check -->
+             <!-- PMD                  -->
+            <!-- mvn pmd:pmd          -->
+            <!-- mvn pmd:check        -->
+            <!-- target/site/pmd.html -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.12.0</version>
                 <configuration>
-                    <targetJdk>9</targetJdk>
                     <linkXRef>true</linkXRef>
                     <sourceEncoding>utf-8</sourceEncoding>
                     <minimumTokens>10</minimumTokens>
+                    <targetJdk>1.8</targetJdk>
                     <excludes>
                         <exclude>**/*Bean.java</exclude>
                         <exclude>**/generated/*.java</exclude>
+                        <exclude>**/*Application.java</exclude>
                     </excludes>
                     <excludeRoots>
                         <excludeRoot>target/generated-sources/stubs
                         </excludeRoot>
                     </excludeRoots>
                     <rulesets>
-                        <ruleset>/category/java/bestpractices.xml</ruleset>
-                        <ruleset>/category/java/codestyle.xml</ruleset>
-                        <ruleset>/category/java/design.xml</ruleset>
-                        <ruleset>/category/java/documentation.xml</ruleset>
-                        <ruleset>/category/java/errorprone.xml</ruleset>
-                        <ruleset>/category/java/multithreading.xml</ruleset>
-                        <ruleset>/category/java/performance.xml</ruleset>
-                        <ruleset>/category/java/security.xml</ruleset>
+                        <ruleset>category/java/multithreading.xml</ruleset>
+                        <ruleset>category/java/performance.xml</ruleset>
+                        <ruleset>category/java/security.xml</ruleset>
+                        <ruleset>${tools.dir}/pmd.xml</ruleset>
                     </rulesets>
                 </configuration>
             </plugin>
@@ -387,7 +385,6 @@
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.12.0</version>
                 <configuration>
-                    <targetJdk>9</targetJdk>
                     <linkXref>true</linkXref>
                     <sourceEncoding>utf-8</sourceEncoding>
                     <minimumTokens>100</minimumTokens>
@@ -577,20 +574,16 @@
                         <artifactId>spotbugs-maven-plugin</artifactId>
                         <version>3.1.11</version>
                         <configuration>
+                            <excludeFilterFile>${tools.dir}/spotbugs.xml
+                            </excludeFilterFile>
                             <effort>Max</effort>
                             <threshold>Low</threshold>
                             <failOnError>true</failOnError>
-                            <includeFilterFile>
-                                ${project.basedir}/spotbugs-security-include.xml
-                            </includeFilterFile>
-                            <excludeFilterFile>
-                                ${project.basedir}/spotbugs-security-exclude.xml
-                            </excludeFilterFile>
                             <plugins>
                                 <plugin>
                                     <groupId>com.h3xstream.findsecbugs</groupId>
                                     <artifactId>findsecbugs-plugin</artifactId>
-                                    <version>1.9.0</version>
+                                    <version>1.8.0</version>
                                 </plugin>
                             </plugins>
                         </configuration>
