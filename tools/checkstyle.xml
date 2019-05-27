@@ -141,7 +141,10 @@
         <module name="IllegalInstantiation"/>
         <module name="InnerAssignment"/>
 
-        <module name="MagicNumber" />
+        <module name="MagicNumber">
+            <property name="constantWaiverParentToken"
+                      value="ASSIGN, EXPR, MOD, DIV, STAR, FINAL"/>
+        </module>
 
         <module name="MissingSwitchDefault"/>
         <module name="SimplifyBooleanExpression"/>
