@@ -72,7 +72,10 @@
         <project.mainClass>
             com.github.kyriosdata.exemplo.application.console.ProgramaCalendario
         </project.mainClass>
+
         <tools.dir>${project.basedir}/tools</tools.dir>
+        <pmd.plugin>3.12.0</pmd.plugin>
+        <pmd.version>6.15.0</pmd.version>
     </properties>
 
     <dependencies>
@@ -116,6 +119,29 @@
     </distributionManagement>
 
     <build>
+
+        <pluginManagement>
+            <plugins>
+                <!-- PMD plugin pode usar versão mais recente do PMD -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>3.11.0</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>net.sourceforge.pmd</groupId>
+                            <artifactId>pmd-core</artifactId>
+                            <version>${pmd.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>net.sourceforge.pmd</groupId>
+                            <artifactId>pmd-java</artifactId>
+                            <version>${pmd.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+        </pluginManagement>
 
         <!-- Define o nome do arquivo a ser gerado (.jar é acrescentada) -->
         <finalName>exemplo</finalName>
@@ -271,7 +297,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.12.0</version>
+                <version>${pmd.plugin}</version>
                 <configuration>
                     <linkXRef>true</linkXRef>
                     <sourceEncoding>utf-8</sourceEncoding>
@@ -383,7 +409,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.12.0</version>
+                <version>${pmd.plugin}</version>
                 <configuration>
                     <linkXref>true</linkXref>
                     <sourceEncoding>utf-8</sourceEncoding>
