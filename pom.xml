@@ -76,6 +76,8 @@
         <tools.dir>${project.basedir}/tools</tools.dir>
         <pmd.plugin>3.12.0</pmd.plugin>
         <pmd.version>6.15.0</pmd.version>
+        <checkstyle.plugin>3.1.0</checkstyle.plugin>
+        <checkstyle.version>8.21</checkstyle.version>
     </properties>
 
     <dependencies>
@@ -122,6 +124,7 @@
 
         <pluginManagement>
             <plugins>
+
                 <!-- PMD plugin pode usar versão mais recente do PMD -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -140,6 +143,21 @@
                         </dependency>
                     </dependencies>
                 </plugin>
+
+                <!-- Configuracao para usar versao especifica checkstyle -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.puppycrawl.tools</groupId>
+                            <artifactId>checkstyle</artifactId>
+                            <version>${checkstyle.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
             </plugins>
         </pluginManagement>
 
@@ -220,7 +238,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${checkstyle.plugin}</version>
                 <configuration>
                     <configLocation>${tools.dir}/checkstyle.xml</configLocation>
                     <suppressionsLocation>${tools.dir}/checkstyle-suppressions.xml</suppressionsLocation>
@@ -452,7 +470,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${checkstyle.plugin}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
