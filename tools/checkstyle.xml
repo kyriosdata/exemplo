@@ -143,7 +143,7 @@
 
         <module name="MagicNumber">
             <property name="constantWaiverParentToken"
-                      value="ASSIGN, EXPR, MOD, DIV, STAR, FINAL"/>
+                      value="ASSIGN, EXPR, MOD, DIV, STAR, FINAL, MINUS, PLUS"/>
         </module>
 
         <module name="MissingSwitchDefault"/>
