@@ -12,6 +12,7 @@ e uma RESTFul API ambas para acesso à funcionalidade.
 "boas práticas" para inspirar projetos reais_.
 
 ## Iniciando...
+
 - `git clone https://github.com/kyriosdata/exemplo`
 - `cd exemplo`
 
