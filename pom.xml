@@ -370,6 +370,24 @@
                 </configuration>
             </plugin>
 
+            <!-- mvn org.pitest:pitest-maven:mutationCoverage -->
+            <!-- Relatório gerado em target\pit-reports\DATAHORA -->
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.4.8</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-junit5-plugin</artifactId>
+                        <version>0.7</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <coverageThreshold>95</coverageThreshold>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
