@@ -562,7 +562,7 @@
                     <plugin>
                         <groupId>org.pitest</groupId>
                         <artifactId>pitest</artifactId>
-                        <version>1.4.8</version>
+                        <version>1.4.9</version>
                         <dependencies>
                             <dependency>
                                 <groupId>org.pitest</groupId>
