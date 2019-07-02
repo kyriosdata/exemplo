@@ -79,20 +79,16 @@ executa o aplicativo por meio do arquivo jar criado pelo comando `mvn package
  desenvolvimento).
 
 - `java -jar target/api.jar`<br>
-coloca em execução a API gerada por `mvn package -P api`. Você pode testar
-conforme ilustrado abaixo:
+coloca em execução a API gerada por `mvn package -P api` na porta padrão (8080). Para fazer uso de porta
+diferente use `java -jar -Dserver.port=9876 target/api.jar`, por exemplo. Requisições podem ser
+submetidas conforme abaixo:
    - Abra o endereço _http://localhost:8080/ds_ no seu navegador, ou forneça 
    a seguinte URL para um dia específico
  _http://localhost:8080/ds?data=01-01-2015_.
    - Via linha de comandos (curl), `curl http://localhost:8080/ds` ou `curl 
  http://localhost:8080/ds?data=01-01-200`.
    - Página HTML (há uma interface gráfica) no diretório **gui**, basta abrir
-     o arquivo _index.html_. 
-
-
-
-- `java -jar -Dserver.port=9876 target/api.jar`<br>
-para executar em uma porta diferente da padrão (8080).
+     o arquivo _index.html_.
 
 
 ## Documentação
