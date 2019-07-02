@@ -88,7 +88,7 @@ submetidas conforme abaixo:
    - Via linha de comandos (curl), `curl http://localhost:8080/ds` ou `curl 
  http://localhost:8080/ds?data=01-01-200`.
    - Página HTML (há uma interface gráfica) no diretório **gui**, basta abrir
-     o arquivo _index.html_.
+     o arquivo [index.html](http://htmlpreview.github.com/?https://raw.githubusercontent.com/kyriosdata/exemplo/master/gui/index.html).
 
 
 ## Documentação
