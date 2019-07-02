@@ -91,6 +91,9 @@ coloca em execução a API gerada por `mvn package -P api`. Você pode testar
 usando o seu navegador ou, via linha de comandos, `curl
 http://localhost:8080/ds`.
 
+- `java -jar -Dserver.port=9876 target/api.jar`<br>
+para executar em uma porta diferente da padrão (8080).
+
 
 ## Documentação
 
