@@ -386,7 +386,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>5.1.0</version>
+                <version>5.1.1</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -612,7 +612,7 @@
                     <plugin>
                         <groupId>org.owasp</groupId>
                         <artifactId>dependency-check-maven</artifactId>
-                        <version>5.1.0</version>
+                        <version>5.1.1</version>
                         <executions>
                             <execution>
                                 <goals>
