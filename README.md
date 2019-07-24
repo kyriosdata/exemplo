@@ -65,7 +65,7 @@ gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
   de chamadas são fornecidos na seção seguinte.
   
 ## Executando a aplicação e a RESTFul API
-- `mvn exec:java`<br>
+- `mvn exec:java -Dexec.mainClass="nome.completo.Classe" -Dexec.args="arg1 arg2"`<br>
 executa o método _main_ da classe indicada na configuração do _plugin_ pertinente
 no arquivo pom.xml. Depende de `mvn compile`.
 
