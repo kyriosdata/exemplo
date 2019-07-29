@@ -34,7 +34,8 @@ compila o projeto, deposita resultados no diretório _target_
 - `mvn test`<br>
 executa todos os testes do projeto. Para executar apenas parte dos testes, por exemplo,
 aqueles contidos em uma dada classe execute `mvn -Dtest=NomeDaClasseTest test`. Observe
-que o sufixo do nome da classe de teste é `Test` (padrão recomendado).
+que o sufixo do nome da classe de teste é `Test` (padrão recomendado). Para executar um
+único teste `mvn -Dtest=NomeDaClasseTest#nomeDoMetodo test`.
 
 - `mvn verify -P cobertura`<br>
 executa testes de unidade e produz relatório de
