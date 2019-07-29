@@ -58,12 +58,14 @@
         <url>https://github.com/kyriosdata/exemplo</url>
     </scm>
 
-    <parent>
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
+    <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.6.RELEASE</version>
+        <type>pom</type>
         <relativePath/>
-    </parent>
+    </dependency>
 
     <properties>
         <java.version>8</java.version>
