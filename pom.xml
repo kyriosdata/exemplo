@@ -671,7 +671,7 @@
                     <plugin>
                         <groupId>io.snyk</groupId>
                         <artifactId>snyk-maven-plugin</artifactId>
-                        <version>1.2.2</version>
+                        <version>1.2.3</version>
                         <executions>
                             <execution>
                                 <id>snyk-test</id>
