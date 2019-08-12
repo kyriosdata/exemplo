@@ -379,7 +379,7 @@
                     <dependency>
                         <groupId>org.pitest</groupId>
                         <artifactId>pitest-junit5-plugin</artifactId>
-                        <version>0.7</version>
+                        <version>0.9</version>
                     </dependency>
                 </dependencies>
                 <configuration>
