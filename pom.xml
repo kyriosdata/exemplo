@@ -661,7 +661,8 @@
                     <!-- mvn snyk:test -P security                      -->
                     <!-- mvn snyk:monitor -P security                   -->
                     <!-- A propriedade "snyk.token" deve estar definida -->
-                    <!-- em settings.xml                                -->
+                    <!-- em settings.xml. Veja detalhes em              -->
+                    <!-- https://maven.apache.org/examples/injecting-properties-via-settings.html                   -->
                     <plugin>
                         <groupId>io.snyk</groupId>
                         <artifactId>snyk-maven-plugin</artifactId>
