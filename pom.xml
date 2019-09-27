@@ -75,14 +75,16 @@
         </project.mainClass>
 
         <tools.dir>${project.basedir}/tools</tools.dir>
-        <pmd.plugin>3.12.0</pmd.plugin>
-        <pmd.version>6.17.0</pmd.version>
         <checkstyle.plugin>3.1.0</checkstyle.plugin>
         <checkstyle.version>8.23</checkstyle.version>
 
         <dependency.check.versao>5.2.2</dependency.check.versao>
         <junit.versao>5.5.2</junit.versao>
+        <maven.compiler.versao>3.8.1</maven.compiler.versao>
+        <pmd.plugin.versao>3.12.0</pmd.plugin.versao>
+        <pmd.versao>6.18.0</pmd.versao>
         <snyk.versao>1.2.4</snyk.versao>
+        <sonar.versao>3.6.1.1688</sonar.versao>
         <spring.boot.versao>2.1.8.RELEASE</spring.boot.versao>
         <surefire.versao>2.22.2</surefire.versao>
     </properties>
@@ -148,12 +150,12 @@
                         <dependency>
                             <groupId>net.sourceforge.pmd</groupId>
                             <artifactId>pmd-core</artifactId>
-                            <version>${pmd.version}</version>
+                            <version>${pmd.versao}</version>
                         </dependency>
                         <dependency>
                             <groupId>net.sourceforge.pmd</groupId>
                             <artifactId>pmd-java</artifactId>
-                            <version>${pmd.version}</version>
+                            <version>${pmd.versao}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -300,18 +302,20 @@
                 </configuration>
             </plugin>
 
-            <!-- sonar -->
+            <!-- sonarqube (detalhes em https://www.sonarqube.org/)      -->
+            <!-- SonarCloud é instância gratuita empregada pelo projeto  -->
+            <!-- https://sonarcloud.io/dashboard?id=com.github.kyriosdata%3Aexemplo -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.6.0.1398</version>
+                <version>${sonar.versao}</version>
             </plugin>
 
             <!-- maven-compiler-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>${maven.compiler.versao}</version>
             </plugin>
 
              <!-- PMD                  -->
@@ -321,7 +325,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>${pmd.plugin}</version>
+                <version>${pmd.plugin.versao}</version>
                 <configuration>
                     <linkXRef>true</linkXRef>
                     <sourceEncoding>utf-8</sourceEncoding>
@@ -451,7 +455,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>${pmd.plugin}</version>
+                <version>${pmd.plugin.versao}</version>
                 <configuration>
                     <linkXref>true</linkXref>
                     <sourceEncoding>utf-8</sourceEncoding>
