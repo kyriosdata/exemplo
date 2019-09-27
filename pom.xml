@@ -67,7 +67,6 @@
 
     <properties>
         <java.version>8</java.version>
-        <junit.version>5.5.1</junit.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -80,6 +79,7 @@
         <pmd.version>6.17.0</pmd.version>
         <checkstyle.plugin>3.1.0</checkstyle.plugin>
         <checkstyle.version>8.23</checkstyle.version>
+        <junit.versao>5.5.1</junit.versao>
     </properties>
 
     <dependencies>
@@ -95,7 +95,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>${junit.version}</version>
+            <version>${junit.versao}</version>
             <scope>test</scope>
         </dependency>
 
