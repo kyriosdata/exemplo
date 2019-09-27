@@ -10,7 +10,7 @@
         <version>2.1.8.RELEASE</version>
         <relativePath />
     </parent>
-    
+
     <groupId>com.github.kyriosdata</groupId>
     <artifactId>exemplo</artifactId>
     <packaging>jar</packaging>
@@ -82,6 +82,7 @@
 
         <dependency.check.versao>5.2.2</dependency.check.versao>
         <junit.versao>5.5.2</junit.versao>
+        <snyk.versao>1.2.4</snyk.versao>
         <spring.boot.versao>2.1.8.RELEASE</spring.boot.versao>
         <surefire.versao>2.22.2</surefire.versao>
     </properties>
@@ -662,7 +663,7 @@
                     <plugin>
                         <groupId>io.snyk</groupId>
                         <artifactId>snyk-maven-plugin</artifactId>
-                        <version>1.2.2</version>
+                        <version>${snyk.versao}</version>
                         <executions>
                             <execution>
                                 <id>snyk-test</id>
