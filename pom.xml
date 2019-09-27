@@ -75,9 +75,9 @@
         </project.mainClass>
 
         <tools.dir>${project.basedir}/tools</tools.dir>
-        <checkstyle.plugin>3.1.0</checkstyle.plugin>
-        <checkstyle.version>8.23</checkstyle.version>
 
+        <checkstyle.plugin.versao>3.1.0</checkstyle.plugin.versao>
+        <checkstyle.versao>8.24</checkstyle.versao>
         <dependency.check.versao>5.2.2</dependency.check.versao>
         <junit.versao>5.5.2</junit.versao>
         <maven.compiler.versao>3.8.1</maven.compiler.versao>
@@ -145,7 +145,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-pmd-plugin</artifactId>
-                    <version>3.12.0</version>
+                    <version>${pmd.plugin.versao}</version>
                     <dependencies>
                         <dependency>
                             <groupId>net.sourceforge.pmd</groupId>
@@ -169,7 +169,7 @@
                         <dependency>
                             <groupId>com.puppycrawl.tools</groupId>
                             <artifactId>checkstyle</artifactId>
-                            <version>${checkstyle.version}</version>
+                            <version>${checkstyle.versao}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -259,7 +259,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle.plugin}</version>
+                <version>${checkstyle.plugin.versao}</version>
                 <configuration>
                     <configLocation>${tools.dir}/checkstyle.xml</configLocation>
                     <suppressionsLocation>${tools.dir}/checkstyle-suppressions.xml</suppressionsLocation>
@@ -498,7 +498,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle.plugin}</version>
+                <version>${checkstyle.plugin.versao}</version>
                 <reportSets>
                     <reportSet>
                         <reports>

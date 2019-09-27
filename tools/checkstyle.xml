@@ -20,6 +20,11 @@
 -->
 
 <module name="Checker">
+
+    <module name="LineLength">
+        <property name="max" value="80"/>
+    </module>
+    
     <!--
         If you set the basedir property below, then all reported file
         names will be relative to the specified directory. See
@@ -97,9 +102,6 @@
 
         <!-- Checks for Size Violations.                    -->
         <!-- See http://checkstyle.sf.net/config_sizes.html -->
-        <module name="LineLength">
-            <property name="max" value="80"/>
-        </module>
         <module name="MethodLength"/>
         <module name="ParameterNumber"/>
 
