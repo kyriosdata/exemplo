@@ -79,7 +79,7 @@
         <pmd.version>6.17.0</pmd.version>
         <checkstyle.plugin>3.1.0</checkstyle.plugin>
         <checkstyle.version>8.23</checkstyle.version>
-        <junit.versao>5.5.1</junit.versao>
+        <junit.versao>5.5.2</junit.versao>
     </properties>
 
     <dependencies>
