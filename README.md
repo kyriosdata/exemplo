@@ -195,6 +195,9 @@ também depende de compilação prévia, ou seja, _mvn compile_
 Gera documentação do projeto, incluindo relatórios de análises estáticas em
 _target/site/index.html_.
 
+- `mvn site:run` executa serviço que disponibiliza em http://localhost:8080 a
+documentação gerada no passo anterior.
+
 ## Disponibilizando biblioteca no repositório Maven Central
 A boa notícia é que este _pom.xml_ está devidamente configurado para
 publicação no Maven Central, contudo, depende de outras ações e da
