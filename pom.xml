@@ -657,9 +657,11 @@
                         </configuration>
                     </plugin>
 
-                    <!-- snyk -->
-                    <!-- mvn snyk:test ou snyk:monitor -->
-                    <!-- snyk.token definito em settings.xml (Snyk API Token) -->
+                    <!-- snyk                                           -->
+                    <!-- mvn snyk:test -P security                      -->
+                    <!-- mvn snyk:monitor -P security                   -->
+                    <!-- A propriedade "snyk.token" deve estar definida -->
+                    <!-- em settings.xml                                -->
                     <plugin>
                         <groupId>io.snyk</groupId>
                         <artifactId>snyk-maven-plugin</artifactId>
