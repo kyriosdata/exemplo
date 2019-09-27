@@ -79,7 +79,10 @@
         <pmd.version>6.17.0</pmd.version>
         <checkstyle.plugin>3.1.0</checkstyle.plugin>
         <checkstyle.version>8.23</checkstyle.version>
+
+        <dependency.check.versao>5.2.0</dependency.check.versao>
         <junit.versao>5.5.2</junit.versao>
+        <surefire.versao>2.22.2</surefire.versao>
     </properties>
 
     <dependencies>
@@ -265,20 +268,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-                <!--<dependencies>-->
-                <!--<dependency>-->
-                <!--<groupId>org.junit.platform</groupId>-->
-                <!--<artifactId>junit-platform-surefire-provider-->
-                <!--</artifactId>-->
-                <!--<version>1.2.0</version>-->
-                <!--</dependency>-->
-                <!--<dependency>-->
-                <!--<groupId>com.tngtech.archunit</groupId>-->
-                <!--<artifactId>archunit-junit5-engine</artifactId>-->
-                <!--<version>0.9.1</version>-->
-                <!--</dependency>-->
-                <!--</dependencies>-->
+                <version>${surefire.versao}</version>
             </plugin>
 
             <!-- javadoc:javadoc -->
@@ -401,7 +391,7 @@
             <plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>5.2.0</version>
+                <version>${dependency.check.versao}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -627,7 +617,7 @@
                     <plugin>
                         <groupId>org.owasp</groupId>
                         <artifactId>dependency-check-maven</artifactId>
-                        <version>5.1.1</version>
+                        <version>${dependency.check.versao}</version>
                         <executions>
                             <execution>
                                 <goals>
