@@ -81,7 +81,7 @@ executa o aplicativo por meio do arquivo jar criado pelo comando `mvn package
  inclusive, a disponibilidade do Maven (o que pode ser útil em tempo de
  desenvolvimento).
 
-- `java -jar target/api.jar`<br>
+- `java -jar target/api.jar` ou ainda `mvn spring-boot:run`<br>
 coloca em execução a API gerada por `mvn package -P api` na porta padrão (8080). Para fazer uso de porta
 diferente use `java -jar -Dserver.port=9876 target/api.jar`, por exemplo. Requisições podem ser
 submetidas conforme abaixo:

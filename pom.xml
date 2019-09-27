@@ -82,16 +82,16 @@
 
         <dependency.check.versao>5.2.2</dependency.check.versao>
         <junit.versao>5.5.2</junit.versao>
+        <spring.boot.versao>2.1.8.RELEASE</spring.boot.versao>
         <surefire.versao>2.22.2</surefire.versao>
     </properties>
 
     <dependencies>
              
-    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
+        <version>${spring.boot.versao}</version>
         <type>pom</type>
     </dependency>             
 
