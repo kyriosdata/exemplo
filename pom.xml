@@ -80,7 +80,7 @@
         <checkstyle.plugin>3.1.0</checkstyle.plugin>
         <checkstyle.version>8.23</checkstyle.version>
 
-        <dependency.check.versao>5.2.0</dependency.check.versao>
+        <dependency.check.versao>5.2.2</dependency.check.versao>
         <junit.versao>5.5.2</junit.versao>
         <surefire.versao>2.22.2</surefire.versao>
     </properties>
