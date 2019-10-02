@@ -77,7 +77,7 @@
         <tools.dir>${project.basedir}/tools</tools.dir>
 
         <checkstyle.plugin.versao>3.1.0</checkstyle.plugin.versao>
-        <checkstyle.versao>8.24</checkstyle.versao>
+        <checkstyle.versao>8.25</checkstyle.versao>
         <dependency.check.versao>5.2.2</dependency.check.versao>
         <junit.versao>5.5.2</junit.versao>
         <maven.compiler.versao>3.8.1</maven.compiler.versao>
