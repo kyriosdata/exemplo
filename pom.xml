@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.8.RELEASE</version>
+        <version>2.1.9.RELEASE</version>
         <relativePath />
     </parent>
 
@@ -85,7 +85,7 @@
         <pmd.versao>6.18.0</pmd.versao>
         <snyk.versao>1.2.4</snyk.versao>
         <sonar.versao>3.6.1.1688</sonar.versao>
-        <spring.boot.versao>2.1.8.RELEASE</spring.boot.versao>
+        <spring.boot.versao>2.1.9.RELEASE</spring.boot.versao>
         <surefire.versao>2.22.2</surefire.versao>
     </properties>
 
