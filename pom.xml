@@ -616,8 +616,6 @@
                         </executions>
                         <configuration>
                             <mainClass>org.h2.tools.Shell</mainClass>
-                            <arguments>
-                            </arguments>
                         </configuration>
                     </plugin>
                 </plugins>
