@@ -233,14 +233,14 @@ limpa dependências do projeto em questão do repositório local e obtém depend
 Copia dependências do projeto para o diretório **target/dependency**.
 
 ## Banco de Dados (H2)
-O H2 (https://www.h2database.com) pela simplicidade será empregado. Primeiro você deve criar
-um banco para poder trabalhar o que pode ser feito com `mvn exec:java -P start-shell-h2` que
-inicia uma _shell_ (linha de comandos) por meio da qual um banco pode ser criado, assim como
-o usuário pode requisitar a execução se sentenças. Ao executar este comando, para criar o banco `x` no diretório em que o comando é executado forneça como URL `jdbc:h2:./x`.
+O H2 (https://www.h2database.com) é empregado pela simplicidade. Primeiro você deve criar
+um banco com o qual irá trabalhar, o que pode ser feito com `mvn exec:java -P start-shell-h2`.
+Ao executar este comando, para criar o banco `x` no diretório em que o comando é executado forneça como URL `jdbc:h2:./x` ou `jdbc:h2:<dir>/bancoNome` para criar `bancoNome` no diretório
+indicado.
 
-Após criado você pode disponibilizar este banco no computador local para outros processos, 
-sua aplicação e um cliente gráfico, o que pode ser feito com o comando 
-`mvn exec:java -P start-h2`.
+Após criado você pode interagir com ele pela própria _shell_ ou disponibilizá-lo no computador local para sua aplicação e um cliente gráfico, o que pode ser feito com o comando 
+`mvn exec:java -P start-h2`. Este comando cria o servidor na porta `9092` e um cliente gráfico
+acessível via _browser_ na porta `8082`. 
 
 ## Outros recursos
 - `mvn help:effective-pom`<br>
