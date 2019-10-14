@@ -79,6 +79,7 @@
         <checkstyle.plugin.versao>3.1.0</checkstyle.plugin.versao>
         <checkstyle.versao>8.25</checkstyle.versao>
         <dependency.check.versao>5.2.2</dependency.check.versao>
+        <h2.versao>1.4.200</h2.versao>
         <junit.versao>5.5.2</junit.versao>
         <maven.compiler.versao>3.8.1</maven.compiler.versao>
         <pmd.plugin.versao>3.12.0</pmd.plugin.versao>
@@ -534,6 +535,58 @@
     </reporting>
 
     <profiles>
+
+        <!-- mvn exec:java -P start-h2 -->
+        <!-- Inicia servidor na porta 9092 e cliente na porta 8082 -->
+        <!-- CLIENTE   : http://localhost:8082/              -->
+        <!-- SERVER    : http://localhost:9092               -->
+        <!-- DIRETORIO : target                              -->
+        <!-- JDBC URL  : jdbc:h2:tcp://localhost:9092/./banco -->
+        <!-- Cria 'banco.h2.db' no diretório target          -->
+       	<profile>
+		<id>start-h2</id>
+		<dependencies>
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>${h2.versao}</version>
+			</dependency>
+		</dependencies>
+		<build>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+            				<version>1.2.1</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>java</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<mainClass>org.h2.tools.Server</mainClass>
+						<arguments>
+							<!-- Start also UI -->
+							<argument>-web</argument>
+							<!-- db is available via tcp -->
+							<argument>-tcp</argument>
+							<!-- local file is present in project-->
+							<argument>-baseDir</argument>
+							<argument>target</argument>
+							<!-- Other computers can connect to this db -->
+							<!-- <argument>-webAllowOthers</argument> -->
+							<argument>-webPort</argument>
+							<argument>8082</argument>
+							<!-- uncomment if you want to open h2 UI automatically -->
+							<argument>-browser</argument>
+						</arguments>
+					</configuration>
+				</plugin>
+			</plugins>
+		</build>
+	</profile>
 
         <profile>
             <id>api</id>
