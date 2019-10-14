@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -91,13 +90,13 @@
     </properties>
 
     <dependencies>
-             
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>${spring.boot.versao}</version>
-        <type>pom</type>
-    </dependency>             
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-parent</artifactId>
+            <version>${spring.boot.versao}</version>
+            <type>pom</type>
+        </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -181,8 +180,8 @@
         <!-- Define o nome do arquivo a ser gerado (.jar é acrescentada) -->
         <finalName>exemplo</finalName>
 
-        <plugins>     
-                 
+        <plugins>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -254,7 +253,7 @@
             </plugin>
 
             <!-- FIM DE ATUALIZACAO DE PLUGINS -->
-                 
+
             <!-- mvn checkstyle:checkstyle -->
             <!-- mvn checkstyle:check      -->
             <plugin>
@@ -319,7 +318,7 @@
                 <version>${maven.compiler.versao}</version>
             </plugin>
 
-             <!-- PMD                  -->
+            <!-- PMD                  -->
             <!-- mvn pmd:pmd          -->
             <!-- mvn pmd:check        -->
             <!-- target/site/pmd.html -->
@@ -359,7 +358,7 @@
                         <goals>
                             <goal>java</goal>
                         </goals>
-                </execution>
+                    </execution>
                 </executions>
                 <configuration>
                     <mainClass>${project.mainClass}</mainClass>
@@ -543,56 +542,93 @@
         <!-- DIRETORIO : target                              -->
         <!-- JDBC URL  : jdbc:h2:tcp://localhost:9092/./banco -->
         <!-- Cria 'banco.h2.db' no diretório target          -->
-       	<profile>
-		<id>start-h2</id>
-		<dependencies>
-			<dependency>
-				<groupId>com.h2database</groupId>
-				<artifactId>h2</artifactId>
-				<version>${h2.versao}</version>
-			</dependency>
-		</dependencies>
-		<build>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>exec-maven-plugin</artifactId>
-            				<version>1.2.1</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>java</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<mainClass>org.h2.tools.Server</mainClass>
-						<arguments>
-							<!-- Start also UI -->
-							<argument>-web</argument>
-							<!-- db is available via tcp -->
-							<argument>-tcp</argument>
-							<!-- local file is present in project-->
-							<argument>-baseDir</argument>
-							<argument>target</argument>
-							<!-- Other computers can connect to this db -->
-							<!-- <argument>-webAllowOthers</argument> -->
-							<argument>-webPort</argument>
-							<argument>8082</argument>
-							<!-- uncomment if you want to open h2 UI automatically -->
-							<argument>-browser</argument>
-						</arguments>
-					</configuration>
-				</plugin>
-			</plugins>
-		</build>
-	</profile>
+        <profile>
+            <id>start-h2</id>
+            <dependencies>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                    <version>${h2.versao}</version>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>java</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <mainClass>org.h2.tools.Server</mainClass>
+                            <arguments>
+                                <!-- Start also UI -->
+                                <argument>-web</argument>
+                                <!-- db is available via tcp -->
+                                <argument>-tcp</argument>
+                                <!-- local file is present in project-->
+                                <argument>-baseDir</argument>
+                                <argument>target</argument>
+                                <!-- Other computers can connect to this db -->
+                                <!-- <argument>-webAllowOthers</argument> -->
+                                <argument>-webPort</argument>
+                                <argument>8082</argument>
+                                <!-- uncomment if you want to open h2 UI automatically -->
+                                <argument>-browser</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- mvn exec:java -P start-shell-h2 -->
+        <!-- Inicia shell do H2 (por exemplo, para criar um db -->
+        <!-- DIRETORIO QUE SERA USADO : target                 -->
+        <!-- JDBC URL  : jdbc:h2:tcp://localhost:9092/./banco -->
+        <!-- Cria 'banco.h2.db' no diretório target          -->
+        <profile>
+            <id>start-shell-h2</id>
+            <dependencies>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                    <version>${h2.versao}</version>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2.1</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>java</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <mainClass>org.h2.tools.Shell</mainClass>
+                            <arguments>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
         <profile>
             <id>api</id>
             <build>
                 <finalName>api</finalName>
-                <plugins>            
+                <plugins>
                     <plugin>
                         <groupId>org.springframework.boot</groupId>
                         <artifactId>spring-boot-maven-plugin</artifactId>
