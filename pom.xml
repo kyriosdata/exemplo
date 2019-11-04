@@ -82,7 +82,7 @@
         <junit.versao>5.5.2</junit.versao>
         <maven.compiler.versao>3.8.1</maven.compiler.versao>
         <pmd.plugin.versao>3.12.0</pmd.plugin.versao>
-        <pmd.versao>6.18.0</pmd.versao>
+        <pmd.versao>6.19.0</pmd.versao>
         <snyk.versao>1.2.4</snyk.versao>
         <sonar.versao>3.6.1.1688</sonar.versao>
         <spring.boot.versao>2.1.9.RELEASE</spring.boot.versao>
@@ -322,6 +322,10 @@
             <!-- mvn pmd:pmd          -->
             <!-- mvn pmd:check        -->
             <!-- target/site/pmd.html -->
+
+            <!-- Copy/Past Detector   -->
+            <!-- mvn pmd:cpd          -->
+            <!-- target/site/cpd.html -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
