@@ -141,11 +141,18 @@ também depende de compilação prévia, ou seja, _mvn compile_
   gera relatório de algumas métricas, inclusive presença de ciclos em _target/site/jdepend-report.html_
 
 - **PMD**
-  - `mvn pmd:pmd`<br>
-  gera relatório em _target/site/pmd.html_
+  - `mvn jxr:jxr pmd:pmd`<br>
+  gera relatório em _target/site/pmd.html_. Observe que o uso do plugin
+  **jxr** é necessário para geração de relatório do código fonte referenciável
+  pelo relatório perado pelo PMD. Contudo, o uso do **jxr** não é obrigatório.
 
   - `mvn pmd:check`<br>
   falha se pelo menos uma regra é violada
+  
+  - `mvn jxr:jxr pmd:cpd`<br>
+  gera relatório de duplicidades encontradas. Observe que o uso do plugin
+  **jxr** é necessário para geração de relatório do código fonte referenciável
+   pelo relatório gerado pelo PMD. Contudo, o uso do **jxr** não é obrigatório.
 
 - **Spotbugs**
   - `mvn spotbugs:spotbugs`<br>

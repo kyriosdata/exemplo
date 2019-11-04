@@ -325,6 +325,7 @@
 
             <!-- Copy/Past Detector   -->
             <!-- mvn pmd:cpd          -->
+            <!-- mvn pmd:cpd-check    -->
             <!-- target/site/cpd.html -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -333,7 +334,7 @@
                 <configuration>
                     <linkXRef>true</linkXRef>
                     <sourceEncoding>utf-8</sourceEncoding>
-                    <minimumTokens>10</minimumTokens>
+                    <minimumTokens>20</minimumTokens>
                     <targetJdk>1.8</targetJdk>
                     <excludes>
                         <exclude>**/*Bean.java</exclude>
@@ -461,7 +462,7 @@
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>${pmd.plugin.versao}</version>
                 <configuration>
-                    <linkXref>true</linkXref>
+                    <linkXRef>true</linkXRef>
                     <sourceEncoding>utf-8</sourceEncoding>
                     <minimumTokens>100</minimumTokens>
                     <excludes>
