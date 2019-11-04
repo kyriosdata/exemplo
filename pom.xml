@@ -79,6 +79,7 @@
         <checkstyle.versao>8.26</checkstyle.versao>
         <dependency.check.versao>5.2.2</dependency.check.versao>
         <h2.versao>1.4.200</h2.versao>
+        <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
         <junit.versao>5.5.2</junit.versao>
         <log4j2.version>2.12.1</log4j2.version>
         <maven.compiler.versao>3.8.1</maven.compiler.versao>
@@ -280,7 +281,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>${maven-javadoc-plugin.version}</version>
                 <configuration>
                     <show>public</show>
                     <additionalOptions>
