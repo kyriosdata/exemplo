@@ -80,6 +80,7 @@
         <dependency.check.versao>5.2.2</dependency.check.versao>
         <h2.versao>1.4.200</h2.versao>
         <junit.versao>5.5.2</junit.versao>
+        <log4j2.version>2.12.1</log4j2.version>
         <maven.compiler.versao>3.8.1</maven.compiler.versao>
         <pmd.plugin.versao>3.12.0</pmd.plugin.versao>
         <pmd.versao>6.19.0</pmd.versao>
@@ -108,7 +109,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.12.1</version>
+            <version>${log4j2.version}</version>
         </dependency>
 
         <dependency>
