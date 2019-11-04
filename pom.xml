@@ -76,7 +76,7 @@
         <tools.dir>${project.basedir}/tools</tools.dir>
 
         <checkstyle.plugin.versao>3.1.0</checkstyle.plugin.versao>
-        <checkstyle.versao>8.25</checkstyle.versao>
+        <checkstyle.versao>8.26</checkstyle.versao>
         <dependency.check.versao>5.2.2</dependency.check.versao>
         <h2.versao>1.4.200</h2.versao>
         <junit.versao>5.5.2</junit.versao>
@@ -165,7 +165,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>${checkstyle.plugin.versao}</version>
                     <dependencies>
                         <dependency>
                             <groupId>com.puppycrawl.tools</groupId>

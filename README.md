@@ -114,7 +114,11 @@ configuradas em conformidade com o contexto em questão.
 
 - **Checkstyle**
   - `mvn checkstyle:checkstyle`<br>
-  gera análise de estilo em _target/site/checkstyle.html_
+  gera análise de estilo em _target/site/checkstyle.html_. 
+  Observe que o uso do plugin
+  **jxr** é necessário para geração de relatório do código fonte referenciável
+  pelo relatório gerado pelo Checkstyle. Contudo, o uso do **jxr** não é 
+  obrigatório.
 
   - `mvn checkstyle:check`<br>
   faz com que o _build_ falhe se pelo menos
