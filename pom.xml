@@ -382,7 +382,7 @@
                     <dependency>
                         <groupId>org.pitest</groupId>
                         <artifactId>pitest-junit5-plugin</artifactId>
-                        <version>0.9</version>
+                        <version>0.12</version>
                     </dependency>
                 </dependencies>
                 <configuration>
@@ -652,7 +652,7 @@
                             <dependency>
                                 <groupId>org.pitest</groupId>
                                 <artifactId>pitest-junit5-plugin</artifactId>
-                                <version>0.9</version>
+                                <version>0.12</version>
                             </dependency>
                         </dependencies>
                         <configuration>
