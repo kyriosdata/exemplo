@@ -4,9 +4,11 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo)
 
 # Escopo e objetivo
-Projeto de referência para software em Java contendo uma biblioteca com um único
-método que identifica o dia da semana para uma data fornecida; uma aplicação
-e uma RESTFul API ambas para acesso à funcionalidade.
+_Projeto de referência para desenvolvimento de software em Java_. 
+
+O projeto inclui:
+(a) uma biblioteca formada por um único método que identifica o dia da semana para uma data fornecida; 
+(b) uma aplicação que oferece tal funcionalidade via linha de comandos e (c) uma RESTFul API ambas para acesso à funcionalidade da biblioteca.
 
 > _Objetivo: ilustrar uma organização de código em Java usando
 "boas práticas" para inspirar projetos reais_.
