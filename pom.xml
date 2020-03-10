@@ -78,6 +78,7 @@
         <checkstyle.plugin.versao>3.1.0</checkstyle.plugin.versao>
         <checkstyle.versao>8.26</checkstyle.versao>
         <dependency.check.versao>5.2.2</dependency.check.versao>
+        <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <h2.versao>1.4.200</h2.versao>
         <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
         <junit.versao>5.5.2</junit.versao>
@@ -89,6 +90,7 @@
         <sonar.versao>3.6.1.1688</sonar.versao>
         <spring.boot.versao>2.1.9.RELEASE</spring.boot.versao>
         <surefire.versao>2.22.2</surefire.versao>
+        <findsecbugs-plugin.version>1.10.1</findsecbugs-plugin.version>
     </properties>
 
     <dependencies>
@@ -678,7 +680,7 @@
                     <plugin>
                         <groupId>com.spotify</groupId>
                         <artifactId>dockerfile-maven-plugin</artifactId>
-                        <version>1.4.12</version>
+                        <version>${dockerfile-maven-plugin.version></version>
                         <executions>
                             <execution>
                                 <id>default</id>
@@ -745,7 +747,7 @@
                                 <plugin>
                                     <groupId>com.h3xstream.findsecbugs</groupId>
                                     <artifactId>findsecbugs-plugin</artifactId>
-                                    <version>1.9.0</version>
+                                    <version>${findsecbugs-plugin.version}</version>
                                 </plugin>
                             </plugins>
                         </configuration>
