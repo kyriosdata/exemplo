@@ -85,7 +85,7 @@
         <log4j2.version>2.12.1</log4j2.version>
         <maven.compiler.versao>3.8.1</maven.compiler.versao>
         <pmd.plugin.versao>3.12.0</pmd.plugin.versao>
-        <pmd.versao>6.19.0</pmd.versao>
+        <pmd.versao>6.21.0</pmd.versao>
         <snyk.versao>1.2.4</snyk.versao>
         <sonar.versao>3.7.0.1746</sonar.versao>
         <spring.boot.versao>2.2.5.RELEASE</spring.boot.versao>
