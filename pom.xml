@@ -76,7 +76,7 @@
         <tools.dir>${project.basedir}/tools</tools.dir>
 
         <checkstyle.plugin.versao>3.1.0</checkstyle.plugin.versao>
-        <checkstyle.versao>8.29</checkstyle.versao>
+        <checkstyle.versao>8.34</checkstyle.versao>
         <dependency.check.versao>5.2.2</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <h2.versao>1.4.200</h2.versao>
