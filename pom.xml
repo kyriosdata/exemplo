@@ -83,7 +83,7 @@
         <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
         <junit.versao>5.7.0</junit.versao>
         <log4j2.version>2.12.1</log4j2.version>
-        <maven.compiler.versao>3.8.1</maven.compiler.versao>
+        <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
         <pmd.plugin.versao>3.13.0</pmd.plugin.versao>
         <pmd.versao>6.28.0</pmd.versao>
         <snyk.versao>1.2.7</snyk.versao>
@@ -320,7 +320,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven.compiler.versao}</version>
+                <version>${maven.compiler.plugin}</version>
             </plugin>
 
             <!-- PMD                  -->
@@ -945,7 +945,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.8.1</version>
+                        <version>${maven.compiler.plugin}</version>
                         <configuration>
                             <source>1.8</source>
                             <target>1.8</target>
