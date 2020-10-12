@@ -179,11 +179,12 @@ também depende de compilação prévia, ou seja, _mvn compile_
 - **Snyk**
 
   - `mvn snyk:test -P security`<br>
-  análise de vulnerabilidade que depende do serviço [Snyk](https://snyk.io). Depende do valor da propriedade _snyk.token_.
-  Por conveniência, pode ser fornecido via linha de comandos,
-  **-Dsnyk.token=API-TOKEN**, ou definido no arquivo
-  _HOME/.m2/settings.xml_. Neste último caso, tal arquivo deve conter
-  algo similar ao conteúdo abaixo:
+  análise de vulnerabilidade oferecida pelo serviço [Snyk](https://snyk.io). 
+  A propriedade _snyk.token_ deve estar definida no arquivo
+  _$HOME/.m2/settings.xml_, conforme ilustrado abaixo. Alternativamente,
+  por conveniência, o valor pode ser fornecido via linha de comandos,
+  **-Dsnyk.token=API-TOKEN** (neste caso não é necessária a definição no
+  arquivo _settings.xml_.
   ```xml
   <settings>
   <profiles>
@@ -245,15 +246,27 @@ limpa dependências do projeto em questão do repositório local e obtém depend
 - `mvn dependency:copy-dependencies`<br>
 Copia dependências do projeto para o diretório **target/dependency**.
 
-## Banco de Dados (H2)
-O H2 (https://www.h2database.com) é empregado pela simplicidade. Primeiro você deve criar
-um banco com o qual irá trabalhar, o que pode ser feito com `mvn exec:java -P start-shell-h2`.
-Ao executar este comando, para criar o banco `x` no diretório em que o comando é executado forneça como URL `jdbc:h2:./x` ou `jdbc:h2:<dir>/bancoNome` para criar `bancoNome` no diretório
-indicado.
+## Banco de Dados H2 (bônus)
+Dado o cenário "comum" no qual aplicações em Java fazem uso de um banco
+relacional, aqui são oferecidos recursos para desenvolvimento usando o
+H2 (https://www.h2database.com). 
 
-Após criado você pode interagir com ele pela própria _shell_ ou disponibilizá-lo no computador local para sua aplicação e um cliente gráfico, o que pode ser feito com o comando 
-`mvn exec:java -P start-h2`. Este comando cria o servidor na porta `9092` e um cliente gráfico
-acessível via _browser_ na porta `8082`. 
+- `mvn exec:java -P start-shell-h2`<br>
+   Abre/cria banco para uso via linha de comandos. 
+   Para criar o banco de nome `bancoNome` no diretório `dir` forneça 
+   `jdbc:h2:<dir>/bancoNome`. Se existir, apenas será aberto. 
+   Adicionalmente, forneça como _driver_ a classe `org.h2.Driver`. 
+   Você pode fazer uso do diretório de sua 
+   preferência, contudo, a sugestão é criar o banco no diretório `target` 
+   (usado pelo comando seguinte).
+
+- `mvn exec:java -P start-h2`<br> 
+   Este comando abre uma interface gráfica, via _browser_, no endereço
+   http://localhost:8082. Observe que o comando anterior permite interagir 
+   com o banco via linha de comandos. Este comando, ao contrário do 
+   anterior, assume que o banco a ser aberto está no diretório `target`.
+   Quando fornecer a URL, use `.` para representar tal diretório. 
+    
 
 ## Outros recursos
 - `mvn help:effective-pom`<br>
