@@ -80,7 +80,7 @@
         <dependency.check.versao>6.0.2</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <h2.versao>1.4.200</h2.versao>
-        <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
         <junit.versao>5.7.0</junit.versao>
         <log4j2.version>2.12.1</log4j2.version>
         <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
@@ -425,7 +425,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.2.0</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -975,7 +975,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>3.2.0</version>
                         <executions>
                             <execution>
                                 <id>package-javadoc</id>
@@ -1003,7 +1003,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>3.2.0</version>
                         <configuration>
                             <show>public</show>
                             <additionalOptions>
