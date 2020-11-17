@@ -86,7 +86,7 @@
         <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
         <pmd.plugin.versao>3.13.0</pmd.plugin.versao>
         <pmd.versao>6.28.0</pmd.versao>
-        <snyk.versao>1.2.7</snyk.versao>
+        <snyk.versao>1.2.9</snyk.versao>
         <sonar.versao>3.7.0.1746</sonar.versao>
         <spotbugs-maven-plugin>4.1.3</spotbugs-maven-plugin>
         <spring.boot.versao>2.3.4.RELEASE</spring.boot.versao>
