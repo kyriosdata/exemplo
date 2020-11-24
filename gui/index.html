@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dia da Semana</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/index.js" type="text/javascript"></script>
+</head>
+<body onload="dataCorrente()">
+    <h1>Dia da semana</h1>
+    <label for="data">Mês / Dia / Ano</label><br>
+    <input type="date" id="data" onchange="atualizaDiaDaSemana()">
+    <button onclick="atualizaDiaDaSemana();">Obtenha dia da semana</button><br>
+    <span style="color: blue; font-size: 20pt;" id="resultado"></span>
+</body>
+</html>
