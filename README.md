@@ -290,6 +290,7 @@ merecidos agradecimentos a:
 - https://travis-ci.com
 - https://sonarcloud.io
 - https://snyk.io
+- https://subversion.apache.org/
 
 A lista acima não tem a pretensão de ser exclusiva. Abaixo seguem outros serviços:
 - https://www.codacy.com/
