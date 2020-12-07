@@ -58,6 +58,7 @@ class NumeroUtilsTest {
         assertEquals("duzentos", NumeroUtils.porExtenso(200));
         assertEquals("duzentos e um", NumeroUtils.porExtenso(201));
         assertEquals("trezentos e três", NumeroUtils.porExtenso(303));
+        assertEquals("quinhentos e cinquenta e oito", NumeroUtils.porExtenso(558));
         assertEquals("novecentos e nove", NumeroUtils.porExtenso(909));
     }
 
@@ -80,6 +81,7 @@ class NumeroUtilsTest {
     @Test
     void variosBlocos() {
         assertEquals("mil e um", NumeroUtils.porExtenso(1001));
+        assertEquals("mil e cem", NumeroUtils.porExtenso(1100));
     }
 
     @Test
@@ -101,6 +103,7 @@ class NumeroUtilsTest {
         assertEquals(2, NumeroUtils.totalDeDigitos(11));
         assertEquals(3, NumeroUtils.totalDeDigitos(999));
         assertEquals(4, NumeroUtils.totalDeDigitos(1999));
+        assertEquals(5, NumeroUtils.totalDeDigitos(55555));
     }
 
     @Test
