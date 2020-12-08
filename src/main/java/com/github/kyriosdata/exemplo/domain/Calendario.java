@@ -59,7 +59,7 @@ public final class Calendario {
      * seguido de terça-feira (índice 1) e assim sucessivamente, até
      * "domingo" (índice 6).
      */
-    protected static final String[] semana = {
+    public static final String[] semana = {
             "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira",
             "sexta-feira", "sábado", "domingo"
     };

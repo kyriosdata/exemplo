@@ -7,14 +7,13 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.4.RELEASE</version>
-        <relativePath />
+        <relativePath/>
     </parent>
 
     <groupId>com.github.kyriosdata</groupId>
     <artifactId>exemplo</artifactId>
     <packaging>jar</packaging>
     <version>1.0.2</version>
-
     <name>${project.groupId}:${project.artifactId}</name>
 
     <description>
@@ -99,34 +98,50 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-parent</artifactId>
-            <version>${spring.boot.versao}</version>
+            <version>2.3.4.RELEASE</version>
             <type>pom</type>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>${junit.versao}</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>${log4j2.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <type>pom</type>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <type>pom</type>
         </dependency>
-
+        <dependency>
+            <groupId>ai.djl.spring</groupId>
+            <artifactId>djl-spring-boot-starter-parent</artifactId>
+            <version>0.7</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>cc.cc4414</groupId>
+            <artifactId>cc-spring-web</artifactId>
+            <version>0.7.0</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>cn.org.faster</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>1.3.8.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.xphsc.boot</groupId>
+            <artifactId>easyjdbc-spring-boot-starter-test</artifactId>
+            <version>2.0.0</version>
+            <type>pom</type>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
@@ -362,7 +377,6 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -554,7 +568,6 @@
                 <dependency>
                     <groupId>com.h2database</groupId>
                     <artifactId>h2</artifactId>
-                    <version>${h2.versao}</version>
                 </dependency>
             </dependencies>
             <build>
@@ -562,7 +575,6 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.2.1</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -604,7 +616,6 @@
                 <dependency>
                     <groupId>com.h2database</groupId>
                     <artifactId>h2</artifactId>
-                    <version>${h2.versao}</version>
                 </dependency>
             </dependencies>
             <build>
@@ -612,7 +623,6 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.2.1</version>
                         <executions>
                             <execution>
                                 <goals>
