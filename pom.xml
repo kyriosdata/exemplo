@@ -84,6 +84,7 @@
         <junit.versao>5.7.0</junit.versao>
         <log4j2.version>2.12.1</log4j2.version>
         <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
+        <pitest.version>1.6.1</pitest.version>
         <pmd.plugin.versao>3.13.0</pmd.plugin.versao>
         <pmd.versao>6.28.0</pmd.versao>
         <snyk.versao>1.2.7</snyk.versao>
@@ -380,7 +381,7 @@
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
-                <version>1.5.0</version>
+                <version>${pitest.version}</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.pitest</groupId>

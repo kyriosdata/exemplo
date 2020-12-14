@@ -59,6 +59,7 @@ public final class Calendario {
      * seguido de terça-feira (índice 1) e assim sucessivamente, até
      * "domingo" (índice 6).
      */
+     // TODO substituir por enum
     public static String[] semana = {
             "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira",
             "sexta-feira", "sábado", "domingo"
