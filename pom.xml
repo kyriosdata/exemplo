@@ -75,18 +75,24 @@
 
         <tools.dir>${project.basedir}/tools</tools.dir>
 
+        <antrun.version>3.0.0</antrun.version>
         <checkstyle.plugin.versao>3.1.1</checkstyle.plugin.versao>
         <checkstyle.versao>8.36.2</checkstyle.versao>
-        <dependency.check.versao>6.0.2</dependency.check.versao>
+        <dependency.check.versao>6.0.3</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <h2.versao>1.4.200</h2.versao>
-        <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
+        <jacoco.version>0.8.6</jacoco.version>
         <junit.versao>5.7.0</junit.versao>
         <log4j2.version>2.14.0</log4j2.version>
         <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
+        <maven.dependency.plugin>3.1.1</maven.dependency.plugin>
+        <maven.exec.plugin>3.0.0</maven.exec.plugin>
+        <maven.javadoc.plugin>3.2.0</maven.javadoc.plugin>
+        <maven.resources.plugin>3.2.0</maven.resources.plugin>        
         <pitest.version>1.6.1</pitest.version>
         <pmd.plugin.versao>3.13.0</pmd.plugin.versao>
         <pmd.versao>6.28.0</pmd.versao>
+        <project.info.reports.version>3.1.1</project.info.reports.version>
         <snyk.versao>1.2.9</snyk.versao>
         <sonar.versao>3.7.0.1746</sonar.versao>
         <spotbugs-maven-plugin>4.1.3</spotbugs-maven-plugin>
@@ -207,7 +213,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>${maven.dependency.plugin}</version>
             </plugin>
 
             <plugin>
@@ -243,13 +249,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>${maven.resources.plugin}</version>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.8</version>
+                <version>${antrun.version}</version>
             </plugin>
 
             <plugin>
@@ -285,7 +291,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${maven-javadoc-plugin.version}</version>
+                <version>${maven.javadoc.plugin}</version>
                 <configuration>
                     <show>public</show>
                     <additionalOptions>
@@ -363,7 +369,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
+                <version>${maven.exec.plugin}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -420,7 +426,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>${project.info.reports.version}</version>
             </plugin>
 
             <plugin>
@@ -526,7 +532,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.5</version>
+                <version>${jacoco.version}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -896,7 +902,7 @@
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
-                        <version>0.8.5</version>
+                        <version>${jacoco.version}</version>
                         <executions>
                             <execution>
                                 <id>default-prepare-agent</id>
