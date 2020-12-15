@@ -77,7 +77,7 @@
 
         <antrun.version>3.0.0</antrun.version>
         <checkstyle.plugin.versao>3.1.1</checkstyle.plugin.versao>
-        <checkstyle.versao>8.36.2</checkstyle.versao>
+        <checkstyle.versao>8.38</checkstyle.versao>
         <dependency.check.versao>6.0.3</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <h2.versao>1.4.200</h2.versao>
