@@ -6,6 +6,9 @@
 # Escopo e objetivo
 _Organizaço de código de referência para desenvolvimento de software em Java_. 
 
+Esta organização inclui um conjunto "completo" de ferramentas, já configuradas, para o desenvolvimento
+empregando Java.
+
 O projeto inclui:
 (a) uma biblioteca formada por um único método que identifica o dia da semana para uma data fornecida; 
 (b) uma aplicação que oferece tal funcionalidade via linha de comandos e (c) uma RESTFul API ambas para acesso à funcionalidade da biblioteca.
