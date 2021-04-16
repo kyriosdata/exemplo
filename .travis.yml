@@ -4,7 +4,7 @@ script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.organization="kyriosdata-github" -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
 cache:
   directories:
-  - "$HOME/.m2/repository"
-  - "$HOME/.sonar/cache"
+    - "$HOME/.m2/repository"
+    - "$HOME/.sonar/cache"
 jdk:
-  - openjdk10
+  - openjdk11

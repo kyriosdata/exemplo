@@ -15,8 +15,8 @@
 
         <antrun.version>3.0.0</antrun.version>
         <checkstyle.plugin.versao>3.1.1</checkstyle.plugin.versao>
-        <checkstyle.versao>8.36.2</checkstyle.versao>
-        <dependency.check.versao>6.0.3</dependency.check.versao>
+        <checkstyle.versao>8.41.1</checkstyle.versao>
+        <dependency.check.versao>6.1.5</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <h2.versao>1.4.200</h2.versao>
         <jacoco.version>0.8.6</jacoco.version>
@@ -27,13 +27,13 @@
         <maven.exec.plugin>3.0.0</maven.exec.plugin>
         <maven.javadoc.plugin>3.2.0</maven.javadoc.plugin>
         <maven.resources.plugin>3.2.0</maven.resources.plugin>
-        <pitest.version>1.6.1</pitest.version>
+        <pitest.version>1.6.4</pitest.version>
         <pmd.plugin.versao>3.13.0</pmd.plugin.versao>
         <pmd.versao>6.33.0</pmd.versao>
         <project.info.reports.version>3.1.1</project.info.reports.version>
         <snyk.versao>1.2.9</snyk.versao>
         <sonar.versao>3.7.0.1746</sonar.versao>
-        <spotbugs-maven-plugin>4.1.3</spotbugs-maven-plugin>
+        <spotbugs-maven-plugin>4.2.2</spotbugs-maven-plugin>
         <spring.boot.versao>2.4.5</spring.boot.versao>
         <surefire.versao>2.22.2</surefire.versao>
         <findsecbugs-plugin.version>1.10.1</findsecbugs-plugin.version>
