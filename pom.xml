@@ -32,7 +32,7 @@
         <pmd.versao>6.33.0</pmd.versao>
         <project.info.reports.version>3.1.1</project.info.reports.version>
         <snyk.versao>1.2.9</snyk.versao>
-        <sonar.versao>3.7.0.1746</sonar.versao>
+        <sonar.versao>3.8.0.2131</sonar.versao>
         <spotbugs-maven-plugin>4.2.2</spotbugs-maven-plugin>
         <spring.boot.versao>2.4.5</spring.boot.versao>
         <surefire.versao>2.22.2</surefire.versao>
