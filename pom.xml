@@ -14,7 +14,7 @@
         <tools.dir>${project.basedir}/tools</tools.dir>
 
         <antrun.version>3.0.0</antrun.version>
-        <checkstyle.plugin.versao>3.1.1</checkstyle.plugin.versao>
+        <checkstyle.plugin.versao>3.1.2</checkstyle.plugin.versao>
         <checkstyle.versao>8.41.1</checkstyle.versao>
         <dependency.check.versao>6.1.5</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
