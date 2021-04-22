@@ -656,7 +656,7 @@
                     <plugin>
                         <groupId>org.pitest</groupId>
                         <artifactId>pitest</artifactId>
-                        <version>1.5.0</version>
+                        <version>1.6.5</version>
                         <dependencies>
                             <dependency>
                                 <groupId>org.pitest</groupId>
