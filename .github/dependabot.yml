@@ -1,0 +1,60 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "08:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: org.apache.maven.plugins:maven-pmd-plugin
+    versions:
+    - 3.14.0
+  - dependency-name: com.github.spotbugs:spotbugs-maven-plugin
+    versions:
+    - 4.2.0
+    - 4.2.2
+  - dependency-name: org.owasp:dependency-check-maven
+    versions:
+    - 6.1.0
+    - 6.1.1
+    - 6.1.2
+    - 6.1.3
+    - 6.1.4
+    - 6.1.5
+  - dependency-name: net.sourceforge.pmd:pmd-java
+    versions:
+    - 6.30.0
+    - 6.33.0
+  - dependency-name: net.sourceforge.pmd:pmd-core
+    versions:
+    - 6.30.0
+    - 6.33.0
+  - dependency-name: com.puppycrawl.tools:checkstyle
+    versions:
+    - "8.39"
+    - "8.40"
+    - "8.41"
+    - 8.41.1
+  - dependency-name: org.pitest:pitest-maven
+    versions:
+    - 1.6.2
+    - 1.6.3
+    - 1.6.4
+  - dependency-name: com.h3xstream.findsecbugs:findsecbugs-plugin
+    versions:
+    - 1.11.0
+  - dependency-name: org.springframework.boot:spring-boot-starter-parent
+    versions:
+    - 2.4.2
+    - 2.4.3
+    - 2.4.4
+    - 2.4.5
+  - dependency-name: org.pitest:pitest
+    versions:
+    - 1.6.2
+    - 1.6.3
+    - 1.6.4
+  - dependency-name: org.codehaus.mojo:versions-maven-plugin
+    versions:
+    - 2.8.1
