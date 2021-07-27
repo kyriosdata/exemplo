@@ -27,7 +27,7 @@
         <maven.exec.plugin>3.0.0</maven.exec.plugin>
         <maven.javadoc.plugin>3.2.0</maven.javadoc.plugin>
         <maven.resources.plugin>3.2.0</maven.resources.plugin>
-        <pitest.version>1.6.4</pitest.version>
+        <pitest.version>1.6.8</pitest.version>
         <pmd.plugin.versao>3.13.0</pmd.plugin.versao>
         <pmd.versao>6.33.0</pmd.versao>
         <project.info.reports.version>3.1.1</project.info.reports.version>
