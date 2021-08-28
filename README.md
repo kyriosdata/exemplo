@@ -195,27 +195,9 @@ configuradas em conformidade com o contexto em questão.
 - **Snyk**
 
   - `mvn snyk:test -P security`<br>
-    análise de vulnerabilidade oferecida pelo serviço [Snyk](https://snyk.io).
-    A propriedade _snyk.token_ deve estar definida no arquivo
-    _$HOME/.m2/settings.xml_, conforme ilustrado abaixo. Alternativamente,
-    por conveniência, o valor pode ser fornecido via linha de comandos,
-    **-Dsnyk.token=API-TOKEN** (neste caso não é necessária a definição no
-    arquivo _settings.xml_.
-
-  ```xml
-  <settings>
-  <profiles>
-    <profile>
-        <activation>
-            <activeByDefault>true</activeByDefault>
-        </activation>
-        <properties>
-            <snyk.token>API-TOKEN AQUI</snyk.token>
-        </properties>
-    </profile>
-  </profiles>
-  </settings>
-  ```
+    Realiza a análise de vulnerabilidade oferecida pelo serviço [Snyk](https://snyk.io).
+    Defina a variável de ambiente **SNYK_TOKEN** com o valor do _token_
+  de acesso ao serviço. 
 
   - `mvn snyk:monitor -P security`<br>
     Disponibiliza relatório em snyk.io (atualiza _badge_)
