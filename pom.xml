@@ -53,13 +53,6 @@
 
     <name>${project.groupId}:${project.artifactId}</name>
 
-    <description>
-        Projeto de referência para desenvolvimento em Java.
-        A expectativa é que o presente projeto possa ser empregado como ponto
-        de partida e, a partir dele, ajustes realizados para se adequar às
-        necessidades específicas do projeto em questão.
-    </description>
-
     <url>https://github.com/kyriosdata/exemplo</url>
 
     <organization>
