@@ -7,11 +7,11 @@
 
 _Projeto que serve de referência para o desenvolvimento de software em Java_.
 
-Ou seja, é um projeto proposto para ser clonado
-e reutilizado no desenvolvimento dos seus projetos.
+É um projeto proposto para ser clonado e reutilizado.
 
-Este projeto inclui um conjunto "completo" de ferramentas, já configuradas, para o desenvolvimento
-de software em Java.
+Há um conjunto relativamente extenso de ferramentas como Spring Boot 3 e 
+muitas outras, principalmente para avaliação do código do projeto, o que é
+um bom ponto de partida para implementação de DevOps.
 
 Para ilustrar o projeto inclui:
 (a) uma biblioteca formada por um único método que identifica o dia da semana para uma data fornecida;
@@ -60,7 +60,7 @@ Agora você poderá executar os vários comandos abaixo.
   o arquivo gerado não é executável. Um arquivo jar é um arquivo no formato
   zip. Você pode verificar o conteúde deste arquivo ao executar o comando `jar vft exemplo.jar`.
 
-- `mvn package -P executavel-dir`<br>
+- **NOT WORKING** `mvn package -P executavel-dir`<br>
   gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
   também criado no diretório _target_. Para executar basta o comando
   `java -jar target/exemplo-dir.jar`. Observe que se o diretório _jars_ for
