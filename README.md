@@ -60,7 +60,7 @@ Agora você poderá executar os vários comandos abaixo.
   o arquivo gerado não é executável. Um arquivo jar é um arquivo no formato
   zip. Você pode verificar o conteúde deste arquivo ao executar o comando `jar vft exemplo.jar`.
 
-- **NOT WORKING** `mvn package -P executavel-dir`<br>
+- `mvn package -P executavel-dir`<br>
   gera _exemplo-dir.jar_, executável, mas dependente do diretório _jars_,
   também criado no diretório _target_. Para executar basta o comando
   `java -jar target/exemplo-dir.jar`. Observe que se o diretório _jars_ for
@@ -68,7 +68,7 @@ Agora você poderá executar os vários comandos abaixo.
   ser depositado no mesmo diretório do arquivo _exemplo.jar_. A execução deste
   arquivo refere-se à aplicação via linha de comandos.
 
-- `mvn package -P executavel-unico`<br>
+- **NOT WORKING** `mvn package -P executavel-unico`<br>
   gera jar executável correspondente ao aplicativo a ser executado via linha de comandos,
   em um único arquivo, _target/exemplo-unico.jar_,
   suficiente para ser transferido e executado. Para executá-lo basta o
