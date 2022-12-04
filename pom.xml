@@ -7,9 +7,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.mainClass>
-            com.github.kyriosdata.exemplo.application.console.ProgramaCalendario
-        </project.mainClass>
+        <project.mainClass>com.github.kyriosdata.exemplo.application.console.ProgramaCalendario</project.mainClass>
 
         <tools.dir>${project.basedir}/tools</tools.dir>
 
@@ -21,11 +19,11 @@
         <h2.versao>2.1.210</h2.versao>
         <jacoco.version>0.8.6</jacoco.version>
         <junit.versao>5.9.1</junit.versao>
-        <log4j2.version>2.14.1</log4j2.version>
-        <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
+        <log4j2.version>2.19.0</log4j2.version>
+        <maven.compiler.plugin>3.10.1</maven.compiler.plugin>
         <maven.dependency.plugin>3.1.1</maven.dependency.plugin>
         <maven.exec.plugin>3.0.0</maven.exec.plugin>
-        <maven.javadoc.plugin>3.2.0</maven.javadoc.plugin>
+        <maven.javadoc.plugin>3.4.1</maven.javadoc.plugin>
         <maven.resources.plugin>3.2.0</maven.resources.plugin>
         <pitest.version>1.6.4</pitest.version>
         <pmd.plugin.versao>3.19.0</pmd.plugin.versao>
@@ -259,7 +257,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.4.2</version>
             </plugin>
 
             <!-- FIM DE ATUALIZACAO DE PLUGINS -->
@@ -430,7 +428,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>${maven.javadoc.plugin}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -861,7 +859,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>3.4.2</version>
                         <executions>
                             <execution>
                                 <phase>package</phase>
@@ -872,15 +870,14 @@
                                     <finalName>exemplo-unico</finalName>
                                     <archive>
                                         <manifest>
-                                            <mainClass>${project.mainClass}
-                                            </mainClass>
+                                            <addClasspath>true</addClasspath>
+                                            <mainClass>${project.mainClass}</mainClass>
                                         </manifest>
                                     </archive>
                                     <descriptorRefs>
-                                        <descriptorRef>jar-with-dependencies
-                                        </descriptorRef>
+                                        <descriptorRef>jar-with-dependencies</descriptorRef>
                                     </descriptorRefs>
-                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <appendAssemblyId>true</appendAssemblyId>
                                 </configuration>
                             </execution>
                         </executions>
@@ -980,7 +977,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>${maven.javadoc.plugin}</version>
                         <executions>
                             <execution>
                                 <id>package-javadoc</id>
@@ -1008,7 +1005,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>${maven.javadoc.plugin}</version>
                         <configuration>
                             <show>public</show>
                             <additionalOptions>

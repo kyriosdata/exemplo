@@ -65,7 +65,8 @@ Agora você poderá executar os vários comandos abaixo.
   também criado no diretório _target_. Para executar basta o comando
   `java -jar target/exemplo-dir.jar`. Observe que se o diretório _jars_ for
   removido, então este comando falha. Por último, o diretório _jars_ deve
-  ser depositado no mesmo diretório do arquivo _exemplo.jar_.
+  ser depositado no mesmo diretório do arquivo _exemplo.jar_. A execução deste
+  arquivo refere-se à aplicação via linha de comandos.
 
 - `mvn package -P executavel-unico`<br>
   gera jar executável correspondente ao aplicativo a ser executado via linha de comandos,
@@ -85,7 +86,7 @@ Agora você poderá executar os vários comandos abaixo.
   executa o método _main_ da classe indicada na configuração do _plugin_ pertinente
   no arquivo pom.xml. Depende de `mvn compile`.
 
-- `java -jar target/exemplo-unico.jar`<br>
+- **NOT WORKING** `java -jar target/exemplo-unico.jar`<br>
   executa o aplicativo por meio do arquivo jar criado pelo comando `mvn package -P executavel-unico`, conforme comentado anteriormente. Observe que o comando
   anterior e o corrente produzem o mesmo efeito, contudo, o arquivo jar
   permite que seja enviado para um outro diretório ou outro computador,
