@@ -20,7 +20,7 @@
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <h2.versao>2.1.210</h2.versao>
         <jacoco.version>0.8.6</jacoco.version>
-        <junit.versao>5.7.2</junit.versao>
+        <junit.versao>5.9.1</junit.versao>
         <log4j2.version>2.14.1</log4j2.version>
         <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
         <maven.dependency.plugin>3.1.1</maven.dependency.plugin>
