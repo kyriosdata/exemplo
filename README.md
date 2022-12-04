@@ -7,10 +7,11 @@
 
 _Projeto que serve de referência para o desenvolvimento de software em Java_.
 
-É um projeto proposto para ser clonado e reutilizado.
+É um projeto proposto para ser clonado e reutilizado, faz uso de 
+Spring Boot 3 e JDK 17.
 
-Há um conjunto relativamente extenso de ferramentas como Spring Boot 3 e 
-muitas outras, principalmente para avaliação do código do projeto, o que é
+Há um conjunto relativamente extenso de ferramentas para avaliação 
+do código do projeto, o que é
 um bom ponto de partida para implementação de DevOps.
 
 Para ilustrar o projeto inclui:
