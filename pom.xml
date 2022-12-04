@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <java.version>8</java.version>
+        <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,7 +34,7 @@
         <snyk.versao>2.0.0</snyk.versao>
         <sonar.versao>3.7.0.1746</sonar.versao>
         <spotbugs-maven-plugin>4.2.2</spotbugs-maven-plugin>
-        <spring.boot.versao>2.5.4</spring.boot.versao>
+        <spring.boot.versao>3.0.0</spring.boot.versao>
         <surefire.versao>2.22.2</surefire.versao>
         <findsecbugs-plugin.version>1.11.0</findsecbugs-plugin.version>
     </properties>
@@ -42,8 +42,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.4</version>
-        <relativePath />
+        <version>3.0.0</version>
     </parent>
 
     <groupId>com.github.kyriosdata</groupId>
