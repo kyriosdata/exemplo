@@ -68,7 +68,7 @@ Agora você poderá executar os vários comandos abaixo.
   ser depositado no mesmo diretório do arquivo _exemplo.jar_. A execução deste
   arquivo refere-se à aplicação via linha de comandos.
 
-- **NOT WORKING** `mvn package -P executavel-unico`<br>
+- `mvn package -P executavel-unico`<br>
   gera jar executável correspondente ao aplicativo a ser executado via linha de comandos,
   em um único arquivo, _target/exemplo-unico.jar_,
   suficiente para ser transferido e executado. Para executá-lo basta o
@@ -86,7 +86,7 @@ Agora você poderá executar os vários comandos abaixo.
   executa o método _main_ da classe indicada na configuração do _plugin_ pertinente
   no arquivo pom.xml. Depende de `mvn compile`.
 
-- **NOT WORKING** `java -jar target/exemplo-unico.jar`<br>
+- `java -jar target/exemplo-unico.jar`<br>
   executa o aplicativo por meio do arquivo jar criado pelo comando `mvn package -P executavel-unico`, conforme comentado anteriormente. Observe que o comando
   anterior e o corrente produzem o mesmo efeito, contudo, o arquivo jar
   permite que seja enviado para um outro diretório ou outro computador,

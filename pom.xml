@@ -190,11 +190,6 @@
 
         <plugins>
 
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-
             <!-- spotbugs -->
             <!-- mvn compile           -->
             <!-- mvn spotbugs:spotbugs -->
