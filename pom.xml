@@ -18,13 +18,13 @@
         <checkstyle.versao>8.45.1</checkstyle.versao>
         <dependency.check.versao>6.1.5</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
+        <exec.maven.plugin>3.1.0</exec.maven.plugin>
         <h2.versao>2.1.210</h2.versao>
         <jacoco.version>0.8.6</jacoco.version>
         <junit.versao>5.7.2</junit.versao>
         <log4j2.version>2.14.1</log4j2.version>
         <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
         <maven.dependency.plugin>3.1.1</maven.dependency.plugin>
-        <maven.exec.plugin>3.0.0</maven.exec.plugin>
         <maven.javadoc.plugin>3.2.0</maven.javadoc.plugin>
         <maven.resources.plugin>3.2.0</maven.resources.plugin>
         <pitest.version>1.6.4</pitest.version>
@@ -183,6 +183,12 @@
                             <version>${checkstyle.versao}</version>
                         </dependency>
                     </dependencies>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.cyclonedx</groupId>
+                    <artifactId>cyclonedx-maven-plugin</artifactId>
+                    <version>2.7.1</version>
                 </plugin>
 
             </plugins>
@@ -368,7 +374,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>${maven.exec.plugin}</version>
+                <version>${exec.maven.plugin}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -376,9 +382,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <mainClass>${project.mainClass}</mainClass>
-                </configuration>
             </plugin>
 
             <!-- mvn org.pitest:pitest-maven:mutationCoverage -->
