@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -116,6 +116,12 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
             <version>${log4j2.version}</version>
         </dependency>
 
