@@ -3,38 +3,36 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <java.version>8</java.version>
+        <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.mainClass>
-            com.github.kyriosdata.exemplo.application.console.ProgramaCalendario
-        </project.mainClass>
+        <project.mainClass>com.github.kyriosdata.exemplo.application.console.ProgramaCalendario</project.mainClass>
 
         <tools.dir>${project.basedir}/tools</tools.dir>
 
         <antrun.version>3.0.0</antrun.version>
         <checkstyle.plugin.versao>3.1.2</checkstyle.plugin.versao>
-        <checkstyle.versao>8.45.1</checkstyle.versao>
+        <checkstyle.versao>10.5.0</checkstyle.versao>
         <dependency.check.versao>6.1.5</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <exec.maven.plugin>3.1.0</exec.maven.plugin>
         <h2.versao>2.1.210</h2.versao>
         <jacoco.version>0.8.6</jacoco.version>
-        <junit.versao>5.7.2</junit.versao>
-        <log4j2.version>2.14.1</log4j2.version>
-        <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
+        <junit.versao>5.9.1</junit.versao>
+        <log4j2.version>2.19.0</log4j2.version>
+        <maven.compiler.plugin>3.10.1</maven.compiler.plugin>
         <maven.dependency.plugin>3.1.1</maven.dependency.plugin>
         <maven.javadoc.plugin>3.2.0</maven.javadoc.plugin>
         <maven.resources.plugin>3.2.0</maven.resources.plugin>
         <pitest.version>1.6.4</pitest.version>
-        <pmd.plugin.versao>3.13.0</pmd.plugin.versao>
-        <pmd.versao>6.37.0</pmd.versao>
+        <pmd.plugin.versao>3.19.0</pmd.plugin.versao>
+        <pmd.versao>6.52.0</pmd.versao>
         <project.info.reports.version>3.1.1</project.info.reports.version>
         <snyk.versao>2.0.0</snyk.versao>
         <sonar.versao>3.7.0.1746</sonar.versao>
         <spotbugs-maven-plugin>4.2.2</spotbugs-maven-plugin>
-        <spring.boot.versao>2.5.4</spring.boot.versao>
+        <spring.boot.versao>3.0.0</spring.boot.versao>
         <surefire.versao>2.22.2</surefire.versao>
         <findsecbugs-plugin.version>1.11.0</findsecbugs-plugin.version>
     </properties>
@@ -42,8 +40,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.4</version>
-        <relativePath />
+        <version>3.0.0</version>
     </parent>
 
     <groupId>com.github.kyriosdata</groupId>
@@ -199,11 +196,6 @@
 
         <plugins>
 
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-
             <!-- spotbugs -->
             <!-- mvn compile           -->
             <!-- mvn spotbugs:spotbugs -->
@@ -266,7 +258,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>3.4.2</version>
             </plugin>
 
             <!-- FIM DE ATUALIZACAO DE PLUGINS -->
@@ -434,7 +426,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>${maven.javadoc.plugin}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -865,7 +857,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>3.4.2</version>
                         <executions>
                             <execution>
                                 <phase>package</phase>
@@ -876,13 +868,12 @@
                                     <finalName>exemplo-unico</finalName>
                                     <archive>
                                         <manifest>
-                                            <mainClass>${project.mainClass}
-                                            </mainClass>
+                                            <addClasspath>true</addClasspath>
+                                            <mainClass>${project.mainClass}</mainClass>
                                         </manifest>
                                     </archive>
                                     <descriptorRefs>
-                                        <descriptorRef>jar-with-dependencies
-                                        </descriptorRef>
+                                        <descriptorRef>jar-with-dependencies</descriptorRef>
                                     </descriptorRefs>
                                     <appendAssemblyId>false</appendAssemblyId>
                                 </configuration>
@@ -984,7 +975,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>${maven.javadoc.plugin}</version>
                         <executions>
                             <execution>
                                 <id>package-javadoc</id>
@@ -1012,7 +1003,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>${maven.javadoc.plugin}</version>
                         <configuration>
                             <show>public</show>
                             <additionalOptions>

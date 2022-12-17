@@ -1,4 +1,4 @@
-[![Build Status](https://app.travis-ci.com/kyriosdata/exemplo.svg)](https://travis-ci.com/kyriosdata/exemplo)
+[![Build Status](https://app.travis-ci.com/kyriosdata/exemplo.svg)](https://app.travis-ci.com/github/kyriosdata/exemplo)
 [![SonarCloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.kyriosdata%3Aexemplo&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.github.kyriosdata%3Aexemplo)
 [![Known Vulnerabilities](https://snyk.io/test/github/kyriosdata/exemplo/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/kyriosdata/exemplo)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo)
@@ -7,11 +7,12 @@
 
 _Projeto que serve de referência para o desenvolvimento de software em Java_.
 
-Ou seja, é um projeto proposto para ser clonado
-e reutilizado no desenvolvimento dos seus projetos.
+É um projeto proposto para ser clonado e reutilizado, faz uso de 
+Spring Boot 3 e JDK 17.
 
-Este projeto inclui um conjunto "completo" de ferramentas, já configuradas, para o desenvolvimento
-de software em Java.
+Há um conjunto relativamente extenso de ferramentas para avaliação 
+do código do projeto, o que é
+um bom ponto de partida para implementação de DevOps.
 
 Para ilustrar o projeto inclui:
 (a) uma biblioteca formada por um único método que identifica o dia da semana para uma data fornecida;
@@ -65,7 +66,8 @@ Agora você poderá executar os vários comandos abaixo.
   também criado no diretório _target_. Para executar basta o comando
   `java -jar target/exemplo-dir.jar`. Observe que se o diretório _jars_ for
   removido, então este comando falha. Por último, o diretório _jars_ deve
-  ser depositado no mesmo diretório do arquivo _exemplo.jar_.
+  ser depositado no mesmo diretório do arquivo _exemplo.jar_. A execução deste
+  arquivo refere-se à aplicação via linha de comandos.
 
 - `mvn package -P executavel-unico`<br>
   gera jar executável correspondente ao aplicativo a ser executado via linha de comandos,
