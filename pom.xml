@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <java.version>8</java.version>
+        <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,12 +18,12 @@
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <exec.maven.plugin>3.1.0</exec.maven.plugin>
         <h2.versao>2.1.210</h2.versao>
-        <jacoco.version>0.8.6</jacoco.version>
+        <jacoco.version>0.8.8</jacoco.version>
         <junit.versao>5.9.1</junit.versao>
         <log4j2.version>2.19.0</log4j2.version>
         <maven.compiler.plugin>3.10.1</maven.compiler.plugin>
         <maven.dependency.plugin>3.1.1</maven.dependency.plugin>
-        <maven.javadoc.plugin>3.2.0</maven.javadoc.plugin>
+        <maven.javadoc.plugin>3.4.1</maven.javadoc.plugin>
         <maven.resources.plugin>3.2.0</maven.resources.plugin>
         <pitest.version>1.6.4</pitest.version>
         <pmd.plugin.versao>3.19.0</pmd.plugin.versao>

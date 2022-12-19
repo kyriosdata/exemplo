@@ -54,7 +54,7 @@ Agora você poderá executar os vários comandos abaixo.
   cobertura em _target/site/jacoco/index.html_ além de verificar se limite mínimo
   de cobertura, conforme configurado, é satisfeito.
 
-## Empacotando o projeto
+## Produzindo código executável (depende da JVM)
 
 - `mvn package`<br>
   gera arquivo _exemplo.jar_ no diretório _target_. Observe que
@@ -78,8 +78,9 @@ Agora você poderá executar os vários comandos abaixo.
 - `mvn package -P api`<br>
   gera jar executável juntamente com todas as dependências reunidas em um único arquivo,
   _target/api.jar_. Este arquivo jar pode ser transferido para outro diretório
-  ou máquina e ser executado pelo comando `java -jar target/api.jar`. A execução e exemplos
-  de chamadas são fornecidos na seção seguinte.
+  ou máquina e ser executado pelo comando `java -jar target/api.jar`. 
+
+A execução e exemplos de chamadas são fornecidos na seção seguinte.
 
 ## Executando a aplicação e a RESTFul API
 
