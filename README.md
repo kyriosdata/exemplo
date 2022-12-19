@@ -8,7 +8,7 @@
 _Projeto que serve de referência para o desenvolvimento de software em Java_.
 
 É um projeto proposto para ser clonado e reutilizado, faz uso de 
-Spring Boot 3 e JDK 17.
+Spring Boot 3, JDK 17 (exigido) e Maven 3.8.6.
 
 Há um conjunto relativamente extenso de ferramentas para avaliação 
 do código do projeto, o que é
@@ -106,6 +106,13 @@ A execução e exemplos de chamadas são fornecidos na seção seguinte.
   - Via linha de comandos (curl), `curl http://localhost:8080/ds` ou `curl http://localhost:8080/ds?data=01-01-200`.
   - Página HTML (há uma interface gráfica) no diretório **gui**, basta abrir
     o arquivo [index.html](http://htmlpreview.github.com/?https://raw.githubusercontent.com/kyriosdata/exemplo/master/gui/index.html).
+
+## Produzindo código executável (native image)
+
+- Depende de GraalVM.
+- JDK 17
+- Visual Studio (Windows)
+- `mvn -P native native:compile`
 
 ## Documentação
 
@@ -225,7 +232,7 @@ configuração do arquivo _HOMEDIR/.m2/settings.xml_.
 
 Particularmente considero a publicação usando o Maven Central mais
 complexa do que a alternativa recente oferecida pelo [JitPack](https://jitpack.io),
-uma alternativa.
+por exemplo.
 
 ## Dependências
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
@@ -12,29 +13,34 @@
         <tools.dir>${project.basedir}/tools</tools.dir>
 
         <antrun.version>3.0.0</antrun.version>
-        <checkstyle.plugin.versao>3.1.2</checkstyle.plugin.versao>
+        <checkstyle.plugin.versao>3.2.0</checkstyle.plugin.versao>
         <checkstyle.versao>10.5.0</checkstyle.versao>
-        <dependency.check.versao>6.1.5</dependency.check.versao>
+        <dependency.check.versao>7.4.1</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <exec.maven.plugin>3.1.0</exec.maven.plugin>
         <h2.versao>2.1.210</h2.versao>
         <jacoco.version>0.8.8</jacoco.version>
+        <javancss.maven.plugin>2.1</javancss.maven.plugin>
         <junit.versao>5.9.1</junit.versao>
+        <jxr.maven.plugin>3.3.0</jxr.maven.plugin>
         <log4j2.version>2.19.0</log4j2.version>
         <maven.compiler.plugin>3.10.1</maven.compiler.plugin>
         <maven.dependency.plugin>3.1.1</maven.dependency.plugin>
         <maven.javadoc.plugin>3.4.1</maven.javadoc.plugin>
+        <maven-project-info-reports-plugin.version>3.4.1</maven-project-info-reports-plugin.version>
         <maven.resources.plugin>3.2.0</maven.resources.plugin>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <pitest.version>1.6.4</pitest.version>
         <pmd.plugin.versao>3.19.0</pmd.plugin.versao>
         <pmd.versao>6.52.0</pmd.versao>
-        <project.info.reports.version>3.1.1</project.info.reports.version>
+        <site.maven.plugin>4.0.0-M4</site.maven.plugin>
         <snyk.versao>2.0.0</snyk.versao>
         <sonar.versao>3.7.0.1746</sonar.versao>
-        <spotbugs-maven-plugin>4.2.2</spotbugs-maven-plugin>
+        <spotbugs-maven-plugin>4.7.3.0</spotbugs-maven-plugin>
         <spring.boot.versao>3.0.0</spring.boot.versao>
         <surefire.versao>2.22.2</surefire.versao>
-        <findsecbugs-plugin.version>1.11.0</findsecbugs-plugin.version>
+        <findsecbugs-plugin.version>1.12.0</findsecbugs-plugin.version>
+        <versions-maven-plugin.version>2.14.1</versions-maven-plugin.version>
     </properties>
 
     <parent>
@@ -98,13 +104,6 @@
     </scm>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-parent</artifactId>
-            <version>${spring.boot.versao}</version>
-            <type>pom</type>
-        </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -202,6 +201,11 @@
 
         <plugins>
 
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
             <!-- spotbugs -->
             <!-- mvn compile           -->
             <!-- mvn spotbugs:spotbugs -->
@@ -211,6 +215,13 @@
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>${spotbugs-maven-plugin}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs</artifactId>
+                        <version>4.7.3</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <plugin>
@@ -246,7 +257,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.9.1</version>
+                <version>${site.maven.plugin}</version>
             </plugin>
 
             <plugin>
@@ -309,7 +320,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>javancss-maven-plugin</artifactId>
-                <version>2.1</version>
+                <version>${javancss.maven.plugin}</version>
                 <configuration>
                     <failOnViolation>true</failOnViolation>
                     <ccnLimit>11</ccnLimit>
@@ -348,7 +359,7 @@
                 <version>${pmd.plugin.versao}</version>
                 <configuration>
                     <linkXRef>true</linkXRef>
-                    <sourceEncoding>utf-8</sourceEncoding>
+                    <inputEncoding>utf-8</inputEncoding>
                     <minimumTokens>20</minimumTokens>
                     <targetJdk>1.8</targetJdk>
                     <excludes>
@@ -426,7 +437,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${project.info.reports.version}</version>
+                <version>${maven-project-info-reports-plugin.version}</version>
             </plugin>
 
             <plugin>
@@ -446,7 +457,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
-                <version>2.7</version>
+                <version>${versions-maven-plugin.version}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -461,7 +472,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>javancss-maven-plugin</artifactId>
-                <version>2.1</version>
+                <version>${javancss.maven.plugin}</version>
                 <configuration>
                     <failOnViolation>true</failOnViolation>
                     <ccnLimit>11</ccnLimit>
@@ -475,11 +486,13 @@
                 <version>${pmd.plugin.versao}</version>
                 <configuration>
                     <linkXRef>true</linkXRef>
-                    <sourceEncoding>utf-8</sourceEncoding>
-                    <minimumTokens>100</minimumTokens>
+                    <inputEncoding>utf-8</inputEncoding>
+                    <minimumTokens>20</minimumTokens>
+                    <targetJdk>1.8</targetJdk>
                     <excludes>
                         <exclude>**/*Bean.java</exclude>
                         <exclude>**/generated/*.java</exclude>
+                        <exclude>**/*Application.java</exclude>
                     </excludes>
                     <excludeRoots>
                         <excludeRoot>target/generated-sources/stubs
@@ -495,15 +508,9 @@
             </plugin>
 
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jdepend-maven-plugin</artifactId>
-                <version>2.0</version>
-            </plugin>
-
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>${jxr.maven.plugin}</version>
             </plugin>
 
             <!-- mvn checkstyle:checkstyle -->
@@ -953,8 +960,8 @@
                         <artifactId>maven-compiler-plugin</artifactId>
                         <version>${maven.compiler.plugin}</version>
                         <configuration>
-                            <source>1.8</source>
-                            <target>1.8</target>
+                            <source>17</source>
+                            <target>17</target>
 
                             <!-- OMITE INFORMACAO DE DEBUGGING -->
                             <compilerArgs>
@@ -966,7 +973,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>3.1.0</version>
+                        <version>${maven-source-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>package-sources</id>
