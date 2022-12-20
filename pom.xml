@@ -4,10 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
+        <nome.projeto>exemplo</nome.projeto>
+
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <project.mainClass>com.github.kyriosdata.exemplo.application.console.ProgramaCalendario</project.mainClass>
 
         <tools.dir>${project.basedir}/tools</tools.dir>
@@ -18,7 +21,7 @@
         <dependency.check.versao>7.4.1</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <exec.maven.plugin>3.1.0</exec.maven.plugin>
-        <h2.versao>2.1.210</h2.versao>
+        <h2.versao>2.1.214</h2.versao>
         <jacoco.version>0.8.8</jacoco.version>
         <javancss.maven.plugin>2.1</javancss.maven.plugin>
         <junit.versao>5.9.1</junit.versao>
@@ -63,7 +66,7 @@
         necessidades específicas do projeto em questão.
     </description>
 
-    <url>https://github.com/kyriosdata/exemplo</url>
+    <url>https://github.com/kyriosdata/${nome.projeto}</url>
 
     <organization>
         <name>Instituto de Informática (UFG) - Fábrica de Software</name>
@@ -96,11 +99,11 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/kyriosdata/exemplo.git
+        <connection>scm:git:https://github.com/kyriosdata/${nome.projeto}.git
         </connection>
-        <developerConnection>scm:git:https://github.com/kyriosdata/exemplo.git
+        <developerConnection>scm:git:https://github.com/kyriosdata/${nome.projeto}.git
         </developerConnection>
-        <url>https://github.com/kyriosdata/exemplo</url>
+        <url>https://github.com/kyriosdata/${nome.projeto}</url>
     </scm>
 
     <dependencies>
@@ -197,7 +200,7 @@
         </pluginManagement>
 
         <!-- Define o nome do arquivo a ser gerado (.jar é acrescentada) -->
-        <finalName>exemplo</finalName>
+        <finalName>${nome.projeto}</finalName>
 
         <plugins>
 
@@ -563,7 +566,7 @@
         <!-- JDBC URL  : jdbc:h2:tcp://localhost:9092/./banco -->
         <!-- Cria 'banco.h2.db' no diretório target          -->
         <profile>
-            <id>start-h2</id>
+            <id>start-h2-dev-in-target</id>
             <dependencies>
                 <dependency>
                     <groupId>com.h2database</groupId>
@@ -576,7 +579,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.2.1</version>
+                        <version>3.1.0</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -600,6 +603,8 @@
                                 <argument>8082</argument>
                                 <!-- uncomment if you want to open h2 UI automatically -->
                                 <argument>-browser</argument>
+                                <!-- cria banco se não existe (APENAS DESENVOLVIMENTO) -->
+                                <argument>-ifNotExists</argument>
                             </arguments>
                         </configuration>
                     </plugin>
@@ -687,36 +692,6 @@
             </build>
         </profile>
 
-        <!-- DOCKER -->
-        <profile>
-            <id>docker</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.spotify</groupId>
-                        <artifactId>dockerfile-maven-plugin</artifactId>
-                        <version>1.4.13</version>
-                        <executions>
-                            <execution>
-                                <id>default</id>
-                                <goals>
-                                    <goal>build</goal>
-                                    <goal>push</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <repository>spotify/foobar</repository>
-                            <tag>${project.version}</tag>
-                            <buildArgs>
-                                <JAR_FILE>target/exemplo-unico.jar</JAR_FILE>
-                            </buildArgs>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
         <!-- OWASP vulnerabilidades              -->
         <!-- mvn verify -P owasp                 -->
         <!-- target/dependency-check-report.html -->
@@ -796,8 +771,9 @@
                         </executions>
                         <configuration>
                             <apiToken>${env.SNYK_TOKEN}</apiToken>
-                            <failOnSeverity>low</failOnSeverity>
-                            <org>kyriosdata</org>
+                            <args>
+                                <arg>--all-projects</arg>
+                            </args>
                         </configuration>
                     </plugin>
 
@@ -1038,7 +1014,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>3.1.0</version>
+                        <version>${maven-source-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>package-sources</id>

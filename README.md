@@ -257,9 +257,9 @@ para outros além daqueles ilustrados abaixo: Version Maven Plugin ([aqui](http:
 - `mvn dependency:copy-dependencies`<br>
   Copia dependências do projeto para o diretório **target/dependency**.
 
-## Banco de Dados H2 (bônus)
+## Banco de Dados H2
 
-Dado o cenário "comum" no qual aplicações em Java fazem uso de um banco
+Nos cenários onde é feito uso de um banco
 relacional, aqui são oferecidos recursos para desenvolvimento usando o
 H2 (https://www.h2database.com).
 
@@ -270,13 +270,12 @@ H2 (https://www.h2database.com).
   Adicionalmente, forneça como _driver_ a classe `org.h2.Driver`.
   Você pode fazer uso do diretório de sua
   preferência, contudo, a sugestão é criar o banco no diretório `target`
-  (usado pelo comando seguinte).
+  (usado pelo comando seguinte). Na _shell_ que é aberta, digite `create table teste (id int primary key, nome varchar(255));` para criar uma tabela de teste. Para inserir um registro, digite `insert into teste values (1, 'teste');`. Para listar os registros, digite `select * from teste;`. Para sair, digite `exit`.
 
-- `mvn exec:java -P start-h2`<br>
+- `mvn exec:java -P start-h2-dev-in-target`<br>
   Este comando abre uma interface gráfica, via _browser_, no endereço
-  http://localhost:8082. Observe que o comando anterior permite interagir
-  com o banco via linha de comandos. Este comando, ao contrário do
-  anterior, assume que o banco a ser aberto está no diretório `target`.
+  http://localhost:8082 com permissão para criar bancos no diretório **target**. Ou seja, é uma opção apenas para experimentação e durante desenvolvimento. Observe que o comando anterior permite interagir
+  com o banco via linha de comandos. Este comando, ao contrário, assume que o banco a ser aberto está no diretório `target`.
   Quando fornecer a URL, use `.` para representar tal diretório.
 
 ## Outros recursos
