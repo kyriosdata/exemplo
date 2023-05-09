@@ -3,7 +3,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/kyriosdata/exemplo/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/kyriosdata/exemplo)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo)
 
-# Escopo e objetivo
+## Escopo e objetivo
 
 _Projeto que serve de referência para o desenvolvimento de software em Java_.
 
