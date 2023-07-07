@@ -21,7 +21,7 @@
         <dependency.check.versao>7.4.1</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <exec.maven.plugin>3.1.0</exec.maven.plugin>
-        <h2.versao>2.1.214</h2.versao>
+        <h2.versao>2.2.220</h2.versao>
         <jacoco.version>0.8.8</jacoco.version>
         <javancss.maven.plugin>2.1</javancss.maven.plugin>
         <junit.versao>5.9.1</junit.versao>
