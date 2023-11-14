@@ -107,7 +107,7 @@ A execução e exemplos de chamadas são fornecidos na seção seguinte.
   - Página HTML (há uma interface gráfica) no diretório **gui**, basta abrir
     o arquivo [index.html](http://htmlpreview.github.com/?https://raw.githubusercontent.com/kyriosdata/exemplo/master/gui/index.html).
 
-## Produzindo código executável (native image)
+## Produzindo código executável (native image) (em testes)
 
 - Depende de GraalVM.
 - JDK 17
@@ -120,6 +120,10 @@ A execução e exemplos de chamadas são fornecidos na seção seguinte.
   produz documentação do projeto depositada em
   _target/site/apidocs/index.html_. Este comando está configurado para
   o JDK 9.
+
+- `mvn jxr:jxr`<br>
+    Produz documentação do código fonte depositada em
+    _target/site/xref/index.html_.
 
 ## Análise estática
 
@@ -182,12 +186,13 @@ configuradas em conformidade com o contexto em questão.
   - `mvn jxr:jxr pmd:cpd`<br>
     gera relatório de duplicidades encontradas. Observe que o uso do plugin
     **jxr** é necessário para geração de relatório do código fonte referenciável
-    pelo relatório gerado pelo PMD. Contudo, o uso do **jxr** não é obrigatório.
+    pelo relatório gerado pelo PMD. Contudo, o uso do **jxr** não é obrigatório. O 
+    resultado é depositado no arquivo _target/site/cpd.html_.
 
 - **Spotbugs**
 
   - `mvn spotbugs:spotbugs`<br>
-    detecção de bugs
+    detecção de bugs. Resultado em _target/spotbugs.html_.
   - `mvn spotbugs:check`<br>
     apenas verifica se há erros
   - `mvn spotbugs:gui`<br>
@@ -196,7 +201,7 @@ configuradas em conformidade com o contexto em questão.
 - **Spotbugs** (security)
 
   - `mvn spotbugs:spotbugs -P security`<br>
-    detecção de bugs
+    detecção de bugs. Resultado em _target/spotbugs.html_.
   - `mvn spotbugs:check -P security`<br>
     apenas verifica se há erros
   - `mvn spotbugs:gui -P security`<br>
@@ -230,9 +235,9 @@ configuração do arquivo _HOMEDIR/.m2/settings.xml_.
 - **Nexus Staging Maven Plugin**
   - `mvn deploy -P deploy`<br>
 
-Particularmente considero a publicação usando o Maven Central mais
+A publicação usando o Maven Central é mais
 complexa do que a alternativa recente oferecida pelo [JitPack](https://jitpack.io),
-por exemplo.
+ou até mesmo pelo Github Packages, por exemplo.
 
 ## Dependências
 

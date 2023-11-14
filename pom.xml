@@ -15,32 +15,33 @@
 
         <tools.dir>${project.basedir}/tools</tools.dir>
 
-        <antrun.version>3.0.0</antrun.version>
-        <checkstyle.plugin.versao>3.2.0</checkstyle.plugin.versao>
-        <checkstyle.versao>10.5.0</checkstyle.versao>
-        <dependency.check.versao>7.4.1</dependency.check.versao>
+        <antrun.version>3.1.0</antrun.version>
+        <checkstyle.plugin.versao>3.3.1</checkstyle.plugin.versao>
+        <checkstyle.versao>10.12.5</checkstyle.versao>
+        <dependency.check.versao>8.4.2</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
         <exec.maven.plugin>3.1.0</exec.maven.plugin>
         <h2.versao>2.1.214</h2.versao>
-        <jacoco.version>0.8.8</jacoco.version>
+        <jacoco.version>0.8.11</jacoco.version>
         <javancss.maven.plugin>2.1</javancss.maven.plugin>
-        <junit.versao>5.9.1</junit.versao>
-        <jxr.maven.plugin>3.3.0</jxr.maven.plugin>
-        <log4j2.version>2.19.0</log4j2.version>
-        <maven.compiler.plugin>3.10.1</maven.compiler.plugin>
-        <maven.dependency.plugin>3.1.1</maven.dependency.plugin>
-        <maven.javadoc.plugin>3.4.1</maven.javadoc.plugin>
+        <junit.versao>5.10.1</junit.versao>
+        <jxr.maven.plugin>3.3.1</jxr.maven.plugin>
+        <log4j2.version>3.0.0-alpha1</log4j2.version>
+        <maven.compiler.plugin>3.11.0</maven.compiler.plugin>
+        <maven.dependency.plugin>3.6.1</maven.dependency.plugin>
+        <maven.javadoc.plugin>3.6.2</maven.javadoc.plugin>
         <maven-project-info-reports-plugin.version>3.4.1</maven-project-info-reports-plugin.version>
         <maven.resources.plugin>3.2.0</maven.resources.plugin>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <pitest.version>1.6.4</pitest.version>
-        <pmd.plugin.versao>3.19.0</pmd.plugin.versao>
-        <pmd.versao>6.52.0</pmd.versao>
-        <site.maven.plugin>4.0.0-M4</site.maven.plugin>
-        <snyk.versao>2.0.0</snyk.versao>
+        <pmd.plugin.versao>3.21.0</pmd.plugin.versao>
+        <pmd.versao>6.55.0</pmd.versao>
+        <site.maven.plugin>4.0.0-M11</site.maven.plugin>
+        <snyk.versao>2.2.0</snyk.versao>
         <sonar.versao>3.7.0.1746</sonar.versao>
-        <spotbugs-maven-plugin>4.7.3.0</spotbugs-maven-plugin>
-        <spring.boot.versao>3.0.0</spring.boot.versao>
+        <spotbugs-maven-plugin>4.8.1.0</spotbugs-maven-plugin>
+        <spotbugs>4.8.1</spotbugs>
+        <spring.boot.versao>3.1.5</spring.boot.versao>
         <surefire.versao>2.22.2</surefire.versao>
         <findsecbugs-plugin.version>1.12.0</findsecbugs-plugin.version>
         <versions-maven-plugin.version>2.14.1</versions-maven-plugin.version>
@@ -49,7 +50,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.0</version>
+        <version>3.1.5</version>
     </parent>
 
     <groupId>com.github.kyriosdata</groupId>
@@ -204,10 +205,11 @@
 
         <plugins>
 
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+<!--            Quando habilitado, interfere com package -P executavel-unico ??!!! -->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
 
             <!-- spotbugs -->
             <!-- mvn compile           -->
@@ -222,9 +224,12 @@
                     <dependency>
                         <groupId>com.github.spotbugs</groupId>
                         <artifactId>spotbugs</artifactId>
-                        <version>4.7.3</version>
+                        <version>${spotbugs}</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+                    <htmlOutput>true</htmlOutput>
+                </configuration>
             </plugin>
 
             <plugin>
@@ -235,20 +240,14 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>3.1.0</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
-                <version>3.0.0-M1</version>
+                <version>3.1.1</version>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
-                <version>3.0.0-M1</version>
+                <version>3.1.1</version>
             </plugin>
 
             <plugin>
@@ -273,12 +272,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>${antrun.version}</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.4.2</version>
             </plugin>
 
             <!-- FIM DE ATUALIZACAO DE PLUGINS -->
@@ -406,7 +399,7 @@
                     <dependency>
                         <groupId>org.pitest</groupId>
                         <artifactId>pitest-junit5-plugin</artifactId>
-                        <version>0.14</version>
+                        <version>1.2.1</version>
                     </dependency>
                 </dependencies>
                 <configuration>
@@ -846,7 +839,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
-                        <version>3.4.2</version>
+                        <version>3.6.0</version>
                         <executions>
                             <execution>
                                 <phase>package</phase>
