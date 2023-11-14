@@ -16,28 +16,39 @@ import org.springframework.web.bind.annotation.RestController;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Controlador REST que expõe serviço para obtenção do dia da semana
+ * para uma data.
+ *
+ */
 @RestController
 public class DiaDaSemanaController {
 
+    /**
+     * Obtém dia da semana para a data informada.
+     *
+     * @param data Data para a qual se deseja obter o dia da semana.
+     * @return Dia da semana para a data informada.
+     */
     @CrossOrigin
     @RequestMapping("ds")
-    public DiaDaSemana diaDaSemana(@RequestParam(value="data", defaultValue =
-            "não fornecida") String arg) {
+    public DiaDaSemana diaDaSemana(@RequestParam(value= "data", defaultValue =
+            "não fornecida") String data) {
 
-        LocalDate data = localDateFromString(arg);
+        LocalDate localDate = localDateFromString(data);
 
-        // Se data não é fornecida, ou é inválida, use o dia corrente.
-        if (data == null) {
-            data = LocalDate.now();
+        // Se localDate não é fornecida, ou é inválida, use o dia corrente.
+        if (localDate == null) {
+            localDate = LocalDate.now();
         }
 
-        int dia = data.getDayOfMonth();
-        int mes = data.getMonthValue();
-        int ano = data.getYear();
+        int dia = localDate.getDayOfMonth();
+        int mes = localDate.getMonthValue();
+        int ano = localDate.getYear();
 
         int ds = Calendario.diaDaSemana(dia, mes, ano);
 
-        return new DiaDaSemana(data, Calendario.semana[ds]);
+        return new DiaDaSemana(localDate, Calendario.semana[ds]);
     }
 
     /**

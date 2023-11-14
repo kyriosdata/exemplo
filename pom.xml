@@ -1,55 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <java.version>8</java.version>
+        <nome.projeto>exemplo</nome.projeto>
+
+        <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.mainClass>
-            com.github.kyriosdata.exemplo.application.console.ProgramaCalendario
-        </project.mainClass>
+
+        <project.mainClass>com.github.kyriosdata.exemplo.application.console.ProgramaCalendario</project.mainClass>
 
         <tools.dir>${project.basedir}/tools</tools.dir>
 
         <antrun.version>3.0.0</antrun.version>
-        <checkstyle.plugin.versao>3.1.1</checkstyle.plugin.versao>
-        <checkstyle.versao>8.41.1</checkstyle.versao>
-        <dependency.check.versao>6.1.5</dependency.check.versao>
+        <checkstyle.plugin.versao>3.2.0</checkstyle.plugin.versao>
+        <checkstyle.versao>10.5.0</checkstyle.versao>
+        <dependency.check.versao>7.4.1</dependency.check.versao>
         <dockerfile-maven-plugin.version>1.4.13</dockerfile-maven-plugin.version>
-        <h2.versao>1.4.200</h2.versao>
-        <jacoco.version>0.8.6</jacoco.version>
-        <junit.versao>5.7.0</junit.versao>
-        <log4j2.version>2.14.0</log4j2.version>
-        <maven.compiler.plugin>3.8.1</maven.compiler.plugin>
+        <exec.maven.plugin>3.1.0</exec.maven.plugin>
+        <h2.versao>2.1.214</h2.versao>
+        <jacoco.version>0.8.8</jacoco.version>
+        <javancss.maven.plugin>2.1</javancss.maven.plugin>
+        <junit.versao>5.9.1</junit.versao>
+        <jxr.maven.plugin>3.3.0</jxr.maven.plugin>
+        <log4j2.version>2.19.0</log4j2.version>
+        <maven.compiler.plugin>3.10.1</maven.compiler.plugin>
         <maven.dependency.plugin>3.1.1</maven.dependency.plugin>
-        <maven.exec.plugin>3.0.0</maven.exec.plugin>
-        <maven.javadoc.plugin>3.2.0</maven.javadoc.plugin>
+        <maven.javadoc.plugin>3.4.1</maven.javadoc.plugin>
+        <maven-project-info-reports-plugin.version>3.4.1</maven-project-info-reports-plugin.version>
         <maven.resources.plugin>3.2.0</maven.resources.plugin>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <pitest.version>1.6.4</pitest.version>
-        <pmd.plugin.versao>3.13.0</pmd.plugin.versao>
-        <pmd.versao>6.33.0</pmd.versao>
-        <project.info.reports.version>3.1.1</project.info.reports.version>
-        <snyk.versao>1.2.9</snyk.versao>
+        <pmd.plugin.versao>3.19.0</pmd.plugin.versao>
+        <pmd.versao>6.52.0</pmd.versao>
+        <site.maven.plugin>4.0.0-M4</site.maven.plugin>
+        <snyk.versao>2.0.0</snyk.versao>
         <sonar.versao>3.7.0.1746</sonar.versao>
-        <spotbugs-maven-plugin>4.3.0</spotbugs-maven-plugin>
-        <spring.boot.versao>2.4.5</spring.boot.versao>
+        <spotbugs-maven-plugin>4.7.3.0</spotbugs-maven-plugin>
+        <spring.boot.versao>3.0.0</spring.boot.versao>
         <surefire.versao>2.22.2</surefire.versao>
-        <findsecbugs-plugin.version>1.10.1</findsecbugs-plugin.version>
+        <findsecbugs-plugin.version>1.12.0</findsecbugs-plugin.version>
+        <versions-maven-plugin.version>2.14.1</versions-maven-plugin.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.5</version>
-        <relativePath />
+        <version>3.0.0</version>
     </parent>
 
     <groupId>com.github.kyriosdata</groupId>
     <artifactId>exemplo</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
 
@@ -60,7 +66,7 @@
         necessidades específicas do projeto em questão.
     </description>
 
-    <url>https://github.com/kyriosdata/exemplo</url>
+    <url>https://github.com/kyriosdata/${nome.projeto}</url>
 
     <organization>
         <name>Instituto de Informática (UFG) - Fábrica de Software</name>
@@ -93,21 +99,14 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/kyriosdata/exemplo.git
+        <connection>scm:git:https://github.com/kyriosdata/${nome.projeto}.git
         </connection>
-        <developerConnection>scm:git:https://github.com/kyriosdata/exemplo.git
+        <developerConnection>scm:git:https://github.com/kyriosdata/${nome.projeto}.git
         </developerConnection>
-        <url>https://github.com/kyriosdata/exemplo</url>
+        <url>https://github.com/kyriosdata/${nome.projeto}</url>
     </scm>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-parent</artifactId>
-            <version>${spring.boot.versao}</version>
-            <type>pom</type>
-        </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -119,6 +118,12 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
             <version>${log4j2.version}</version>
         </dependency>
 
@@ -185,11 +190,17 @@
                     </dependencies>
                 </plugin>
 
+                <plugin>
+                    <groupId>org.cyclonedx</groupId>
+                    <artifactId>cyclonedx-maven-plugin</artifactId>
+                    <version>2.7.1</version>
+                </plugin>
+
             </plugins>
         </pluginManagement>
 
         <!-- Define o nome do arquivo a ser gerado (.jar é acrescentada) -->
-        <finalName>exemplo</finalName>
+        <finalName>${nome.projeto}</finalName>
 
         <plugins>
 
@@ -207,6 +218,13 @@
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>${spotbugs-maven-plugin}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.github.spotbugs</groupId>
+                        <artifactId>spotbugs</artifactId>
+                        <version>4.7.3</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <plugin>
@@ -224,25 +242,25 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.8.2</version>
+                <version>3.0.0-M1</version>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
-                <version>2.5.2</version>
+                <version>3.0.0-M1</version>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.2.0</version>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>3.9.1</version>
+                <version>${site.maven.plugin}</version>
             </plugin>
 
             <plugin>
@@ -260,7 +278,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>3.4.2</version>
             </plugin>
 
             <!-- FIM DE ATUALIZACAO DE PLUGINS -->
@@ -305,7 +323,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>javancss-maven-plugin</artifactId>
-                <version>2.1</version>
+                <version>${javancss.maven.plugin}</version>
                 <configuration>
                     <failOnViolation>true</failOnViolation>
                     <ccnLimit>11</ccnLimit>
@@ -344,7 +362,7 @@
                 <version>${pmd.plugin.versao}</version>
                 <configuration>
                     <linkXRef>true</linkXRef>
-                    <sourceEncoding>utf-8</sourceEncoding>
+                    <inputEncoding>utf-8</inputEncoding>
                     <minimumTokens>20</minimumTokens>
                     <targetJdk>1.8</targetJdk>
                     <excludes>
@@ -368,7 +386,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>${maven.exec.plugin}</version>
+                <version>${exec.maven.plugin}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -376,9 +394,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <mainClass>${project.mainClass}</mainClass>
-                </configuration>
             </plugin>
 
             <!-- mvn org.pitest:pitest-maven:mutationCoverage -->
@@ -391,7 +406,7 @@
                     <dependency>
                         <groupId>org.pitest</groupId>
                         <artifactId>pitest-junit5-plugin</artifactId>
-                        <version>0.12</version>
+                        <version>0.14</version>
                     </dependency>
                 </dependencies>
                 <configuration>
@@ -425,13 +440,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>${project.info.reports.version}</version>
+                <version>${maven-project-info-reports-plugin.version}</version>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>${maven.javadoc.plugin}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -445,7 +460,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
-                <version>2.7</version>
+                <version>${versions-maven-plugin.version}</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -460,7 +475,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>javancss-maven-plugin</artifactId>
-                <version>2.1</version>
+                <version>${javancss.maven.plugin}</version>
                 <configuration>
                     <failOnViolation>true</failOnViolation>
                     <ccnLimit>11</ccnLimit>
@@ -474,11 +489,13 @@
                 <version>${pmd.plugin.versao}</version>
                 <configuration>
                     <linkXRef>true</linkXRef>
-                    <sourceEncoding>utf-8</sourceEncoding>
-                    <minimumTokens>100</minimumTokens>
+                    <inputEncoding>utf-8</inputEncoding>
+                    <minimumTokens>20</minimumTokens>
+                    <targetJdk>1.8</targetJdk>
                     <excludes>
                         <exclude>**/*Bean.java</exclude>
                         <exclude>**/generated/*.java</exclude>
+                        <exclude>**/*Application.java</exclude>
                     </excludes>
                     <excludeRoots>
                         <excludeRoot>target/generated-sources/stubs
@@ -494,15 +511,9 @@
             </plugin>
 
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jdepend-maven-plugin</artifactId>
-                <version>2.0</version>
-            </plugin>
-
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>${jxr.maven.plugin}</version>
             </plugin>
 
             <!-- mvn checkstyle:checkstyle -->
@@ -555,7 +566,7 @@
         <!-- JDBC URL  : jdbc:h2:tcp://localhost:9092/./banco -->
         <!-- Cria 'banco.h2.db' no diretório target          -->
         <profile>
-            <id>start-h2</id>
+            <id>start-h2-dev-in-target</id>
             <dependencies>
                 <dependency>
                     <groupId>com.h2database</groupId>
@@ -568,7 +579,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.2.1</version>
+                        <version>3.1.0</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -592,6 +603,8 @@
                                 <argument>8082</argument>
                                 <!-- uncomment if you want to open h2 UI automatically -->
                                 <argument>-browser</argument>
+                                <!-- cria banco se não existe (APENAS DESENVOLVIMENTO) -->
+                                <argument>-ifNotExists</argument>
                             </arguments>
                         </configuration>
                     </plugin>
@@ -656,7 +669,7 @@
                     <plugin>
                         <groupId>org.pitest</groupId>
                         <artifactId>pitest</artifactId>
-                        <version>1.5.0</version>
+                        <version>1.6.8</version>
                         <dependencies>
                             <dependency>
                                 <groupId>org.pitest</groupId>
@@ -673,36 +686,6 @@
                             <targetTests>
                                 <param>com.github.kyriosdata.exemplo.*</param>
                             </targetTests>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <!-- DOCKER -->
-        <profile>
-            <id>docker</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>com.spotify</groupId>
-                        <artifactId>dockerfile-maven-plugin</artifactId>
-                        <version>${dockerfile-maven-plugin.version></version>
-                        <executions>
-                            <execution>
-                                <id>default</id>
-                                <goals>
-                                    <goal>build</goal>
-                                    <goal>push</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <repository>spotify/foobar</repository>
-                            <tag>${project.version}</tag>
-                            <buildArgs>
-                                <JAR_FILE>target/exemplo-unico.jar</JAR_FILE>
-                            </buildArgs>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -787,9 +770,10 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <apiToken>${snyk.token}</apiToken>
-                            <failOnSeverity>low</failOnSeverity>
-                            <org>kyriosdata</org>
+                            <apiToken>${env.SNYK_TOKEN}</apiToken>
+                            <args>
+                                <arg>--all-projects</arg>
+                            </args>
                         </configuration>
                     </plugin>
 
@@ -862,7 +846,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>3.4.2</version>
                         <executions>
                             <execution>
                                 <phase>package</phase>
@@ -873,13 +857,12 @@
                                     <finalName>exemplo-unico</finalName>
                                     <archive>
                                         <manifest>
-                                            <mainClass>${project.mainClass}
-                                            </mainClass>
+                                            <addClasspath>true</addClasspath>
+                                            <mainClass>${project.mainClass}</mainClass>
                                         </manifest>
                                     </archive>
                                     <descriptorRefs>
-                                        <descriptorRef>jar-with-dependencies
-                                        </descriptorRef>
+                                        <descriptorRef>jar-with-dependencies</descriptorRef>
                                     </descriptorRefs>
                                     <appendAssemblyId>false</appendAssemblyId>
                                 </configuration>
@@ -953,8 +936,8 @@
                         <artifactId>maven-compiler-plugin</artifactId>
                         <version>${maven.compiler.plugin}</version>
                         <configuration>
-                            <source>1.8</source>
-                            <target>1.8</target>
+                            <source>17</source>
+                            <target>17</target>
 
                             <!-- OMITE INFORMACAO DE DEBUGGING -->
                             <compilerArgs>
@@ -966,7 +949,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>3.1.0</version>
+                        <version>${maven-source-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>package-sources</id>
@@ -981,7 +964,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>${maven.javadoc.plugin}</version>
                         <executions>
                             <execution>
                                 <id>package-javadoc</id>
@@ -1009,7 +992,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.1.1</version>
+                        <version>${maven.javadoc.plugin}</version>
                         <configuration>
                             <show>public</show>
                             <additionalOptions>
@@ -1031,7 +1014,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>3.1.0</version>
+                        <version>${maven-source-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>package-sources</id>

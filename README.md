@@ -1,17 +1,18 @@
-﻿[![Build Status](https://travis-ci.com/kyriosdata/exemplo.svg)](https://travis-ci.com/kyriosdata/exemplo)
+[![Build Status](https://app.travis-ci.com/kyriosdata/exemplo.svg)](https://app.travis-ci.com/github/kyriosdata/exemplo)
 [![SonarCloud Status](https://sonarcloud.io/api/project_badges/measure?project=com.github.kyriosdata%3Aexemplo&metric=alert_status)](https://sonarcloud.io/dashboard?id=com.github.kyriosdata%3Aexemplo)
-[![Known Vulnerabilities](https://snyk.io/test/github/kyriosdata/exemplo/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/kyriosdata/exemplo?targetFile=pom.xml)
+[![Known Vulnerabilities](https://snyk.io/test/github/kyriosdata/exemplo/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/kyriosdata/exemplo)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.kyriosdata/exemplo)
 
-# Escopo e objetivo
+## Escopo, pré-requisitos e objetivo
 
 _Projeto que serve de referência para o desenvolvimento de software em Java_.
 
-Ou seja, é um projeto proposto para ser clonado
-e reutilizado no desenvolvimento dos seus projetos.
+É um projeto proposto para ser clonado e reutilizado, faz uso de 
+Spring Boot 3, JDK 17 (exigido) e Maven 3.8.6.
 
-Este projeto inclui um conjunto "completo" de ferramentas, já configuradas, para o desenvolvimento
-de software em Java.
+Há um conjunto relativamente extenso de ferramentas para avaliação 
+do código do projeto, o que é
+um bom ponto de partida para implementação de DevOps.
 
 Para ilustrar o projeto inclui:
 (a) uma biblioteca formada por um único método que identifica o dia da semana para uma data fornecida;
@@ -53,7 +54,7 @@ Agora você poderá executar os vários comandos abaixo.
   cobertura em _target/site/jacoco/index.html_ além de verificar se limite mínimo
   de cobertura, conforme configurado, é satisfeito.
 
-## Empacotando o projeto
+## Produzindo código executável (depende da JVM)
 
 - `mvn package`<br>
   gera arquivo _exemplo.jar_ no diretório _target_. Observe que
@@ -65,7 +66,8 @@ Agora você poderá executar os vários comandos abaixo.
   também criado no diretório _target_. Para executar basta o comando
   `java -jar target/exemplo-dir.jar`. Observe que se o diretório _jars_ for
   removido, então este comando falha. Por último, o diretório _jars_ deve
-  ser depositado no mesmo diretório do arquivo _exemplo.jar_.
+  ser depositado no mesmo diretório do arquivo _exemplo.jar_. A execução deste
+  arquivo refere-se à aplicação via linha de comandos.
 
 - `mvn package -P executavel-unico`<br>
   gera jar executável correspondente ao aplicativo a ser executado via linha de comandos,
@@ -76,8 +78,9 @@ Agora você poderá executar os vários comandos abaixo.
 - `mvn package -P api`<br>
   gera jar executável juntamente com todas as dependências reunidas em um único arquivo,
   _target/api.jar_. Este arquivo jar pode ser transferido para outro diretório
-  ou máquina e ser executado pelo comando `java -jar target/api.jar`. A execução e exemplos
-  de chamadas são fornecidos na seção seguinte.
+  ou máquina e ser executado pelo comando `java -jar target/api.jar`. 
+
+A execução e exemplos de chamadas são fornecidos na seção seguinte.
 
 ## Executando a aplicação e a RESTFul API
 
@@ -103,6 +106,13 @@ Agora você poderá executar os vários comandos abaixo.
   - Via linha de comandos (curl), `curl http://localhost:8080/ds` ou `curl http://localhost:8080/ds?data=01-01-200`.
   - Página HTML (há uma interface gráfica) no diretório **gui**, basta abrir
     o arquivo [index.html](http://htmlpreview.github.com/?https://raw.githubusercontent.com/kyriosdata/exemplo/master/gui/index.html).
+
+## Produzindo código executável (native image)
+
+- Depende de GraalVM.
+- JDK 17
+- Visual Studio (Windows)
+- `mvn -P native native:compile`
 
 ## Documentação
 
@@ -195,27 +205,9 @@ configuradas em conformidade com o contexto em questão.
 - **Snyk**
 
   - `mvn snyk:test -P security`<br>
-    análise de vulnerabilidade oferecida pelo serviço [Snyk](https://snyk.io).
-    A propriedade _snyk.token_ deve estar definida no arquivo
-    _$HOME/.m2/settings.xml_, conforme ilustrado abaixo. Alternativamente,
-    por conveniência, o valor pode ser fornecido via linha de comandos,
-    **-Dsnyk.token=API-TOKEN** (neste caso não é necessária a definição no
-    arquivo _settings.xml_.
-
-  ```xml
-  <settings>
-  <profiles>
-    <profile>
-        <activation>
-            <activeByDefault>true</activeByDefault>
-        </activation>
-        <properties>
-            <snyk.token>API-TOKEN AQUI</snyk.token>
-        </properties>
-    </profile>
-  </profiles>
-  </settings>
-  ```
+    Realiza a análise de vulnerabilidade oferecida pelo serviço [Snyk](https://snyk.io).
+    Defina a variável de ambiente **SNYK_TOKEN** com o valor do _token_
+  de acesso ao serviço. 
 
   - `mvn snyk:monitor -P security`<br>
     Disponibiliza relatório em snyk.io (atualiza _badge_)
@@ -240,7 +232,7 @@ configuração do arquivo _HOMEDIR/.m2/settings.xml_.
 
 Particularmente considero a publicação usando o Maven Central mais
 complexa do que a alternativa recente oferecida pelo [JitPack](https://jitpack.io),
-uma alternativa.
+por exemplo.
 
 ## Dependências
 
@@ -265,9 +257,9 @@ para outros além daqueles ilustrados abaixo: Version Maven Plugin ([aqui](http:
 - `mvn dependency:copy-dependencies`<br>
   Copia dependências do projeto para o diretório **target/dependency**.
 
-## Banco de Dados H2 (bônus)
+## Banco de Dados H2
 
-Dado o cenário "comum" no qual aplicações em Java fazem uso de um banco
+Nos cenários onde é feito uso de um banco
 relacional, aqui são oferecidos recursos para desenvolvimento usando o
 H2 (https://www.h2database.com).
 
@@ -278,13 +270,12 @@ H2 (https://www.h2database.com).
   Adicionalmente, forneça como _driver_ a classe `org.h2.Driver`.
   Você pode fazer uso do diretório de sua
   preferência, contudo, a sugestão é criar o banco no diretório `target`
-  (usado pelo comando seguinte).
+  (usado pelo comando seguinte). Na _shell_ que é aberta, digite `create table teste (id int primary key, nome varchar(255));` para criar uma tabela de teste. Para inserir um registro, digite `insert into teste values (1, 'teste');`. Para listar os registros, digite `select * from teste;`. Para sair, digite `exit`.
 
-- `mvn exec:java -P start-h2`<br>
+- `mvn exec:java -P start-h2-dev-in-target`<br>
   Este comando abre uma interface gráfica, via _browser_, no endereço
-  http://localhost:8082. Observe que o comando anterior permite interagir
-  com o banco via linha de comandos. Este comando, ao contrário do
-  anterior, assume que o banco a ser aberto está no diretório `target`.
+  http://localhost:8082 com permissão para criar bancos no diretório **target**. Ou seja, é uma opção apenas para experimentação e durante desenvolvimento. Observe que o comando anterior permite interagir
+  com o banco via linha de comandos. Este comando, ao contrário, assume que o banco a ser aberto está no diretório `target`.
   Quando fornecer a URL, use `.` para representar tal diretório.
 
 ## Outros recursos
