@@ -35,7 +35,7 @@
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <pitest.version>1.6.4</pitest.version>
         <pmd.plugin.versao>3.21.0</pmd.plugin.versao>
-        <pmd.versao>6.55.0</pmd.versao>
+        <pmd.versao>7.10.0</pmd.versao>
         <site.maven.plugin>4.0.0-M11</site.maven.plugin>
         <snyk.versao>2.2.0</snyk.versao>
         <sonar.versao>3.7.0.1746</sonar.versao>
